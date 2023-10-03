@@ -27,7 +27,11 @@ Durante os últimos 15 dias...
   - Terminar os guiões teste
 
  A seguir da proposta...
-  - É necessário começar a pensar nos models para começar a planear a arquitetura da base de dados.
+  - 1ª semana (02/10):
+	  - É necessário começar a pensar nos models para começar a planear a arquitetura da base de dados.
+	  - Definir main UI
+  - 2ª semana (09/10):
+	  - Fazer calendario (servidor da google para notificações)
   
    
 
