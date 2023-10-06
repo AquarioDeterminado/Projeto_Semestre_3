@@ -37,7 +37,7 @@
  - Seguem os guiões de teste. 
 
 ##### Mapa do Fluxo completo da app (sujeito a alterações)
-![](/proposta/assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-01.png)
+![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-01.png)
 
 ---
 ### Guiões *Core*:
@@ -45,17 +45,17 @@
 
 #### Eventos:
  - Fluxo para participar/ser notificado de eventos a decorrer no espaço
-![](/proposta/assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-02.png)
+![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-02.png)
 
 #### Gestão de Subscrições e Rendas:
 - Fluxo de gestão do arrendamento do espaço (este fluxo é limitado as pessoas responsáveis pelo arrendamento, ou seja, nem todas as pessoas de uma empresa tem acesso a este fluxo)
-![](/proposta/assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-03.png)
+![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-03.png)
 ---
 ### Guiões *Extra*:
  - Estes guiões são uma extenção do fluxo *core* (daí a seta a sair da esquerda) 
 #### Disponibilidade de Hot Desks:
  - Mostra a Disponibilidade de *Hot Desks* do espaço
-![](/proposta/assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-04.png)
+![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-04.png)
 #### Cartão de Acesso
  - Método de autenticação digital/físico (o tipo de acesso via depender da integração com o espaço)
-![](/proposta/assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-05.png)
+![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-05.png)
