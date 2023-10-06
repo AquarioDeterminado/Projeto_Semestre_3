@@ -48,14 +48,17 @@
 ![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-02.png)
 
 #### Gestão de Subscrições e Rendas:
-- Fluxo de gestão do arrendamento do espaço (este fluxo é limitado as pessoas responsáveis pelo arrendamento, ou seja, nem todas as pessoas de uma empresa tem acesso a este fluxo)
+- Fluxo de gestão do arrendamento de espaços (este fluxo é limitado as pessoas responsáveis pelo arrendamento, ou seja, nem todas as pessoas de uma empresa tem acesso a este fluxo)
 ![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-03.png)
 ---
 ### Guiões *Extra*:
  - Estes guiões são uma extenção do fluxo *core* (daí a seta a sair da esquerda) 
 #### Disponibilidade de Hot Desks:
- - Mostra a Disponibilidade de *Hot Desks* do espaço
+ - Mostra a Disponibilidade de *Hot Desks* do espaço.
+
 ![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-04.png)
 #### Cartão de Acesso
- - Método de autenticação digital/físico (o tipo de acesso via depender da integração com o espaço)
+ - Método de autenticação. Este cartão de acesso é a interação principal entre o espaço e app. Desde a marcação de uso de hot desks (através da leitura de qr codes nas secretarias), até o acesso ao workspace ou a áreas mais restritas (a definir com as implementações de acessos do espaço) este cartão é a chave para muitas funcionalidades do workspace.
+
+
 ![](assets/User%20Flow%20-%20Cowork%20Space%20Manager%20[Recovered]-05.png)
