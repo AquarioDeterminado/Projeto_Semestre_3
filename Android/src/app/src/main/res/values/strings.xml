@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProjetoSolar</string>
+
+    <!-- LogIn Entry Page -->
+    <string name="login_entry_username">Username</string>
+    <string name="login_entry_password">Password</string>
+</resources>
