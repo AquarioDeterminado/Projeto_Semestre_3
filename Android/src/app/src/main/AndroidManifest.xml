@@ -13,7 +13,13 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="pt.iade.RicardoDiasJoaoCoelho.projetosolar.LogIn_Entry"
+            android:exported="false" />
+        <activity
+            android:name="pt.iade.RicardoDiasJoaoCoelho.projetosolar.MainPage"
+            android:exported="false" />
+        <activity
+            android:name="pt.iade.RicardoDiasJoaoCoelho.projetosolar.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

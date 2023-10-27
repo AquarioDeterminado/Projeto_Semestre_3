@@ -2,6 +2,10 @@
     <string name="app_name">ProjetoSolar</string>
 
     <!-- LogIn Entry Page -->
+    <string name="login_entry_company_img_descript">logo</string>
     <string name="login_entry_username">Username</string>
     <string name="login_entry_password">Password</string>
+    <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
+    <string name="login_entry_logIn_button">LogIn</string>
+
 </resources>
