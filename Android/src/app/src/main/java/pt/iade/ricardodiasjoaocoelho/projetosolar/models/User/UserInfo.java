@@ -1,4 +1,4 @@
-package pt.iade.RicardoDiasJoaoCoelho.projetosolar.models.User;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.models.User;
 
 import java.sql.Date;
 

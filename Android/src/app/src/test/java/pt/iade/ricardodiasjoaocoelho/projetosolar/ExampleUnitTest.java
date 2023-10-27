@@ -1,4 +1,4 @@
-package pt.iade.RicardoDiasJoaoCoelho.projetosolar;
+package pt.iade.ricardodiasjoaocoelho.projetosolar;
 
 import org.junit.Test;
 

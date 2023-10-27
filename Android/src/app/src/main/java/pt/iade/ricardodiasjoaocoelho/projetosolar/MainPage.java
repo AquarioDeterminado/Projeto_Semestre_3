@@ -1,11 +1,8 @@
-package pt.iade.RicardoDiasJoaoCoelho.projetosolar;
-
+package pt.iade.ricardodiasjoaocoelho.projetosolar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import pt.iade.RicardoDiasJoaoCoelho.projetosolar.MainActivity;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

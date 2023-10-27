@@ -1,4 +1,4 @@
-package pt.iade.RicardoDiasJoaoCoelho.projetosolar.models.User;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.models.User;
 
 public class LegalId {
     String usr_legal_document_id_num;

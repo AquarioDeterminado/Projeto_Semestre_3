@@ -1,6 +1,4 @@
-package pt.iade.RicardoDiasJoaoCoelho.projetosolar;
-import android.os.Bundle;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+package pt.iade.ricardodiasjoaocoelho.projetosolar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
