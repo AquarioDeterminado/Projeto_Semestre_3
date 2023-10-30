@@ -8,4 +8,8 @@
     <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
     <string name="login_entry_logIn_button">LogIn</string>
 
+
+    <!-- Main/Event Page -->
+    <string name="mainpage_events_events_scroll_descrip">Current Events</string>
+    <string name="mainpage_events_space_info_button">See More …</string>
 </resources>
