@@ -13,13 +13,19 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
-            android:name="pt.iade.ricardodiasjoaocoelho.projetosolar.LogIn_Entry"
+            android:name=".Email_Recovery"
             android:exported="false" />
         <activity
-            android:name="pt.iade.ricardodiasjoaocoelho.projetosolar.MainPage"
+            android:name=".Cowork_Id"
             android:exported="false" />
         <activity
-            android:name="pt.iade.ricardodiasjoaocoelho.projetosolar.MainActivity"
+            android:name=".LogIn_Entry"
+            android:exported="false" />
+        <activity
+            android:name=".MainPage"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

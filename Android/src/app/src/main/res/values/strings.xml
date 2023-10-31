@@ -1,5 +1,10 @@
 <resources>
+    <!-- App Info -->
     <string name="app_name">ProjetoSolar</string>
+
+    <!-- Utils -->
+    <string name="utils_back_button_icon"> &lt; </string>
+
 
     <!-- LogIn Entry Page -->
     <string name="login_entry_company_img_descript">logo</string>
@@ -7,5 +12,15 @@
     <string name="login_entry_password">Password</string>
     <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
     <string name="login_entry_logIn_button">LogIn</string>
+
+    <!--- Email Recovery Page -->
+    <string name="email_recovery_email_hint">Email</string>
+    <string name="email_recovery_send_button">Send</string>
+    <string name="email_recovery_intro_message">Email Recovery BlaBlaBla</string>
+
+    <!-- Id Page -->
+    <string name="id_page_card_img">Id Card</string>
+
+
 
 </resources>
