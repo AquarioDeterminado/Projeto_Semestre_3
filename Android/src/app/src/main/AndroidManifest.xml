@@ -19,6 +19,9 @@
             android:name="pt.iade.ricardodiasjoaocoelho.projetosolar.MainPage"
             android:exported="false" />
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name="pt.iade.ricardodiasjoaocoelho.projetosolar.MainActivity"
             android:exported="true">
             <intent-filter>

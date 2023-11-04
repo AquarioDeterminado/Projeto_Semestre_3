@@ -19,4 +19,21 @@
     <!-- Main/Event Page -->
     <string name="mainpage_events_events_scroll_descrip">Current Events</string>
     <string name="mainpage_events_space_info_button">See More …</string>
+
+    <!-- Profile Page -->
+    <string name="profile_email_display">email</string>
+    <string name="profile_name_display">Name</string>
+    <string name="profile_settings_button">Settings</string>
+    <string name="profile_avatar_display">User Avatar Photo</string>
+    <string name="profile_back_button">Temp Buttton</string>
+
+    <!-- Plant Selector -->
+    <string name="plant_selector_company_name_1">Empresa 1</string>
+    <string name="plant_selector_company_name_2">Empresa 2</string>
+    <string name="plant_selector_company_name_3">Empresa 3</string>
+    <string name="plant_selector_company_name_4">Empresa 4</string>
+    <string name="plant_selector_back_button">Temp Button</string>
+    <string name="plant_selector_settings_button">Settings</string>
+    <string name="plant_selector_image_description">Company Image</string>
+
 </resources>
