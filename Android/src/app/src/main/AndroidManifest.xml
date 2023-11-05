@@ -13,28 +13,29 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
-            android:name=".Email_Recovery"
+            android:name=".views.Email_Recovery"
             android:exported="false" />
         <activity
-            android:name=".Cowork_Id"
+            android:name=".views.Cowork_Id"
             android:exported="false" />
         <activity
-            android:name=".LogIn_Entry"
-            android:exported="false" />
-        <activity
-            android:name=".MainPage"
-            android:exported="false" />
-        <activity
-            android:name=".Profile"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".views.LogIn_Entry"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.MainPage"
+            android:exported="false" />
+        <activity
+            android:name=".views.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
         </activity>
     </application>
 

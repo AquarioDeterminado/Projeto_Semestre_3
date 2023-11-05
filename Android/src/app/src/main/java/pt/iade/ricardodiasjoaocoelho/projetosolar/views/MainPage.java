@@ -1,6 +1,8 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class MainPage extends AppCompatActivity {
 

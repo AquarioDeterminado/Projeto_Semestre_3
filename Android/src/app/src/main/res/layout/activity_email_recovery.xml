@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Email_Recovery">
+    tools:context=".views.Email_Recovery">
 
     <Button
         android:id="@+id/email_recovery_back_button"
@@ -20,19 +20,21 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
         android:ems="10"
         android:hint="@string/email_recovery_email_hint"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="282dp" />
+        app:layout_constraintTop_toBottomOf="@+id/email_recovery_back_button" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
         android:text="@string/email_recovery_intro_message"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 </androidx.constraintlayout.widget.ConstraintLayout>

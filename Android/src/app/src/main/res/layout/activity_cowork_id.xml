@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cowork_Id">
+    tools:context=".views.Cowork_Id">
 
     <Button
         android:id="@+id/cowork_id_back_button"
@@ -39,7 +39,8 @@
         android:id="@+id/cowork_id_nfc_button"
         android:layout_width="56dp"
         android:layout_height="51dp"
+        android:layout_marginTop="324dp"
         app:layout_constraintEnd_toEndOf="@+id/cowork_id_card"
-        app:srcCompat="@android:drawable/ic_menu_compass"
-        tools:layout_editor_absoluteY="632dp" />
+        app:layout_constraintTop_toBottomOf="@+id/cowork_id_card"
+        app:srcCompat="@android:drawable/ic_menu_compass" />
 </androidx.constraintlayout.widget.ConstraintLayout>
