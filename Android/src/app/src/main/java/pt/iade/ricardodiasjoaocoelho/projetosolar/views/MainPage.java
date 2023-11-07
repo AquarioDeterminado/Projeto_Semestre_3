@@ -43,21 +43,12 @@ public class MainPage extends AppCompatActivity {
         eventsList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Event.class);
+                Intent intent = new Intent(context, Event_RSVP.class);
                 startActivity(intent);
             }
         });
 
         //MainPage -> Space
-        spacesList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Space.class);
-                startActivity(intent);
-            }
-        });
-
-
 
     }
 }
