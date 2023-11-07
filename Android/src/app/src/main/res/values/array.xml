@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="event_time_window">
-        <item>@string/nav_home_page</item>
-        <item>@string/nav_spaces_page</item>
-        <item>@string/nav_id_page</item>
-        <item>@string/nav_profile_page</item>
+        <item>@string/mainpage_events_datapicker_today</item>
+        <item>@string/mainpage_events_datapicker_week</item>
+        <item>@string/mainpage_events_datapicker_month</item>
+        <item>@string/mainpage_events_datapicker_next</item>
     </string-array>
 </resources>
