@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
 
 public class LogIn_Entry extends AppCompatActivity {
-
-    private Button changeActivityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +38,19 @@ public class LogIn_Entry extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (true)
+                //TODO: Check if username and password are correct
+                String inputUsername = username_edit.getText().toString();
+                String inputPassword = password_edit.getText().toString();
+
+                String response = LogInController.CheckCredentials(inputUsername, inputPassword);
+                if (response.isEmpty())
                 {
                     Intent myIntent = new Intent((Context) context, MainPage.class);
                     startActivity(myIntent);
                 }
                 else
                 {
-
+                    LogInError(response);
                 }
             }
         });
@@ -59,5 +64,16 @@ public class LogIn_Entry extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+    }
+
+    /* --- Error Handling --- */
+    private void LogInError (String errorMessage) {
+        //build dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Not Able to log in!")
+                .setMessage(errorMessage);
+
+        AlertDialog popUpError = builder.create();
+        popUpError.show();
     }
 }
