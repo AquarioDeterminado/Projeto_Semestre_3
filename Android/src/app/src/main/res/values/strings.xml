@@ -53,4 +53,11 @@
     <string name="plant_selector_settings_button">Settings</string>
     <string name="plant_selector_image_description">Company Image</string>
 
+    <!--- RSVP Page -->
+    <string name="rsvp_event_name">Event Name</string>
+    <string name="rsvp_event_descrip">Event Name</string>
+    <string name="rsvp_event_accept_bttn">Event Name</string>
+    <string name="rsvp_event_notify_bttn">Event Name</string>
+
+
 </resources>

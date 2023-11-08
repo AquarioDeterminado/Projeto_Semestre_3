@@ -41,7 +41,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
                     android:scaleType="fitXY"
-                    app:layout_constraintBottom_toBottomOf="@+id/mainppage_event_more_button"
+                    app:layout_constraintBottom_toBottomOf="@+id/mainpage_event_more_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.657"
                     app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/mainppage_event_more_button"
+                    android:id="@+id/mainpage_event_more_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="210dp"
