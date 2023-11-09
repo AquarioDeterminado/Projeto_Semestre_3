@@ -55,9 +55,13 @@
 
     <!--- RSVP Page -->
     <string name="rsvp_event_name">Event Name</string>
-    <string name="rsvp_event_descrip">Event Name</string>
-    <string name="rsvp_event_accept_bttn">Event Name</string>
-    <string name="rsvp_event_notify_bttn">Event Name</string>
+    <string name="rsvp_event_descrip">Event Decrip.</string>
+    <string name="rsvp_date">date</string>
+    <string name="rsvp_accept_bttn">Let\'s Go!</string>
+    <string name="rsvp_notify_bttn">Notify Me</string>
+
+    <string name="rsvp_accept_message">Have Fun!</string>
+    <string name="rsvp_notify_message">We will notify you.</string>
 
 
 </resources>
