@@ -10,6 +10,7 @@
         android:id="@+id/space_info_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/space_info_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:text="TextView"
+        android:text="@string/space_info_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_info_image" />
 
@@ -35,5 +36,85 @@
         app:layout_constraintTop_toBottomOf="@+id/space_info_title">
 
     </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/space_info_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/space_info_local"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/space_info_title"
+        app:layout_constraintTop_toTopOf="@+id/space_info_title" />
+
+    <TextView
+        android:id="@+id/space_info_descrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/space_info_descrip"
+        app:layout_constraintStart_toStartOf="@+id/space_info_tags"
+        app:layout_constraintTop_toBottomOf="@+id/space_info_tags" />
+
+    <LinearLayout
+        android:id="@+id/space_info_plans_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal|top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space_info_descrip">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/space_info_plan_1"
+            android:layout_width="192dp"
+            android:layout_height="229dp"
+            android:background="@color/dark_ligth">
+
+            <TextView
+                android:id="@+id/space_info_plan_1_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/space_info_plan_default_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/space_info_plan_1_renewal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/space_info_plan_default_renewal"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="@+id/button"
+                app:layout_constraintStart_toStartOf="@+id/button" />
+
+            <TextView
+                android:id="@+id/space_info_plan_1_decrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/space_info_plan_default_decrip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space_info_plan_1_title" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/space_info_plan_default_price"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

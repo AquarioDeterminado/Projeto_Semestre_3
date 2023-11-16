@@ -31,17 +31,15 @@ public class Space_Info extends AppCompatActivity {
         spaceID = getIntent().getStringExtra("spaceID");
         Space space = new Space(spaceID);
 
-
         /* --- Widgets --- */
         TextView spaceTitle = findViewById(R.id.space_info_title);
 
         ChipGroup spaceTagGroup = findViewById(R.id.space_info_tags);
-        List<Tag> tags = space.getTags();
+
+        /* --- Load/Show Tags --- */
+        ArrayList<Tag> tags = space.getTags();
         ArrayList<View> chips = turnIntoChips(tags);
-        chips.forEach(chip -> {
-            spaceTagGroup.addView(chip);
-            styleChip((Chip) chip);
-        });
+        chips.forEach(chip -> spaceTagGroup.addView(chip));
     }
 
     private ArrayList<View> turnIntoChips(List<Tag> tags) {
@@ -49,16 +47,17 @@ public class Space_Info extends AppCompatActivity {
         tags.forEach(tag -> {
             Chip chip = new Chip(this);
             chip.setText(tag.getDescrip());
+            chip.setLayoutParams(ChipStyle());
             chips.add(chip);
         });
         return chips;
     }
 
-    private void styleChip (Chip chip){
-        RelativeLayout.LayoutParams layout = (RelativeLayout.LayoutParams) chip.getLayoutParams();
-        //layout.height = RelativeLayout.LayoutParams.WRAP_CONTENT;
-        layout.height = 50;
-        chip.setLayoutParams(layout);
 
+    private RelativeLayout.LayoutParams ChipStyle (){
+        RelativeLayout.LayoutParams layout = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+        return layout;
     }
 }
