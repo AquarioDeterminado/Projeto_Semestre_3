@@ -13,7 +13,10 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
-            android:name=".Plan_Subscript"
+            android:name=".views.Register_User"
+            android:exported="false" />
+        <activity
+            android:name=".views.Plan_Subscript"
             android:exported="false" />
         <activity
             android:name=".views.Space_Info"

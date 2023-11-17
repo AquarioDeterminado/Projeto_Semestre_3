@@ -91,9 +91,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="@string/space_info_plan_default_renewal"
-                app:layout_constraintBottom_toTopOf="@+id/button"
-                app:layout_constraintEnd_toEndOf="@+id/button"
-                app:layout_constraintStart_toStartOf="@+id/button" />
+                app:layout_constraintBottom_toTopOf="@+id/space_info_plan_1_bttn"
+                app:layout_constraintEnd_toEndOf="@+id/space_info_plan_1_bttn"
+                app:layout_constraintStart_toStartOf="@+id/space_info_plan_1_bttn" />
 
             <TextView
                 android:id="@+id/space_info_plan_1_decrip"
@@ -106,7 +106,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/space_info_plan_1_title" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/space_info_plan_1_bttn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

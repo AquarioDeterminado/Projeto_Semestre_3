@@ -2,8 +2,10 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -36,10 +38,19 @@ public class Space_Info extends AppCompatActivity {
 
         ChipGroup spaceTagGroup = findViewById(R.id.space_info_tags);
 
+        Button contactBttn = findViewById(R.id.space_info_plan_1_bttn);
+
         /* --- Load/Show Tags --- */
         ArrayList<Tag> tags = space.getTags();
         ArrayList<View> chips = turnIntoChips(tags);
         chips.forEach(chip -> spaceTagGroup.addView(chip));
+
+        /* --- Navigation --- */
+        //Space_Info->Plan_Subscript
+        contactBttn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Plan_Subscript.class);
+            startActivity(intent);
+        });
     }
 
     private ArrayList<View> turnIntoChips(List<Tag> tags) {
