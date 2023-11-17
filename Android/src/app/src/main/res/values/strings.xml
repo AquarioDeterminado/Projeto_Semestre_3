@@ -19,6 +19,20 @@
     <string name="login_entry_password">Password</string>
     <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
     <string name="login_entry_logIn_button">LogIn</string>
+    <string name="login_entry_logIn_register_button">U New? Join Us!</string>
+
+    <!-- Register User Page -->
+    <string name="register_usr_title">Register</string>
+    <string name="register_usr_username">Full Name</string>
+    <string name="register_usr_email">Email</string>
+    <string name="register_usr_phone">Phone Number</string>
+    <string name="register_usr_password">Password</string>
+    <string name="register_usr_password_confirm">Confirm Password</string>
+    <string name="register_usr_bdate">Birth Date</string>
+    <string name="register_usr_bdate_hint">DD/MM/YYYY</string>
+    <string name="register_usr_doc_type">Document Type</string>
+    <string name="register_usr_doc_num">Document Number</string>
+    <string name="register_usr_confirm_button">Confirm</string>
 
     <!--- Email Recovery Page -->
     <string name="email_recovery_email_hint">Email</string>
