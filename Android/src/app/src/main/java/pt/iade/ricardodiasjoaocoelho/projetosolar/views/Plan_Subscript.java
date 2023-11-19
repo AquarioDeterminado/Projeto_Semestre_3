@@ -1,5 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -28,7 +29,23 @@ public class Plan_Subscript extends AppCompatActivity {
 
         //Plan->Space_Info
         contactBttn.setOnClickListener(v -> {
-            finish();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Contacto");
+            builder.setMessage("Space has been contacted")
+                .setCancelable(false)
+                .setPositiveButton("OK", (dialog, id) -> {;
+                    AlertDialog.Builder jk = new AlertDialog.Builder(this);
+                    jk.setTitle("Contacto");
+                    jk.setMessage("Space has been contacted")
+                            .setCancelable(false)
+                            .setPositiveButton("OK", (dialog2, id2) -> {;
+                                finish();
+                            });
+                    AlertDialog alert2 = jk.create();
+                    alert2.show();
+                });
+            AlertDialog alert = builder.create();
+            alert.show();
         });
 
     }
