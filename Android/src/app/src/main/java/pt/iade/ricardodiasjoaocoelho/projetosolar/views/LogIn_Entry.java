@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class LogIn_Entry extends AppCompatActivity {
         EditText password_edit = (EditText) findViewById(R.id.login_entry_password_input);
 
         Button login_button = (Button) findViewById(R.id.login_entry_login_button);
+
+        TextView registerBttn = (TextView) findViewById(R.id.login_entry_register_bttn);
 
         Button forgot_password_button = (Button) findViewById(R.id.login_entry_forgot_credentials);
 
@@ -61,6 +64,14 @@ public class LogIn_Entry extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent((Context) context, Email_Recovery.class);
+                startActivity(myIntent);
+            }
+        });
+
+        registerBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent((Context) context, Register_User.class);
                 startActivity(myIntent);
             }
         });
