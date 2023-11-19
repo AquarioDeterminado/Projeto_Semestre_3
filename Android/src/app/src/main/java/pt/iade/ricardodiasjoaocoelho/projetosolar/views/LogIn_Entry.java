@@ -30,7 +30,7 @@ public class LogIn_Entry extends AppCompatActivity {
 
         Button login_button = (Button) findViewById(R.id.login_entry_login_button);
 
-        TextView registerBttn = (TextView) findViewById(R.id.login_entry_register_bttn);
+        TextView signupBttn = (TextView) findViewById(R.id.login_entry_signup_bttn);
 
         Button forgot_password_button = (Button) findViewById(R.id.login_entry_forgot_credentials);
 
@@ -68,10 +68,10 @@ public class LogIn_Entry extends AppCompatActivity {
             }
         });
 
-        registerBttn.setOnClickListener(new View.OnClickListener() {
+        signupBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent((Context) context, Register_User.class);
+                Intent myIntent = new Intent((Context) context, Signup_User.class);
                 startActivity(myIntent);
             }
         });
