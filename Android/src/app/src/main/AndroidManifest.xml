@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
+            android:name=".views.Usr_Spaces"
+            android:exported="false" />
+        <activity
             android:name=".views.Register_User"
             android:exported="false" />
         <activity
@@ -39,8 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.Register_User"
-            android:exported="false"/>
+        <activity
+            android:name=".views.Register_User"
+            android:exported="false" />
         <activity
             android:name=".views.MainPage"
             android:exported="false" />
