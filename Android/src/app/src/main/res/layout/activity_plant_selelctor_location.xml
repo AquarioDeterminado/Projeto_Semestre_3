@@ -6,41 +6,41 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/plant_selector_company_name_1"
+        android:id="@+id/plant_selector_coworking_name_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/plant_selector_company_name_1"
+        android:text="@string/plant_selector_coworking_name_1"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_1"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_1"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_1" />
 
     <TextView
-        android:id="@+id/plant_selector_company_name_2"
+        android:id="@+id/plant_selector_coworking_name_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/plant_selector_company_name_2"
+        android:text="@string/plant_selector_coworking_name_2"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_2"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_2"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_2" />
 
     <TextView
-        android:id="@+id/plant_selector_company_name_3"
+        android:id="@+id/plant_selector_coworking_name_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/plant_selector_company_name_3"
+        android:text="@string/plant_selector_coworking_name_3"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_3"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_3"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_3" />
 
     <TextView
-        android:id="@+id/plant_selector_company_name_4"
+        android:id="@+id/plant_selector_coworking_name_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/plant_selector_company_name_4"
+        android:text="@string/plant_selector_coworking_name_4"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_4"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_4"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_4" />
@@ -95,7 +95,7 @@
         android:contentDescription="@string/plant_selector_image_description"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_2"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_2"
-        app:layout_constraintTop_toBottomOf="@+id/plant_selector_company_name_2"
+        app:layout_constraintTop_toBottomOf="@+id/plant_selector_coworking_name_2"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <ImageView
@@ -106,6 +106,62 @@
         android:contentDescription="@string/plant_selector_image_description"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_1"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_1"
-        app:layout_constraintTop_toBottomOf="@+id/plant_selector_company_name_1"
+        app:layout_constraintTop_toBottomOf="@+id/plant_selector_coworking_name_1"
         app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <Button
+        android:id="@+id/plant_selector_office_preview_button_company_1"
+        android:layout_width="100dp"
+        android:layout_height="132dp"
+        android:background="#00FFFFFF"
+        android:text="@string/plant_selector_office_preview_button_company_1"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_1"
+        app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_1"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_1"
+        app:layout_constraintTop_toTopOf="@+id/plant_selector_office_preview_image_1"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <Button
+        android:id="@+id/plant_selector_office_preview_button_company_2"
+        android:layout_width="100dp"
+        android:layout_height="132dp"
+        android:background="#00FFFFFF"
+        android:text="@string/plant_selector_office_preview_button_company_2"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_2"
+        app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_2"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_2"
+        app:layout_constraintTop_toTopOf="@+id/plant_selector_office_preview_image_2"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <Button
+        android:id="@+id/plant_selector_office_preview_button_company_4"
+        android:layout_width="100dp"
+        android:layout_height="132dp"
+        android:background="#00FFFFFF"
+        android:text="@string/plant_selector_office_preview_button_company_4"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_4"
+        app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_4"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_4"
+        app:layout_constraintTop_toTopOf="@+id/plant_selector_office_preview_image_4"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <Button
+        android:id="@+id/plant_selector_office_preview_button_company_3"
+        android:layout_width="100dp"
+        android:layout_height="132dp"
+        android:background="#00FFFFFF"
+        android:text="@string/plant_selector_office_preview_button_company_3"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_3"
+        app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_3"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_3"
+        app:layout_constraintTop_toTopOf="@+id/plant_selector_office_preview_image_3"
+        app:layout_constraintVertical_bias="0.562" />
 </androidx.constraintlayout.widget.ConstraintLayout>
