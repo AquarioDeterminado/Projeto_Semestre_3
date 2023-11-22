@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+
 
 public class Main_Fragment extends Fragment {
     public Main_Fragment() {

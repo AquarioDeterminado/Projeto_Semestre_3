@@ -1,13 +1,10 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationBarView;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class MainPage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
@@ -17,7 +14,7 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
     /* --- Fragments --- */
     Main_Fragment mainFragment = new Main_Fragment();
     Usr_Spaces usrSpacesFragment = new Usr_Spaces();
-    Cowork_Id Cowork_Id = new Cowork_Id();
+    pt.iade.ricardodiasjoaocoelho.projetosolar.views.Cowork_Id Cowork_Id = new Cowork_Id();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
