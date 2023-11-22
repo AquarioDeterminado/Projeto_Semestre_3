@@ -59,13 +59,30 @@
     <string name="profile_back_button">Temp Buttton</string>
 
     <!-- Plant Selector -->
-    <string name="plant_selector_company_name_1">Empresa 1</string>
-    <string name="plant_selector_company_name_2">Empresa 2</string>
-    <string name="plant_selector_company_name_3">Empresa 3</string>
-    <string name="plant_selector_company_name_4">Empresa 4</string>
+    <string name="plant_selector_coworking_name_1">Coworking 1</string>
+    <string name="plant_selector_coworking_name_2">Coworking 2</string>
+    <string name="plant_selector_coworking_name_3">Coworking 3</string>
+    <string name="plant_selector_coworking_name_4">Coworking 4</string>
     <string name="plant_selector_back_button">Temp Button</string>
     <string name="plant_selector_settings_button">Settings</string>
-    <string name="plant_selector_image_description">Company Image</string>
+    <string name="plant_selector_image_description">Coworking Image</string>
+    <string name="plant_selector_office_preview_button_coworking_1">1 </string>
+    <string name="plant_selector_office_preview_button_coworking_2">2 </string>
+    <string name="plant_selector_office_preview_button_coworking_3">3 </string>
+    <string name="plant_selector_office_preview_button_coworking_4">4 </string>
+
+    <!-- Coworking Floor Plant Availability-->
+    <string name="cfpa_home_title">Floor Plant </string>
+    <string name="cfpa_floor_image_description">Floor Plant Image </string>
+    <string name="cfa_floor_plant_button_1">- </string>
+    <string name="cfa_floor_plant_button_2">2 </string>
+    <string name="cfa_floor_plant_button_3">3 </string>
+    <string name="cfa_floor_plant_button_4">4 </string>
+    <string name="cfa_floor_plant_button_5">5 </string>
+    <string name="cfa_floor_plant_button_6">6 </string>
+    <string name="cfa_floor_plant_button_7">7 </string>
+    <string name="cfa_floor_plant_button_8">8 </string>
+    <string name="cfa_floor_plant_button_9">9 </string>
 
     <!--- RSVP Page -->
     <string name="rsvp_event_name">Event Name</string>
