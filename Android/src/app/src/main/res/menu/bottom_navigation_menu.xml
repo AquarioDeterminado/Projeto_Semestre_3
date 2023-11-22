@@ -13,12 +13,12 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/nav_spaces_page"/>
     <item
-        android:id="@+id/nac_id"
+        android:id="@+id/nav_id"
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/nav_id_page"/>
     <item
-        android:id="@+id/nac_profile"
+        android:id="@+id/nav_profile"
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/nav_profile_page"

@@ -1,94 +1,72 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.snackbar.Snackbar;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class MainPage extends AppCompatActivity implements Event_RSVP.OnDataReceivedListener {
+public class MainPage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-    View layoutBackground;
+    NavigationBarView navBar;
+
+    /* --- Fragments --- */
+    Main_Fragment_test mainFragment = new Main_Fragment_test();
+    Usr_Spaces usrSpacesFragment = new Usr_Spaces();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage_events);
 
-        /*Widgets*/
-        layoutBackground = findViewById(R.id.mainpage_background);
+        /* --- Widgets --- */
 
-        ImageButton profileButton = findViewById(R.id.mainpage_profile_button);
+        navBar = findViewById(R.id.mainpage_bottom_navigator);
 
-        //Spinner datePicker = findViewById(R.id.mainpage_datePicker);
 
-        //HorizontalScrollView eventsList = findViewById(R.id.mainpage_eventList);
-        Button eventsBttn = findViewById(R.id.mainpage_event_more_button);
-        Button spaceBttn = findViewById(R.id.mainpage_events_space_info_button_1);
-        //LinearLayout spacesList = findViewById(R.id.mainpage_spaces_list);
+        /* --- NavBar --- */
+        navBar.setOnItemSelectedListener(this);
 
-        /* --- Navigation --- */
-        Context context = this;
-        Event_RSVP.OnDataReceivedListener listener = this;
+        navBar.setSelectedItemId(R.id.nav_home);
 
-        //MainPage -> Profile
-        profileButton.setOnClickListener(v -> {
-            Intent intent = new Intent(context, Profile.class);
-            startActivity(intent);
-        });
 
-        //MainPage -> Event
-        eventsBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Event_RSVP.class);
-
-                String eventId = GetEventId();
-                intent.putExtra("eventID", eventId);
-
-                Event_RSVP event = new Event_RSVP();
-                event.SetOnDataReceivedListener(listener);
-
-                startActivity(intent);
-            }
-
-            String GetEventId()
-            {
-                return "1";
-            }
-        });
-
-        //MainPage -> Space
-        spaceBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Space_Info.class);
-                String spaceId = GetSpaceId();
-                intent.putExtra("spaceID", spaceId);
-                startActivity(intent);
-            }
-
-            String GetSpaceId()
-            {
-                return "1";
-            }
-        });
 
     }
 
     @Override
-    public void onDataReceived(String data) {
-        Snackbar.make(layoutBackground, data, Snackbar.LENGTH_LONG).show();
-        Log.d("RSVP", data);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, mainFragment).commit();
+            return true;
+        } else if (id == R.id.nav_spaces) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
+            return true;
+        } else if (id == R.id.nav_profile) {
+                Intent intent = new Intent(this, Profile.class);
+                startActivity(intent);
+                return true;
+        } else {
+                throw new IllegalStateException("Unexpected value: " + item.getItemId());
+        }
     }
 }
+
