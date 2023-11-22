@@ -17,6 +17,7 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
     /* --- Fragments --- */
     Main_Fragment mainFragment = new Main_Fragment();
     Usr_Spaces usrSpacesFragment = new Usr_Spaces();
+    Cowork_Id Cowork_Id = new Cowork_Id();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +49,13 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
         } else if (id == R.id.nav_spaces) {
             getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
             return true;
-        } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this, Profile.class);
-            startActivity(intent);
-            return true;
 
         } else if (id == R.id.nav_id) {
-            Intent intent = new Intent(this, Cowork_Id.class);
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, Cowork_Id).commit();
+
+            return true;
+        } else if (id == R.id.nav_profile) {
+            Intent intent = new Intent(this, Profile.class);
             startActivity(intent);
             return true;
         } else {
