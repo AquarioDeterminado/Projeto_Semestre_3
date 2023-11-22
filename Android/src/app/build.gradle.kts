@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "pt.iade.RicardoDiasJoaoCoelho.projetosolar"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "pt.iade.RicardoDiasJoaoCoelho.projetosolar"
