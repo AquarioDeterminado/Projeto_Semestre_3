@@ -14,8 +14,8 @@ import android.widget.ImageButton;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class Main_Fragment_test extends Fragment {
-    public Main_Fragment_test() {
+public class Main_Fragment extends Fragment {
+    public Main_Fragment() {
         super(R.layout.mainpage_events);
     }
 
@@ -51,7 +51,7 @@ public class Main_Fragment_test extends Fragment {
                 String eventId = GetEventId();
                 intent.putExtra("eventID", eventId);
 
-                Event_RSVP event = new Event_RSVP();
+                //Event_RSVP event = new Event_RSVP();
 
                 startActivity(intent);
             }
