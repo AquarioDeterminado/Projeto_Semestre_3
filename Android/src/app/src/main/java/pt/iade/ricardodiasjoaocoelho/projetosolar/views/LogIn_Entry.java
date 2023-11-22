@@ -5,15 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
@@ -38,7 +35,7 @@ public class LogIn_Entry extends AppCompatActivity {
 
         Button forgot_password_button = findViewById(R.id.login_entry_forgot_credentials);
 
-        /* --- Navigation --- */
+        /* --- Navigation --- */ //TODO: Can U use the same launcher for multiple intents?
         Context context = this;
         View parentLayout = findViewById(android.R.id.content);
 
@@ -63,7 +60,32 @@ public class LogIn_Entry extends AppCompatActivity {
             }
         });
 
-        ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+        //LoginEntry -> EmailRecovery
+        ActivityResultLauncher<Intent> forgorPasswordLauncher = afterLunchSnack(parentLayout);
+        forgot_password_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(context, Email_Recovery.class);
+                forgorPasswordLauncher.launch(intent);
+            }
+        });
+
+        // LoginEntry -> Signup
+        ActivityResultLauncher<Intent> signupLauncher = afterLunchSnack(parentLayout);
+        signupBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Signup_User.class);
+                signupLauncher.launch(intent);
+            }
+        });
+    }
+
+    private ActivityResultLauncher<Intent> afterLunchSnack(View parentLayout) {
+        return registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if (result.getResultCode() == RESULT_OK) {
@@ -75,26 +97,6 @@ public class LogIn_Entry extends AppCompatActivity {
                     }
                 }
         );
-
-        //LoginEntry -> EmailRecovery
-        forgot_password_button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-
-                Intent intent = new Intent(context, Email_Recovery.class);
-                launcher.launch(intent);
-            }
-        });
-
-        signupBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(context, Signup_User.class);
-                startActivity(myIntent);
-            }
-        });
     }
 
     /* --- Error Handling --- */

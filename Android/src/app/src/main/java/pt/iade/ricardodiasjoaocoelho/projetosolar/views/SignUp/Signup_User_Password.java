@@ -1,5 +1,7 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,12 +27,16 @@ public class Signup_User_Password extends Fragment {
         assert view != null;
 
         /* ---  Widgets --- */
-        Button finifshbttn = view.findViewById(R.id.signup_finish_bttn);
+        Button finishbttn = view.findViewById(R.id.signup_finish_bttn);
 
-        finifshbttn.setOnClickListener(new View.OnClickListener() {
+        finishbttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().finish();
+                Activity activity = getActivity();
+                Intent intent = new Intent();
+                intent.putExtra("message", "User created successfully!");
+                activity.setResult(Activity.RESULT_OK, intent);
+                activity.finish();
             }
         });
 
