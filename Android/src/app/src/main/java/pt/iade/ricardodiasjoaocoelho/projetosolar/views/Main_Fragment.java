@@ -1,11 +1,10 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
+import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -30,7 +29,9 @@ public class Main_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
+        Utils utils = new Utils();
 
+        /* ---  Widgets --- */
         ImageButton profileButton = view.findViewById(R.id.mainpage_profile_button);
 
         //Spinner datePicker = view.findViewById(R.id.mainpage_datePicker);
@@ -53,7 +54,7 @@ public class Main_Fragment extends Fragment {
         });
 
         //MainPage -> Event
-        ActivityResultLauncher<Intent> eventLauncher = afterLunchSnack(parentLayout);
+        ActivityResultLauncher<Intent> eventLauncher = utils.afterLunchSnack(getActivity() ,parentLayout);
         eventsBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,20 +89,5 @@ public class Main_Fragment extends Fragment {
         });
 
         return view;
-    }
-
-    private ActivityResultLauncher<Intent> afterLunchSnack(View parentLayout) {
-        return registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent data = result.getData();
-                        String message = data.getStringExtra("message");
-                        Snackbar confirmation = Snackbar.make(parentLayout , message, Snackbar.LENGTH_LONG);
-                        confirmation.setText(message);
-                        confirmation.show();
-                    }
-                }
-        );
     }
 }

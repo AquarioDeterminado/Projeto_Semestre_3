@@ -1,4 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
@@ -22,6 +26,7 @@ public class LogIn_Entry extends AppCompatActivity {
         /* --- Create --- */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_entry);
+        Utils utils = new Utils();
 
         /* ---  Widgets --- */
         //ImageView logo = (ImageView) findViewById(R.id.login_entry_logo);
@@ -61,20 +66,19 @@ public class LogIn_Entry extends AppCompatActivity {
         });
 
         //LoginEntry -> EmailRecovery
-        ActivityResultLauncher<Intent> forgorPasswordLauncher = afterLunchSnack(parentLayout);
+        ActivityResultLauncher<Intent> forgotPasswordLauncher = utils.afterLunchSnack(this, parentLayout);
         forgot_password_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-
                 Intent intent = new Intent(context, Email_Recovery.class);
-                forgorPasswordLauncher.launch(intent);
+                forgotPasswordLauncher.launch(intent);
             }
         });
 
         // LoginEntry -> Signup
-        ActivityResultLauncher<Intent> signupLauncher = afterLunchSnack(parentLayout);
+        ActivityResultLauncher<Intent> signupLauncher = utils.afterLunchSnack(this, parentLayout);
         signupBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,21 +86,6 @@ public class LogIn_Entry extends AppCompatActivity {
                 signupLauncher.launch(intent);
             }
         });
-    }
-
-    private ActivityResultLauncher<Intent> afterLunchSnack(View parentLayout) {
-        return registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == RESULT_OK) {
-                        Intent data = result.getData();
-                        String message = data.getStringExtra("message");
-                        Snackbar confirmation = Snackbar.make(parentLayout , message, Snackbar.LENGTH_LONG);
-                        confirmation.setText(message);
-                        confirmation.show();
-                    }
-                }
-        );
     }
 
     /* --- Error Handling --- */
