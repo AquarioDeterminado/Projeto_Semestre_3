@@ -13,6 +13,18 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
+            android:name=".views.Floor_Plan_Availabibity"
+            android:exported="false" />
+        <activity
+            android:name=".views.Company_Plan_Selelctor"
+            android:exported="false" />
+        <activity
+            android:name=".views.Floor_Plan_Avalability"
+            android:exported="false" />
+        <activity
+            android:name=".views.plan_selector_location"
+            android:exported="false" />
+        <activity
             android:name=".activity_company_page_1"
             android:exported="false" />
         <activity
