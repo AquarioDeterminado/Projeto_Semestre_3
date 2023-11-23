@@ -11,6 +11,6 @@ public class Company_Plan_Selelctor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plant_selelctor_location);
+        setContentView(R.layout.activity_plan_selelector_location);
     }
 }
