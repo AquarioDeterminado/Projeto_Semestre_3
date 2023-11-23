@@ -16,7 +16,7 @@
             android:name=".views.Floor_Plan_Availabibity"
             android:exported="false" />
         <activity
-            android:name=".views.Company_Plan_Selelctor"
+            android:name=".views.Company_Plan_Selelector"
             android:exported="false" />
         <activity
             android:name=".views.Floor_Plan_Avalability"
