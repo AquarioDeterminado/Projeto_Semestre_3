@@ -23,7 +23,7 @@ public class LogIn_Entry extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_entry);
 
-        /* --- Initialize Widgets --- */
+        /* ---  Widgets --- */
         //ImageView logo = (ImageView) findViewById(R.id.login_entry_logo);
 
         EditText username_edit = findViewById(R.id.login_entry_username_input);
