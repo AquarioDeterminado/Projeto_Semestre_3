@@ -3,6 +3,8 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
