@@ -52,6 +52,8 @@
     <string name="mainpage_events_datapicker_month">This Month...</string>
     <string name="mainpage_events_datapicker_next">Up Next...</string>
 
+    <!-- Main/MySpaces Page -->
+    <string name="myspaces_page_title">My Spaces</string>
 
     <!-- Profile Page -->
     <string name="profile_email_display">email</string>

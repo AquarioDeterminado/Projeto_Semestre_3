@@ -78,7 +78,16 @@ public class LogIn_Entry extends AppCompatActivity {
         });
 
         // LoginEntry -> Signup
-        ActivityResultLauncher<Intent> signupLauncher = utils.afterLunchSnack(this, parentLayout);
+        ActivityResultLauncher<Intent> signupLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Intent data = result.getData();
+                        String message = data.getStringExtra("message");
+                        Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show();
+                    }
+                }
+        );
         signupBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

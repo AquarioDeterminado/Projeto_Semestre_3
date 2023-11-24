@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/sub_row_item_space_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/sub_row_item_bttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/sub_row_item_space_img"
+        app:layout_constraintEnd_toEndOf="@+id/sub_row_item_space_img"
+        app:layout_constraintStart_toEndOf="@+id/sub_row_item_space_img"
+        app:layout_constraintTop_toBottomOf="@+id/sub_row_item_space_img" />
+
+    <TextView
+        android:id="@+id/sub_row_item_sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sub_row_item_space_img"
+        app:layout_constraintEnd_toStartOf="@+id/sub_row_item_space_img"
+        app:layout_constraintStart_toStartOf="@+id/sub_row_item_space_img" />
+
+    <TextView
+        android:id="@+id/sub_row_item_space_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/sub_row_item_sub"
+        app:layout_constraintStart_toStartOf="@+id/sub_row_item_sub" />
+</androidx.constraintlayout.widget.ConstraintLayout>
