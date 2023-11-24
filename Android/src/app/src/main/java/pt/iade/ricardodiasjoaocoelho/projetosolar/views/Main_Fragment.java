@@ -2,7 +2,7 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import static androidx.core.content.ContextCompat.startActivity;
 import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController.getCurrentEvents;
-import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.SpaceController.getNearSpaces;
+import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController.getNearSpaces;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
