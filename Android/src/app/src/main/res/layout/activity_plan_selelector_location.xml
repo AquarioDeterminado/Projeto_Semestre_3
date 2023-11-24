@@ -167,9 +167,9 @@
         app:layout_constraintVertical_bias="0.12" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="83dp"
-        android:layout_height="849dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="63dp" />
+        android:layout_width="86dp"
+        android:layout_height="701dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="212dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

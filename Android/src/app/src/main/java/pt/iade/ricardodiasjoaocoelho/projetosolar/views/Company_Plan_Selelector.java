@@ -13,4 +13,8 @@ public class Company_Plan_Selelector extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_selelector_location);
     }
+
+    /* --- Set Events --- */
+    //Adapter
+
 }
