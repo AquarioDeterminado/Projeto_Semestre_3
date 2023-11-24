@@ -73,3 +73,4 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
         return 0;
     }
 }
+
