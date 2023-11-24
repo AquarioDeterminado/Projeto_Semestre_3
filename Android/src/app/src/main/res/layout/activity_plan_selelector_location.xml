@@ -42,7 +42,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/plant_selector_coworking_name_4"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_4"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_4"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_4" />
@@ -52,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/plant_selector_coworking_name_2"
+        android:text="+"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_2"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_2"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_2" />
@@ -62,7 +61,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/plant_selector_coworking_name_3"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_3"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_3"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_3" />
@@ -120,7 +118,6 @@
         android:layout_width="100dp"
         android:layout_height="132dp"
         android:background="#00FFFFFF"
-        android:text="@string/plant_selector_office_preview_button_coworking_3"
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_3"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_3"
@@ -134,7 +131,6 @@
         android:layout_width="100dp"
         android:layout_height="132dp"
         android:background="#00FFFFFF"
-        android:text="@string/plant_selector_office_preview_button_coworking_2"
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_2"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_2"
@@ -148,7 +144,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/plant_selector_coworking_name_1"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_1"
         app:layout_constraintStart_toStartOf="@+id/plant_selector_office_preview_image_1"
         app:layout_constraintTop_toBottomOf="@+id/plant_selector_office_preview_image_1" />
@@ -158,7 +153,6 @@
         android:layout_width="100dp"
         android:layout_height="132dp"
         android:background="#00FFFFFF"
-        android:text="@string/plant_selector_office_preview_button_coworking_1"
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/plant_selector_coworking_name_1"
         app:layout_constraintEnd_toEndOf="@+id/plant_selector_office_preview_image_1"
