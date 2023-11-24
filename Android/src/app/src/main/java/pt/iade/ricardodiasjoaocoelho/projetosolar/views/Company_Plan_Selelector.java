@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.Company;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Company;
 
 public class Company_Plan_Selelector extends AppCompatActivity {
 
