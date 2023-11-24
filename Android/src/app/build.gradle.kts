@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "pt.iade.RicardoDiasJoaoCoelho.projetosolar"
-    compileSdk = 33
+    namespace = "pt.iade.ricardodiasjoaocoelho.projetosolar"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "pt.iade.RicardoDiasJoaoCoelho.projetosolar"
+        applicationId = "pt.iade.ricardodiasjoaocoelho.projetosolar"
         minSdk = 28
         targetSdk = 33
         versionCode = 1

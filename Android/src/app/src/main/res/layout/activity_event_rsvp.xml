@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rsvp_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".views.Event_RSVP">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rsvp_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="250dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:backgroundTint="@color/white"
+        android:backgroundTintMode="src_atop"
+        android:clipToPadding="false"
+        android:fadingEdge="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/rsvp_accept_button"
+            android:layout_width="117dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/rsvp_accept_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/rsvp_notify_bttn"
+            android:layout_width="117dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/rsvp_notify_bttn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/rsvp_event_title"
+            android:layout_width="166dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/rsvp_event_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/rsvp_event_descrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/rsvp_event_descrip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rsvp_event_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/rsvp_event_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:backgroundTint="@color/white"
+        android:backgroundTintMode="src_in"
+        android:text="@string/rsvp_date"
+        app:layout_constraintBottom_toTopOf="@+id/rsvp_container"
+        app:layout_constraintEnd_toEndOf="@+id/rsvp_container"
+        app:layout_constraintTop_toTopOf="@+id/rsvp_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

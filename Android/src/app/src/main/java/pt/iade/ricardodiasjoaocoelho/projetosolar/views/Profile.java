@@ -1,16 +1,14 @@
-package pt.iade.RicardoDiasJoaoCoelho.projetosolar;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class MainActivity extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
     }
 }

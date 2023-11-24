@@ -1,7 +1,98 @@
 <resources>
+    <!-- App Info -->
     <string name="app_name">ProjetoSolar</string>
 
+    <!-- Utils -->
+    <string name="utils_back_button_icon"> &lt; </string>
+
+    <!-- Nav Bar \ -->
+    <string name="nav_home_page">Home</string>
+    <string name="nav_spaces_page">My Spaces</string>
+    <string name="nav_id_page">ID</string>
+    <string name="nav_profile_page">Profile</string>
+
+
     <!-- LogIn Entry Page -->
+    <string name="login_entry_company_img_descript">logo</string>
     <string name="login_entry_username">Username</string>
     <string name="login_entry_password">Password</string>
+    <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
+    <string name="login_entry_logIn_button">LogIn</string>
+    <string name="login_entry_logIn_signup_button">U New? Join Us!</string>
+
+    <!-- Signup User Page -->
+    <string name="signup_usr_title">Signup</string>
+    <string name="signup_usr_username">Full Name</string>
+    <string name="signup_usr_email">Email</string>
+    <string name="signup_usr_phone">Phone Number</string>
+    <string name="signup_usr_password">Password</string>
+    <string name="signup_usr_password_confirm">Confirm Password</string>
+    <string name="signup_usr_bdate">Birth Date</string>
+    <string name="signup_usr_bdate_hint">DD/MM/YYYY</string>
+    <string name="signup_usr_doc_type">Document Type</string>
+    <string name="signup_usr_doc_num">Document Number</string>
+    <string name="signup_usr_next_button">Next</string>
+    <string name="signup_usr_complete_button">Finish</string>
+    <string name="signup_usr_confirm_button">Confirm</string>
+
+    <!--- Email Recovery Page -->
+    <string name="email_recovery_email_hint">Email</string>
+    <string name="email_recovery_send_button">Send</string>
+    <string name="email_recovery_intro_message">Email Recovery BlaBlaBla</string>
+
+    <!-- Id Page -->
+    <string name="id_page_card_img">Id Card</string>
+
+
+    <!-- Main/Event Page -->
+    <string name="mainpage_events_events_scroll_descrip">Current Events</string>
+    <string name="mainpage_events_space_info_button">See More …</string>
+    <string name="mainpage_events_datapicker_today">Today...</string>
+    <string name="mainpage_events_datapicker_week">This Week...</string>
+    <string name="mainpage_events_datapicker_month">This Month...</string>
+    <string name="mainpage_events_datapicker_next">Up Next...</string>
+
+
+    <!-- Profile Page -->
+    <string name="profile_email_display">email</string>
+    <string name="profile_name_display">Name</string>
+    <string name="profile_settings_button">Settings</string>
+    <string name="profile_avatar_display">User Avatar Photo</string>
+    <string name="profile_back_button">Temp Buttton</string>
+
+    <!-- Plant Selector -->
+    <string name="plant_selector_company_name_1">Empresa 1</string>
+    <string name="plant_selector_company_name_2">Empresa 2</string>
+    <string name="plant_selector_company_name_3">Empresa 3</string>
+    <string name="plant_selector_company_name_4">Empresa 4</string>
+    <string name="plant_selector_back_button">Temp Button</string>
+    <string name="plant_selector_settings_button">Settings</string>
+    <string name="plant_selector_image_description">Company Image</string>
+
+    <!--- RSVP Page -->
+    <string name="rsvp_event_name">Event Name</string>
+    <string name="rsvp_event_descrip">Event Decrip.</string>
+    <string name="rsvp_date">date</string>
+    <string name="rsvp_accept_bttn">Let\'s Go!</string>
+    <string name="rsvp_notify_bttn">Notify Me</string>
+
+    <string name="rsvp_accept_message">Have Fun!</string>
+    <string name="rsvp_notify_message">We will notify you.</string>
+
+    <!-- Space Info Page -->
+    <string name="space_info_title">Space Name</string>
+    <string name="space_info_local">Space Location</string>
+    <string name="space_info_descrip">Space Description</string>
+    <string name="space_info_image">Space Image</string>
+    <string name="space_info_tags">Space Tags</string>
+    <string name="space_info_plans_list">Space Plans List</string>
+    <string name="space_info_plan_default_title">Subscription</string>
+    <string name="space_info_plan_default_decrip">Hu Hum</string>
+    <string name="space_info_plan_default_renewal">monthly</string>
+    <string name="space_info_plan_default_price">2 emeralds</string>
+
+    <!--- Plan Subscript Page -->
+    <string name="plan_contact_title">Would you like to contact the space?"</string>
+    <string name="plan_contact_bttn">Contact</string>
+
 </resources>
