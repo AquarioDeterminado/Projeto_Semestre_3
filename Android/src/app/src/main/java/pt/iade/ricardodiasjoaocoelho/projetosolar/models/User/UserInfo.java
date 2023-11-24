@@ -47,4 +47,8 @@ public class UserInfo {
         this.usr_creation_date = new Date(0);
         this.usr_active = false;
     }
+
+    public String getId() {
+        return usr_id;
+    }
 }

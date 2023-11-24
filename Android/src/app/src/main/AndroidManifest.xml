@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
+            android:name=".views.Subscription_Info"
+            android:exported="false" />
+        <activity
             android:name=".views.Usr_Spaces"
             android:exported="false" />
         <activity
