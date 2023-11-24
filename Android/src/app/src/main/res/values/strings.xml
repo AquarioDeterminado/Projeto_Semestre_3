@@ -52,6 +52,8 @@
     <string name="mainpage_events_datapicker_month">This Month...</string>
     <string name="mainpage_events_datapicker_next">Up Next...</string>
 
+    <!-- Main/MySpaces Page -->
+    <string name="myspaces_page_title">My Spaces</string>
 
     <!-- Profile Page -->
     <string name="profile_email_display">email</string>
@@ -92,9 +94,11 @@
     <string name="rsvp_date">date</string>
     <string name="rsvp_accept_bttn">Let\'s Go!</string>
     <string name="rsvp_notify_bttn">Notify Me</string>
-
     <string name="rsvp_accept_message">Have Fun!</string>
     <string name="rsvp_notify_message">We will notify you.</string>
+
+    <!--- Subscription Info Page -->
+    <string name="sub_info_end_bttn">Cancel Subscription</string>
 
     <!-- Space Info Page -->
     <string name="space_info_title">Space Name</string>
