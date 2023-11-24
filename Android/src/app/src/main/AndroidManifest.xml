@@ -16,7 +16,7 @@
             android:name=".views.Usr_Spaces"
             android:exported="false" />
         <activity
-            android:name=".views.Register_User"
+            android:name=".views.SignUp.Signup_User"
             android:exported="false" />
         <activity
             android:name=".views.Plan_Subscript"

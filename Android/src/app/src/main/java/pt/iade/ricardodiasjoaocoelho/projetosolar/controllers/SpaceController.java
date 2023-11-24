@@ -1,16 +1,14 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
-import java.util.List;
+import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
 public class SpaceController {
 
-/*
-    public List<Tag> getSpacetags(String spaceId) {
-        //Get Space
-        Space space = new Space(spaceId);
-
+    static public ArrayList<Space> getNearSpaces()
+    {
+        ArrayList<Space> spaces = new ArrayList<>();
+        spaces.add(new Space("1"));
+        spaces.add(new Space("2"));
+        return spaces;
     }
-
- */
 }

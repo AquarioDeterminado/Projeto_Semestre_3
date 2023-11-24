@@ -1,18 +1,23 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
 
 public class LogIn_Entry extends AppCompatActivity {
 
@@ -21,21 +26,23 @@ public class LogIn_Entry extends AppCompatActivity {
         /* --- Create --- */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_entry);
+        Utils utils = new Utils();
 
-        /* --- Initialize Widgets --- */
-        ImageView logo = (ImageView) findViewById(R.id.login_entry_logo);
+        /* ---  Widgets --- */
+        //ImageView logo = (ImageView) findViewById(R.id.login_entry_logo);
 
-        EditText username_edit = (EditText) findViewById(R.id.login_entry_username_input);
-        EditText password_edit = (EditText) findViewById(R.id.login_entry_password_input);
+        EditText username_edit = findViewById(R.id.login_entry_username_input);
+        EditText password_edit = findViewById(R.id.login_entry_password_input);
 
-        Button login_button = (Button) findViewById(R.id.login_entry_login_button);
+        Button login_button = findViewById(R.id.login_entry_login_button);
 
-        TextView registerBttn = (TextView) findViewById(R.id.login_entry_register_bttn);
+        TextView signupBttn = findViewById(R.id.login_entry_signup_bttn);
 
-        Button forgot_password_button = (Button) findViewById(R.id.login_entry_forgot_credentials);
+        Button forgot_password_button = findViewById(R.id.login_entry_forgot_credentials);
 
-        /* --- Navigation --- */
+        /* --- Navigation --- */ //TODO: Can U use the same launcher for multiple intents?
         Context context = this;
+        View parentLayout = findViewById(android.R.id.content);
 
         //LoginEntry -> MainPage
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +55,7 @@ public class LogIn_Entry extends AppCompatActivity {
                 String response = LogInController.CheckCredentials(inputUsername, inputPassword);
                 if (response.isEmpty())
                 {
-                    Intent myIntent = new Intent((Context) context, MainPage.class);
+                    Intent myIntent = new Intent(context, MainPage.class);
                     startActivity(myIntent);
                 }
                 else
@@ -59,20 +66,24 @@ public class LogIn_Entry extends AppCompatActivity {
         });
 
         //LoginEntry -> EmailRecovery
+        ActivityResultLauncher<Intent> forgotPasswordLauncher = utils.afterLunchSnack(this, parentLayout);
         forgot_password_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent((Context) context, Email_Recovery.class);
-                startActivity(myIntent);
+
+                Intent intent = new Intent(context, Email_Recovery.class);
+                forgotPasswordLauncher.launch(intent);
             }
         });
 
-        registerBttn.setOnClickListener(new View.OnClickListener() {
+        // LoginEntry -> Signup
+        ActivityResultLauncher<Intent> signupLauncher = utils.afterLunchSnack(this, parentLayout);
+        signupBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent((Context) context, Register_User.class);
-                startActivity(myIntent);
+                Intent intent = new Intent(context, Signup_User.class);
+                signupLauncher.launch(intent);
             }
         });
     }

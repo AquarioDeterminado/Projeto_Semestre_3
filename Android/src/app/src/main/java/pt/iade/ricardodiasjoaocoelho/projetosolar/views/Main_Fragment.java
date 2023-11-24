@@ -1,9 +1,17 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
+import static androidx.core.content.ContextCompat.startActivity;
+import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController.getCurrentEvents;
+import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.SpaceController.getNearSpaces;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import android.content.Context;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,8 +19,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
+
 
 public class Main_Fragment extends Fragment {
     public Main_Fragment() {
@@ -24,58 +38,181 @@ public class Main_Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
 
+        /* ---  Widgets --- */
         ImageButton profileButton = view.findViewById(R.id.mainpage_profile_button);
 
         //Spinner datePicker = view.findViewById(R.id.mainpage_datePicker);
 
-        //HorizontalScrollView eventsList = view.findViewById(R.id.mainpage_eventList);
-        Button eventsBttn = view.findViewById(R.id.mainpage_event_more_button);
-        Button spaceBttn = view.findViewById(R.id.mainpage_events_space_info_button_1);
-        //LinearLayout spacesList = view.findViewById(R.id.mainpage_spaces_list);
+        RecyclerView eventsList = view.findViewById(R.id.mainpage_events_list);
+        RecyclerView spacesList = view.findViewById(R.id.mainpage_spaces_list);
+
 
         /* --- Navigation --- */
-        Context context = getActivity();
 
         //MainPage -> Profile
-        profileButton.setOnClickListener(v -> {
-            Intent intent = new Intent(context, Profile.class);
-            startActivity(intent);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Profile.class);
+                startActivity(intent);
+            }
         });
 
         //MainPage -> Event
-        eventsBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Event_RSVP.class);
+        ActivityResultLauncher<Intent> eventLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        String message = data.getStringExtra("message");
+                        Snackbar confirmation = Snackbar.make(view , message, Snackbar.LENGTH_LONG);
+                        confirmation.setText(message);
+                        confirmation.show();
+                    }
+                });
 
-                String eventId = GetEventId();
-                intent.putExtra("eventID", eventId);
+        /* --- Set Events --- */
+        //Adapter
+        Event[] currentEvents = getCurrentEvents(new UserInfo("1")).toArray(new Event[0]);
+        EventListAdapter enventListAdapter = new EventListAdapter(currentEvents);
+        enventListAdapter.setEventLauncher(eventLauncher);
+        eventsList.setAdapter(enventListAdapter);
 
-                //Event_RSVP event = new Event_RSVP();
+        //Layout Manager
+        LinearLayoutManager eventLayoutManager = new LinearLayoutManager(getContext());
+        eventLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        eventsList.setLayoutManager(eventLayoutManager);
 
-                startActivity(intent);
-            }
+        eventsList.setHasFixedSize(true);
 
-            String GetEventId() {
-                return "1";
-            }
-        });
+        /* --- Set Spaces --- */
+        //Adapter
+        Space[] nearSpaces = getNearSpaces().toArray(new Space[0]);
+        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearSpaces);
+        spacesList.setAdapter(spaceListAdapter);
 
-        //MainPage -> Space
-        spaceBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Space_Info.class);
-                String spaceId = GetSpaceId();
-                intent.putExtra("spaceID", spaceId);
-                startActivity(intent);
-            }
+        //Layout Manager
+        LinearLayoutManager spaceLayoutManager = new LinearLayoutManager(getContext());
+        spacesList.setLayoutManager(spaceLayoutManager);
 
-            String GetSpaceId() {
-                return "1";
-            }
-        });
+        spacesList.setHasFixedSize(true);
 
         return view;
     }
 }
+
+class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder> {
+    private Event[] eventDataSet;
+    private ActivityResultLauncher<Intent> eventLauncher;
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final TextView eventDate;
+
+        private final ImageView eventImage;
+        private final TextView eventTitle;
+        private final Button eventRSVP;
+        public ViewHolder(View view) {
+            super(view);
+            eventDate = view.findViewById(R.id.event_row_item_start_time);
+            eventImage = view.findViewById(R.id.event_row_item_img);
+            eventTitle = view.findViewById(R.id.event_row_item_title);
+            eventRSVP = view.findViewById(R.id.event_row_item_more_button);
+        }
+
+    }
+    public EventListAdapter(Event[] eventDataSet) {
+         this.eventDataSet = eventDataSet;
+    }
+
+    @Override
+    public EventListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.event_row_item, parent, false);
+
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(EventListAdapter.ViewHolder holder, int position) {
+        /* --- Set Widgets --- */
+        holder.eventTitle.setText(eventDataSet[position].getTitle());
+        holder.eventDate.setText(eventDataSet[position].getStartTime());
+        //holder.eventImage.setImageResource(eventDataSet[position].getImage());
+
+        /* --- Navigation --- */
+        holder.eventRSVP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , Event_RSVP.class);
+                String eventId = eventDataSet[position].getId();
+                intent.putExtra("eventID", eventId);
+                eventLauncher.launch(intent);
+            }
+        });
+    }
+
+    public void setEventLauncher(ActivityResultLauncher<Intent> eventLauncher) {
+        this.eventLauncher = eventLauncher;
+    }
+
+    @Override
+    public int getItemCount() {
+        return eventDataSet.length;
+    }
+}
+
+class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder> {
+    private Space[] spaceDataSet;
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final TextView spaceName;
+        private final ImageView spaceImage;
+        private final Button spaceBttn;
+
+        public ViewHolder(View view) {
+            super(view);
+            spaceName = view.findViewById(R.id.space_row_item_name);
+            spaceImage = view.findViewById(R.id.space_row_item_img);
+            spaceBttn = view.findViewById(R.id.space_row_item_button);
+        }
+
+    }
+    SpaceListAdapter (Space[] spaceDataSet) {
+         this.spaceDataSet = spaceDataSet;
+    }
+
+    @Override
+    public SpaceListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.space_row_item, parent, false);
+
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(SpaceListAdapter.ViewHolder holder, int position) {
+        /* --- Set Widgets --- */
+        holder.spaceName.setText(spaceDataSet[position].getName());
+        //holder.spaceImage.setImageResource(spaceDataSet[position].getImage());
+
+        /* --- Navigation --- */
+        holder.spaceBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , Space_Info.class);
+                String eventId = spaceDataSet[position].getId();
+                intent.putExtra("eventID", eventId);
+                startActivity(v.getContext(), intent, null);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return spaceDataSet.length;
+    }
+}
+
+
