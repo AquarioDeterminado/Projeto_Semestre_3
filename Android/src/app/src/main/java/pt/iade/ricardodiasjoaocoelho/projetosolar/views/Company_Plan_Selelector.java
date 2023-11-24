@@ -1,5 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Company;
 
 public class Company_Plan_Selelector extends AppCompatActivity {
 
@@ -30,9 +33,23 @@ public class Company_Plan_Selelector extends AppCompatActivity {
 
 }
 class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHolder> {
-    private final Company[] companies;
+    private final CoworkSpaceController[] companies;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView companyName1;
+        private final TextView companyName2;
+        private final TextView companyName3;
+        private final TextView companyName4;
+
+        private final ImageView companyLogo1;
+        private final ImageView companyLogo2;
+        private final ImageView companyLogo3;
+        private final ImageView companyLogo4;
+
+        private final Button companyButton1;
+        private final Button companyButton2;
+        private final Button companyButton3;
+        private final Button companyButton4;
 
         public ViewHolder(View view) {
             super(view);
@@ -54,9 +71,10 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
             Button companyButton4 = (Button) view.findViewById(R.id.plant_selector_office_preview_button_company_4);
         }
     }
-    public CompanyListAdapter(Company[] companies) {
+    public CompanyListAdapter(CoworkSpaceController[] companies) {
         this.companies = companies;
     }
+    @NonNull
     @Override
     public CompanyListAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_plan_selelector_location, viewGroup, false);
@@ -84,5 +102,9 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
             }
         }
     }
-}
 
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+}
