@@ -1,18 +1,21 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.Utils;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.snackbar.Snackbar;
 
 
 
 public class Utils extends AppCompatActivity {
+
+    /*
+    / Creates a launcher that will lunch an activity and show a snack bar with a message
+    / @param context: The current active Activity
+    / @param parentLayout: The view that will be used to show the snack bar
+     */
     public ActivityResultLauncher<Intent> afterLunchSnack(Activity context, View parentLayout) {
         return registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
