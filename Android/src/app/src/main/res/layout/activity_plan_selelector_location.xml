@@ -167,6 +167,7 @@
         app:layout_constraintVertical_bias="0.12" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/plan_selector_company_list"
         android:layout_width="86dp"
         android:layout_height="701dp"
         tools:layout_editor_absoluteX="1dp"
