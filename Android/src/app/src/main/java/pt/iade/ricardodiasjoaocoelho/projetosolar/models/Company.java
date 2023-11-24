@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.models;
 
 public class Company {
 
