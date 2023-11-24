@@ -1,8 +1,10 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
@@ -19,7 +21,6 @@ public class Company_Plan_Selelector extends AppCompatActivity {
 
     /* --- Set Events --- */
     //Adapter
-
 
 }
 class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHolder> {
