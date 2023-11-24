@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.Company;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Company;
 
 public class Company_Plan_Selelector extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class Company_Plan_Selelector extends AppCompatActivity {
 
 }
 class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHolder> {
-    private Company[] companies;
+    private final Company[] companies;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -65,7 +65,7 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
         return new CompanyListAdapter.ViewHolder(view);
     }
     @Override
-    public void onBindViewHolder(CompanyListAdapter.ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(CompanyListAdapter.ViewHolder holder, final int position) {
         /* --- Set Widgets --- */
 
         holder.companyName1.setText(companies[position].getName());
