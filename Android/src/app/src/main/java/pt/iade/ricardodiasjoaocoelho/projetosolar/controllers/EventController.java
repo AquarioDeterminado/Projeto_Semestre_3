@@ -6,11 +6,11 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
 
 public class EventController {
 
-    public static Event[] getCurrentEvents(UserInfo user)
+    public static ArrayList<Event> getCurrentEvents(UserInfo user)
     {
         ArrayList<Event> eventArrayList = new ArrayList<>();
         eventArrayList.add(new Event("1"));
         eventArrayList.add(new Event("2"));
-        return eventArrayList.toArray(new Event[0]);
+        return eventArrayList;
     }
 }

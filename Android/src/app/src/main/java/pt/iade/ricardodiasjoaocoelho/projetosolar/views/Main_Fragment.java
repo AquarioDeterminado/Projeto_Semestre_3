@@ -2,6 +2,8 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import static androidx.core.content.ContextCompat.startActivity;
 import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController.getCurrentEvents;
+import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.SpaceController.getNearSpaces;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -10,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -72,7 +73,8 @@ public class Main_Fragment extends Fragment {
 
         /* --- Set Events --- */
         //Adapter
-        EventListAdapter enventListAdapter = new EventListAdapter(getCurrentEvents(new UserInfo("1")));
+        Event[] currentEvents = getCurrentEvents(new UserInfo("1")).toArray(new Event[0]);
+        EventListAdapter enventListAdapter = new EventListAdapter(currentEvents);
         enventListAdapter.setEventLauncher(eventLauncher);
         eventsList.setAdapter(enventListAdapter);
 
@@ -84,9 +86,12 @@ public class Main_Fragment extends Fragment {
         eventsList.setHasFixedSize(true);
 
         /* --- Set Spaces --- */
-        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(new Space[]{new Space("1")});
+        //Adapter
+        Space[] nearSpaces = getNearSpaces().toArray(new Space[0]);
+        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearSpaces);
         spacesList.setAdapter(spaceListAdapter);
 
+        //Layout Manager
         LinearLayoutManager spaceLayoutManager = new LinearLayoutManager(getContext());
         spacesList.setLayoutManager(spaceLayoutManager);
 
