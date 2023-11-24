@@ -85,3 +85,4 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
         }
     }
 }
+
