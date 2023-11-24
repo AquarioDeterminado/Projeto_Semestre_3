@@ -3,10 +3,17 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.Company;
 
 public class Company_Plan_Selelector extends AppCompatActivity {
 
@@ -79,4 +86,3 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
         }
     }
 }
-
