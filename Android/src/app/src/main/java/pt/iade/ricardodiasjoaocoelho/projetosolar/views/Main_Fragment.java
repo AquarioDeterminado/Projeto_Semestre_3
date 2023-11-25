@@ -146,6 +146,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
                 Intent intent = new Intent(v.getContext() , Event_RSVP.class);
                 String eventId = eventDataSet[position].getId();
                 intent.putExtra("eventID", eventId);
+                startActivity(v.getContext(), intent, null);
                 eventLauncher.launch(intent);
             }
         });

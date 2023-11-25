@@ -4,15 +4,20 @@ import android.graphics.drawable.Icon;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
+import java.time.Instant;
+import java.util.Date;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class Subscription implements Parcelable {
-    private String id;
+    private final String id;
     private Space space;
     private User_Info user;
     private String title;
+    double price;
     private Icon subIcon;
+
+    private Date nextRenewalDate;
     private String locationAccessId;
 
 
@@ -21,15 +26,24 @@ public class Subscription implements Parcelable {
         this.user = user;
         String userId = user.getId();
 
+
         if(userId == "1") {
             if (id == "1"){
                 title = "All Day, Every Day";
                 space = new Space("1");
+                Instant instant1 = Instant.parse("2021-05-01T10:15:30.00Z");
+                nextRenewalDate = Date.from(instant1);
             } else if (id == "2"){
                 title = "One time a month";
                 space = new Space("2");
+                Instant instant2 = Instant.parse("2026-02-01T10:15:30.00Z");
+                nextRenewalDate = Date.from(instant2);
             }
         }
+    }
+
+    public static boolean equals(Subscription sub1, Subscription sub2) {
+        return sub1.getId().equals(sub2.getId());
     }
 
     public String getId() {
@@ -49,6 +63,8 @@ public class Subscription implements Parcelable {
         return subIcon;
     }
 
+    public Date getNextRenewalDate() { return nextRenewalDate; }
+
     /* --- Parcelable --- */
     @Override
     public int describeContents() {
@@ -61,6 +77,7 @@ public class Subscription implements Parcelable {
         user = in.readParcelable(User_Info.class.getClassLoader());
         title = in.readString();
         subIcon = in.readParcelable(Icon.class.getClassLoader());
+        nextRenewalDate = new Date(in.readLong());
         locationAccessId = in.readString();
     }
 
@@ -83,6 +100,11 @@ public class Subscription implements Parcelable {
         dest.writeParcelable(user, 0);
         dest.writeString(title);
         dest.writeParcelable(subIcon, 0);
+        dest.writeLong(nextRenewalDate.getTime());
         dest.writeString(locationAccessId)  ;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

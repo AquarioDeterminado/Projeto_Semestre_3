@@ -7,10 +7,9 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class SubscriptionController {
     public static ArrayList<Subscription> getUserSubscriptions(User_Info user) {
-        String user_id = user.getId();
         ArrayList<Subscription> subs = new ArrayList<>();
-        subs.add(new Subscription("1", user_id));
-        subs.add(new Subscription("2", user_id));
+        subs.add(new Subscription("1", user));
+        subs.add(new Subscription("2", user));
         return subs;
     }
 }
