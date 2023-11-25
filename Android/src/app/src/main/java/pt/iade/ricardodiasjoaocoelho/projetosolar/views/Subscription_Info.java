@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Subscription;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscription;
 
 public class Subscription_Info extends AppCompatActivity {
 

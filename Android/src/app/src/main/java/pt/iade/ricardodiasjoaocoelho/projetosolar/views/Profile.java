@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-import pt.iade.RicardoDiasJoaoCoelho.projetosolar.R;
-
 public class Profile extends AppCompatActivity {
 
     @Override

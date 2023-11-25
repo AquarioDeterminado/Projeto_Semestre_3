@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace;
 
 import android.graphics.drawable.Icon;
 import android.os.Parcel;
@@ -11,7 +11,7 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class Subscription implements Parcelable {
     private final String id;
-    private Space space;
+    private CoworkSpace space;
     private User_Info user;
     private String title;
     double price;
@@ -28,14 +28,14 @@ public class Subscription implements Parcelable {
 
 
         if(userId == "1") {
-            if (id == "1"){
+            if (id.equals("1")){
                 title = "All Day, Every Day";
-                space = new Space("1");
+                space = new CoworkSpace("1", "Space1");
                 Instant instant1 = Instant.parse("2021-05-01T10:15:30.00Z");
                 nextRenewalDate = Date.from(instant1);
-            } else if (id == "2"){
+            } else if (id.equals("2")){
                 title = "One time a month";
-                space = new Space("2");
+                space = new CoworkSpace("2", "Space2");
                 Instant instant2 = Instant.parse("2026-02-01T10:15:30.00Z");
                 nextRenewalDate = Date.from(instant2);
             }
@@ -52,11 +52,8 @@ public class Subscription implements Parcelable {
     public String getTitle() {
         return title;
     }
-    public Space getSpace() {
+    public CoworkSpace getSpace() {
         return space;
-    }
-    public User_Info getUser() {
-        return user;
     }
 
     public Icon getImage() {
@@ -73,7 +70,7 @@ public class Subscription implements Parcelable {
 
     protected Subscription(Parcel in) {
         id = in.readString();
-        space = in.readParcelable(Space.class.getClassLoader());
+        space = in.readParcelable(CoworkSpace.class.getClassLoader());
         user = in.readParcelable(User_Info.class.getClassLoader());
         title = in.readString();
         subIcon = in.readParcelable(Icon.class.getClassLoader());

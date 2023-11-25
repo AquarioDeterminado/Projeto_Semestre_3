@@ -17,14 +17,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.CoworkSpaces;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 
@@ -39,8 +37,6 @@ public class Main_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
 
         /* ---  Widgets --- */
-        ImageButton profileButton = view.findViewById(R.id.mainpage_profile_button);
-
         //Spinner datePicker = view.findViewById(R.id.mainpage_datePicker);
 
         RecyclerView eventsList = view.findViewById(R.id.mainpage_events_list);
@@ -48,16 +44,6 @@ public class Main_Fragment extends Fragment {
 
 
         /* --- Navigation --- */
-
-        //MainPage -> Profile
-        profileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Profile.class);
-                startActivity(intent);
-            }
-        });
-
         //MainPage -> Event
         ActivityResultLauncher<Intent> eventLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -87,7 +73,7 @@ public class Main_Fragment extends Fragment {
 
         /* --- Set Spaces --- */
         //Adapter
-        CoworkSpaces[] nearCoworkSpaces = getNearSpaces().toArray(new CoworkSpaces[0]);
+        CoworkSpace[] nearCoworkSpaces = getNearSpaces().toArray(new CoworkSpace[0]);
         SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearCoworkSpaces);
         spacesList.setAdapter(spaceListAdapter);
 
@@ -163,7 +149,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
 }
 
 class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder> {
-    private CoworkSpaces[] coworkSpacesDataSet;
+    private CoworkSpace[] coworkSpaceDataSet;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -179,8 +165,8 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
         }
 
     }
-    SpaceListAdapter (CoworkSpaces[] coworkSpacesDataSet) {
-         this.coworkSpacesDataSet = coworkSpacesDataSet;
+    SpaceListAdapter (CoworkSpace[] coworkSpaceDataSet) {
+         this.coworkSpaceDataSet = coworkSpaceDataSet;
     }
 
     @Override
@@ -194,7 +180,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(SpaceListAdapter.ViewHolder holder, int position) {
         /* --- Set Widgets --- */
-        holder.spaceName.setText(coworkSpacesDataSet[position].getName());
+        holder.spaceName.setText(coworkSpaceDataSet[position].getName());
         //holder.spaceImage.setImageResource(spaceDataSet[position].getImage());
 
         /* --- Navigation --- */
@@ -202,7 +188,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Space_Info.class);
-                String eventId = coworkSpacesDataSet[position].getId();
+                String eventId = coworkSpaceDataSet[position].getId();
                 intent.putExtra("eventID", eventId);
                 startActivity(v.getContext(), intent, null);
             }
@@ -211,7 +197,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return coworkSpacesDataSet.length;
+        return coworkSpaceDataSet.length;
     }
 }
 

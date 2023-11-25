@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 
 public class Company_Plan_Selelector extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class Company_Plan_Selelector extends AppCompatActivity {
 
 }
 class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHolder> {
-    private final CoworkSpaceController[] companies;
+    private final CoworkSpace[] companies;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final Button companyButton;
@@ -45,7 +46,7 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
             companyButton = (Button) view.findViewById(R.id.plan_row_item);
         }
     }
-    public CompanyListAdapter(CoworkSpaceController[] companies) {
+    public CompanyListAdapter(CoworkSpace[] companies) {
         this.companies = companies;
     }
     @NonNull

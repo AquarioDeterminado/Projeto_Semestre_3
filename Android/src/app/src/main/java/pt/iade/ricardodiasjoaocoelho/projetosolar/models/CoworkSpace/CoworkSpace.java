@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace;
 
 import android.os.Parcelable;
 import android.widget.ImageView;
@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
-public class CoworkSpaces implements Parcelable {
+public class CoworkSpace implements Parcelable {
 
     private final String id;
     private String name;
     private static ImageView logo;
 
-    public CoworkSpaces(String id, String name)
+    public CoworkSpace(String id, String name)
     {
         this.id = id;
         this.name = name;
@@ -23,7 +23,7 @@ public class CoworkSpaces implements Parcelable {
     }
 
     public static void setLogo(ImageView logo) {
-        CoworkSpaces.logo = logo;
+        CoworkSpace.logo = logo;
     }
 
     public String getId()
@@ -51,7 +51,7 @@ public class CoworkSpaces implements Parcelable {
     }
 
     /* --- Parcelable --- */
-    protected Space(android.os.Parcel in) {
+    protected CoworkSpace(android.os.Parcel in) {
         id = in.readString();
         name = in.readString();
     }
@@ -61,15 +61,15 @@ public class CoworkSpaces implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Space> CREATOR = new Creator<Space>() {
+    public static final Creator<CoworkSpace> CREATOR = new Creator<CoworkSpace>() {
         @Override
-        public Space createFromParcel(android.os.Parcel in) {
-            return new Space(in);
+        public CoworkSpace createFromParcel(android.os.Parcel in) {
+            return new CoworkSpace(in);
         }
 
         @Override
-        public Space[] newArray(int size) {
-            return new Space[size];
+        public CoworkSpace[] newArray(int size) {
+            return new CoworkSpace[size];
         }
     };
 

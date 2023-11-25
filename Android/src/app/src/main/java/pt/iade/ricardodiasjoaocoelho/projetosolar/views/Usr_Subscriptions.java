@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Subscription;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscription;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class Usr_Subscriptions extends Fragment {
@@ -53,18 +53,18 @@ public class Usr_Subscriptions extends Fragment {
                         Intent data = result.getData();
                         Subscription sub = data.getExtras().getParcelable("subscription");
                         Log.d("Sub Deleted", "sub deleted " + subslist.remove(sub));
-                        AtomicReference<Subscription> match = new AtomicReference<Subscription>();
+                        AtomicReference<Subscription> match = new AtomicReference<>();
                         subslist.forEach(s -> { if (Subscription.equals(s, sub))  match.set(s); });
                         subslist.remove(match.get());
                         SubsListAdapter subsListAdapter = (SubsListAdapter) recyclerView.getAdapter();
-                        subsListAdapter.subsDataSet = subslist.toArray(new Subscription[subslist.size()]);
+                        subsListAdapter.subsDataSet = subslist.toArray(new Subscription[0]);
                         recyclerView.swapAdapter(subsListAdapter, true);
                     }
                 });
 
         /* ---  Subs List --- */
         //Adapter
-        Subscription[] subsDataSet = subslist.toArray(new Subscription[subslist.size()]);
+        Subscription[] subsDataSet = subslist.toArray(new Subscription[0]);
         SubsListAdapter subsListAdapter = new SubsListAdapter(subsDataSet);
         subsListAdapter.setSubscriptionInfoLauncher(subscriptionInfoLauncher);
         recyclerView.setAdapter(subsListAdapter);

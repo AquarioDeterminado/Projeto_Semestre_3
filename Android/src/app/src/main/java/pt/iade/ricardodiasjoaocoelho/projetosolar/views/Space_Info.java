@@ -15,15 +15,15 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.List;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.CoworkSpaces;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
 public class Space_Info extends AppCompatActivity {
 
-    private static String spaceID;
-    private static String spaceName;
+    private static String id;
+    private static String name;
 
-    public static String getId() { return spaceID; }
+    public static String getId() { return id; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,8 @@ public class Space_Info extends AppCompatActivity {
         setContentView(R.layout.activity_space_info);
 
         /* --- Get Space --- */
-        spaceID = getIntent().getStringExtra("spaceID");
-        CoworkSpaces coworkSpaces = new CoworkSpaces(spaceID, spaceName);
+        id = getIntent().getStringExtra("id");
+        CoworkSpace coworkSpace = new CoworkSpace(id, name);
 
         /* --- Widgets --- */
         //TextView spaceTitle = findViewById(R.id.space_info_title);
@@ -42,7 +42,7 @@ public class Space_Info extends AppCompatActivity {
         Button contactBttn = findViewById(R.id.space_info_plan_1_bttn);
 
         /* --- Load/Show Tags --- */
-        ArrayList<Tag> tags = coworkSpaces.getTags();
+        ArrayList<Tag> tags = coworkSpace.getTags();
         ArrayList<View> chips = turnIntoChips(tags);
         chips.forEach(chip -> spaceTagGroup.addView(chip));
 

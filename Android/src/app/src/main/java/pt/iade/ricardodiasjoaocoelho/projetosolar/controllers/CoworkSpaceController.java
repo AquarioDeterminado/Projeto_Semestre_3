@@ -1,28 +1,17 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
-
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.CoworkSpaces;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Space_Info;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 
 public class CoworkSpaceController {
 
-    static public ArrayList<CoworkSpaces> getNearSpaces()
+    static public ArrayList<CoworkSpace> getNearSpaces()
     {
-        ArrayList<CoworkSpaces> coworkSpaces = new ArrayList<>();
-        coworkSpaces.add(new CoworkSpaces("1", "Big Compa"));
-        coworkSpaces.add(new CoworkSpaces("2", "Mega Compa"));
-        coworkSpaces.add(new CoworkSpaces("3", "Medium Compa"));
-        coworkSpaces.add(new CoworkSpaces("4", "Mini Compa"));
+        ArrayList<CoworkSpace> coworkSpaces = new ArrayList<>();
+        coworkSpaces.add(new CoworkSpace("1", "Big Compa"));
+        coworkSpaces.add(new CoworkSpace("2", "Mega Compa"));
+        coworkSpaces.add(new CoworkSpace("3", "Medium Compa"));
+        coworkSpaces.add(new CoworkSpace("4", "Mini Compa"));
         return coworkSpaces;
-    }
-
-    public String getName() {
-        return CoworkSpaces.getName();
-    }
-
-    public ImageView getLogo() {
-        return CoworkSpaces.getLogo();
     }
 }

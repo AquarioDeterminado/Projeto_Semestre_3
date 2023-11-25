@@ -2,7 +2,7 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 
 import java.util.ArrayList;
 
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Subscription;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscription;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class SubscriptionController {
