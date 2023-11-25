@@ -113,7 +113,7 @@
     <string name="space_info_plan_default_price">2 emeralds</string>
 
     <!--- Plan Subscript Page -->
-    <string name="plan_contact_title">Would you like to contact the space?"</string>
+    <string name="plan_contact_title">Would you like to contact the coworkSpaces?"</string>
     <string name="plan_contact_bttn">Contact</string>
 
 </resources>

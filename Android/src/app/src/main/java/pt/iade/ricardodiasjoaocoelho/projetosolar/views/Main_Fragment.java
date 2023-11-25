@@ -23,7 +23,7 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.CoworkSpaces;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
 
 
@@ -86,8 +86,8 @@ public class Main_Fragment extends Fragment {
 
         /* --- Set Spaces --- */
         //Adapter
-        Space[] nearSpaces = getNearSpaces().toArray(new Space[0]);
-        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearSpaces);
+        CoworkSpaces[] nearCoworkSpaces = getNearSpaces().toArray(new CoworkSpaces[0]);
+        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearCoworkSpaces);
         spacesList.setAdapter(spaceListAdapter);
 
         //Layout Manager
@@ -162,7 +162,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
 }
 
 class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder> {
-    private Space[] spaceDataSet;
+    private CoworkSpaces[] coworkSpacesDataSet;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -178,8 +178,8 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
         }
 
     }
-    SpaceListAdapter (Space[] spaceDataSet) {
-         this.spaceDataSet = spaceDataSet;
+    SpaceListAdapter (CoworkSpaces[] coworkSpacesDataSet) {
+         this.coworkSpacesDataSet = coworkSpacesDataSet;
     }
 
     @Override
@@ -193,7 +193,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(SpaceListAdapter.ViewHolder holder, int position) {
         /* --- Set Widgets --- */
-        holder.spaceName.setText(spaceDataSet[position].getName());
+        holder.spaceName.setText(coworkSpacesDataSet[position].getName());
         //holder.spaceImage.setImageResource(spaceDataSet[position].getImage());
 
         /* --- Navigation --- */
@@ -201,7 +201,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Space_Info.class);
-                String eventId = spaceDataSet[position].getId();
+                String eventId = coworkSpacesDataSet[position].getId();
                 intent.putExtra("eventID", eventId);
                 startActivity(v.getContext(), intent, null);
             }
@@ -210,7 +210,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return spaceDataSet.length;
+        return coworkSpacesDataSet.length;
     }
 }
 
