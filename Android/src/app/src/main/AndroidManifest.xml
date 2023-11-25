@@ -13,10 +13,22 @@
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
         <activity
-            android:name=".views.Floor_Plan_Availabibity"
+            android:name=".activity_desk_reserve_page"
+            android:exported="false" />
+        <activity
+            android:name=".activity_company_page_1"
             android:exported="false" />
         <activity
             android:name=".views.Company_Plan_Selelector"
+            android:exported="false" />
+        <activity
+            android:name=".views.Floor_Plan_Avalability"
+            android:exported="false" />
+        <activity
+            android:name=".views.plan_selector_location"
+            android:exported="false" />
+        <activity
+            android:name=".activity_company_page_1"
             android:exported="false" />
         <activity
             android:name=".views.Subscription_Info"
@@ -56,6 +68,9 @@
             android:exported="false" />
         <activity
             android:name=".views.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="false" />
     </application>
 

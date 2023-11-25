@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/plan_selector_company_list"
-        android:layout_width="86dp"
-        android:layout_height="701dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="212dp" />
+    android:layout_height="match_parent"
+    tools:context=".activity_desk_reserve_page">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
