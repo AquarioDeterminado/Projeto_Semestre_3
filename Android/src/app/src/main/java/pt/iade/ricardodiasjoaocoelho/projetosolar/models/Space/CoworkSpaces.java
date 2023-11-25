@@ -9,7 +9,7 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 public class CoworkSpaces {
 
     private final String id;
-    private String name;
+    private static String name;
     private static ImageView logo;
 
     public CoworkSpaces(String id, String name)
