@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationBarView;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
@@ -13,7 +14,7 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
 
     /* --- Fragments --- */
     Main_Fragment mainFragment = new Main_Fragment();
-    Usr_Spaces usrSpacesFragment = new Usr_Spaces();
+    Usr_Subscriptions usrSpacesFragment = new Usr_Subscriptions();
     pt.iade.ricardodiasjoaocoelho.projetosolar.views.Cowork_Id Cowork_Id = new Cowork_Id();
 
     @Override
@@ -30,8 +31,8 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
         navBar.setOnItemSelectedListener(this);
 
         navBar.setSelectedItemId(R.id.nav_home);
-    }
 
+    }
 
 
     @Override

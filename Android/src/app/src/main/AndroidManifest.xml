@@ -16,7 +16,7 @@
             android:name=".views.Subscription_Info"
             android:exported="false" />
         <activity
-            android:name=".views.Usr_Spaces"
+            android:name=".views.Usr_Subscriptions"
             android:exported="false" />
         <activity
             android:name=".views.SignUp.Signup_User"
