@@ -16,7 +16,6 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@tools:sample/avatars[0]"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton

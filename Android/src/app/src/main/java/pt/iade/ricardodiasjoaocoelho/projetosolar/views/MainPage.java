@@ -15,7 +15,9 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
     /* --- Fragments --- */
     Main_Fragment mainFragment = new Main_Fragment();
     Usr_Subscriptions usrSpacesFragment = new Usr_Subscriptions();
-    pt.iade.ricardodiasjoaocoelho.projetosolar.views.Cowork_Id Cowork_Id = new Cowork_Id();
+    Company_Plan_Selelector_Fragment planSelectorFragment = new Company_Plan_Selelector_Fragment();
+
+    Cowork_Id coworkIdFragment = new Cowork_Id();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +50,10 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
             getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
             return true;
         } else if (id == R.id.nav_availability) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, planSelectorFragment).commit();
             return true;
         } else if (id == R.id.nav_id) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, Cowork_Id).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, coworkIdFragment).commit();
 
             return true;
         } else if (id == R.id.nav_profile) {

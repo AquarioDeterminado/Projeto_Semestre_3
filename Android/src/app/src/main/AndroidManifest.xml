@@ -19,7 +19,7 @@
             android:name=".activity_company_page_1"
             android:exported="false" />
         <activity
-            android:name=".views.Company_Plan_Selelector"
+            android:name=".views.Company_Plan_Selelector_Fragment"
             android:exported="false" />
         <activity
             android:name=".views.Floor_Plan_Avalability"

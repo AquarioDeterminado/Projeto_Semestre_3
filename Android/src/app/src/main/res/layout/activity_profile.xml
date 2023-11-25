@@ -34,9 +34,7 @@
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/profile_avatar_display"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@tools:sample/avatars[0]"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <CalendarView
         android:id="@+id/profile_calendar"

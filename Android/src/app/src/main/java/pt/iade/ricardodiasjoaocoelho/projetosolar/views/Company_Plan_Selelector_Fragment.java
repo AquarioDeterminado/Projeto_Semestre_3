@@ -1,7 +1,11 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 
-import androidx.appcompat.app.AppCompatActivity;
+import static androidx.core.content.ContextCompat.startActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -10,28 +14,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 
-public class Company_Plan_Selelector extends AppCompatActivity {
+public class Company_Plan_Selelector_Fragment extends Fragment {
 
+    public Company_Plan_Selelector_Fragment() { super(R.layout.mainpage_events); }
+
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plan_selelector_location);
-    }
-    /* ---  Widgets --- */
-    private View view;
-    RecyclerView compList = view.findViewById(R.id.plan_selector_company_list);
+        View view = inflater.inflate(R.layout.activity_plan_selelector_location, container, false);
 
-    /* --- Set Events --- */
-    //Adapter
+        /* ---  Widgets --- */
+        RecyclerView compList = view.findViewById(R.id.plan_selector_company_list);
+
+        /* --- Set Events --- */
+        //Adapter
+
+        return view;
+    }
 
 }
 class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHolder> {
-    private final CoworkSpaceController[] companies;
+    private final CoworkSpace[] companies;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final Button companyButton;
@@ -42,7 +51,7 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
             companyButton = (Button) view.findViewById(R.id.plan_row_item);
         }
     }
-    public CompanyListAdapter(CoworkSpaceController[] companies) {
+    public CompanyListAdapter(CoworkSpace[] companies) {
         this.companies = companies;
     }
     @NonNull
