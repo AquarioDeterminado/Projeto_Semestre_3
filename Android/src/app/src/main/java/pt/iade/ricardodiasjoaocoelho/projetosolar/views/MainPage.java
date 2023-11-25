@@ -47,7 +47,9 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
         } else if (id == R.id.nav_spaces) {
             getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
             return true;
-
+        } else if (id == R.id.nav_availability) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
+            return true;
         } else if (id == R.id.nav_id) {
             getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, Cowork_Id).commit();
 

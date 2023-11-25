@@ -8,6 +8,7 @@
     <!-- Nav Bar \ -->
     <string name="nav_home_page">Home</string>
     <string name="nav_spaces_page">My Spaces</string>
+    <string name="nav_availability">Availability</string>
     <string name="nav_id_page">ID</string>
     <string name="nav_profile_page">Profile</string>
 

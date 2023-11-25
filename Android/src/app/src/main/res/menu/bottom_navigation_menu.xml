@@ -13,6 +13,11 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/nav_spaces_page"/>
     <item
+        android:id="@+id/nav_availability"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/nav_availability"/>
+    <item
         android:id="@+id/nav_id"
         android:enabled="true"
         android:icon="@drawable/ic_launcher_background"
