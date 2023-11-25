@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
+        <activity android:name=".views.Floor_Plan_Availabibity"
+            android:exported="false"/>
         <activity
             android:name=".views.Change_Apperance"
             android:exported="false" />

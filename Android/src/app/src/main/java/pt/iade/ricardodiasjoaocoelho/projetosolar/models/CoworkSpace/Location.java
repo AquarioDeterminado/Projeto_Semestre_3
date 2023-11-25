@@ -1,26 +1,22 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import androidx.annotation.NonNull;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class Location implements Parcelable {
 
     private final String  id;
     private final String cowork_id;
 
+    private final String name;
+    private final String address;
+    private final int floorPlan;
+
     public String getName() {
         return name;
     }
-
-    private final String name;
-    private final String address;
-    private final Drawable floorPlan;
 
     public Location(String id) {
         this.id = id;
@@ -28,17 +24,17 @@ public class Location implements Parcelable {
             cowork_id = "1";
             name = "Solar do Areal";
             address = "Rua do Areal, 1";
-            floorPlan = BitmapDrawable.createFromPath("app/src/main/res/drawable/mapa_teste___coworking.xml");
+            floorPlan = R.drawable.mapa_teste___coworking_;
         } else if(id.equals("2")){
             cowork_id = "2";
             name = "Solar do Monte";
             address = "Rua do Monte, 1";
-            floorPlan = BitmapDrawable.createFromPath("app/src/main/res/drawable/mapa_teste___coworking.xml");
+            floorPlan = R.drawable.mapa_teste___coworking_;
         } else {
             cowork_id = "3";
             name = "Solar do Terra";
             address = "Rua do Terra, 1";
-            floorPlan = BitmapDrawable.createFromPath("app/src/main/res/drawable/mapa_teste___coworking.xml");
+            floorPlan = R.drawable.mapa_teste___coworking_;
         }
     }
 
@@ -54,8 +50,7 @@ public class Location implements Parcelable {
         dest.writeString(cowork_id);
         dest.writeString(name);
         dest.writeString(address);
-        Bitmap bitmap = (Bitmap) ((BitmapDrawable) floorPlan).getBitmap();
-        dest.writeParcelable(bitmap, flags);
+        dest.writeInt(floorPlan);
     }
 
     public static final Parcelable.Creator<Location> CREATOR = new Parcelable.Creator<Location>() {
@@ -75,7 +70,10 @@ public class Location implements Parcelable {
         cowork_id = in.readString();
         name = in.readString();
         address = in.readString();
-        Bitmap bitmap = in.readParcelable(Bitmap.class.getClassLoader());
-        floorPlan = new BitmapDrawable(Resources.getSystem(), bitmap);
+        floorPlan = in.readInt();
+    }
+
+    public int getFloorPlan() {
+        return floorPlan;
     }
 }

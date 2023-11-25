@@ -112,8 +112,7 @@ public class Usr_Subscriptions extends Fragment {
         public void onBindViewHolder(SubsListAdapter.ViewHolder holder, int position) {
             /* --- Set Widgets --- */
             holder.subTitle.setText(subsDataSet[position].getTitle());
-            holder.subImage.setImageIcon(subsDataSet[position].getImage());
-            //holder.eventImage.setImageResource(eventDataSet[position].getImage());
+            //holder.subImage.setImageIcon(subsDataSet[position].getImage());
 
             /* --- Navigation --- */
             holder.subMoreInfo.setOnClickListener(new View.OnClickListener() {

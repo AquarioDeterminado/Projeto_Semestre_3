@@ -39,7 +39,8 @@ public class Company_Plan_Selelector_Fragment extends Fragment {
         /* --- Set Events --- */
         //Adapter
         ArrayList<Location> locations = LocationController.getUserAccessibleLocations();
-        LocationListAdapter adapter = new LocationListAdapter(locations.toArray(new Location[0]));
+        Location[] locationsArray = locations.toArray(new Location[0]);
+        LocationListAdapter adapter = new LocationListAdapter(locationsArray);
         locationRecycle.setAdapter(adapter);
 
         //Layout Manager
@@ -84,9 +85,8 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), Floor_Plan_Availabibity.class);
-                myIntent.putExtra("Floor Plan", locations[position]);
+                myIntent.putExtra("location", locations[position]);
                 startActivity(v.getContext(), myIntent, null);
-
             }
         });
     }

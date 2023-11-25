@@ -34,7 +34,9 @@
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/profile_avatar_display"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:srcCompat="@drawable/ic_launcher_foreground" />
 
     <CalendarView
         android:id="@+id/profile_calendar"
@@ -54,15 +56,5 @@
         android:text="@string/profile_settings_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/profile_back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/profile_back_button"
-        app:layout_constraintEnd_toEndOf="@+id/profile_calendar"
-        app:layout_constraintStart_toStartOf="@+id/profile_calendar"
-        app:layout_constraintTop_toBottomOf="@+id/profile_calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
