@@ -118,8 +118,22 @@
     <!--- Settings Page -->
     <string name="settings_page_title">Settings</string>
     <string name="settings_page_button_1">Change Name</string>
-    <string name="settings_page_button_2">Change Avatar</string>
+    <string name="settings_page_button_2">Change Password</string>
     <string name="settings_page_button_3">Change Appearance</string>
     <string name="settings_page_button_4">Log Out</string>
 
+    <!--- Change name Page -->
+    <string name="change_name_page_title">Insert new Name</string>
+    <string name="change_name_page_hint">New Name</string>
+    <string name="change_name_page_button">Confirm</string>
+
+    <!--- Change Password Page -->
+    <string name="change_password_page_title">Insert new Password</string>
+    <string name="change_password_page_hint">New Password</string>
+    <string name="change_password_page_button">Confirm</string>
+
+    <!--- Change Apperance Page -->
+    <string name="change_apperance_page_title">Change Appearance</string>
+    <string name="change_apperance_page_button_lightmode">Light Mode</string>
+    <string name="change_apperance_page_button_darkmode">Dark Mode</string>
 </resources>

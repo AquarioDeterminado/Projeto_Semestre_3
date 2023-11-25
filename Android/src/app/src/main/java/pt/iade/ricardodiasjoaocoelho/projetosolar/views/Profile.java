@@ -2,6 +2,7 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,12 +21,12 @@ public class Profile extends AppCompatActivity {
         Button settingsButton = findViewById(R.id.profile_settings_button);
 
         // Set a click listener for the settings button
+        Context context = this;
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Start the SettingsActivity when the button is clicked
-                Intent myintent;
-                myintent = new Intent(Profile.this, Settings_Page.class);
+                Intent myintent = new Intent(context, Settings_Page.class);
                 startActivity(myintent);
             }
         });
