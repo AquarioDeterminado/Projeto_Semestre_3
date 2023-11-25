@@ -59,7 +59,6 @@
     <!-- Profile Page -->
     <string name="profile_email_display">email</string>
     <string name="profile_name_display">Name</string>
-    <string name="profile_settings_button">Settings</string>
     <string name="profile_avatar_display">User Avatar Photo</string>
     <string name="profile_back_button">Temp Buttton</string>
 
@@ -68,8 +67,6 @@
     <string name="plant_selector_coworking_name_2">Coworking 2</string>
     <string name="plant_selector_coworking_name_3">Coworking 3</string>
     <string name="plant_selector_coworking_name_4">Coworking 4</string>
-    <string name="plant_selector_back_button">Temp Button</string>
-    <string name="plant_selector_settings_button">Settings</string>
     <string name="plant_selector_image_description">Coworking Image</string>
     <string name="plant_selector_office_preview_button_coworking_1">1 </string>
     <string name="plant_selector_office_preview_button_coworking_2">2 </string>
@@ -116,5 +113,12 @@
     <!--- Plan Subscript Page -->
     <string name="plan_contact_title">Would you like to contact the coworkSpace?"</string>
     <string name="plan_contact_bttn">Contact</string>
+
+    <!--- Settings Page -->
+    <string name="settings_page_title">Settings</string>
+    <string name="settings_page_button_1">Change Name</string>
+    <string name="settings_page_button_2">Change Avatar</string>
+    <string name="settings_page_button_3">Change Appearance</string>
+    <string name="settings_page_button_4">Log Out</string>
 
 </resources>
