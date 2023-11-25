@@ -38,7 +38,7 @@ public class LogIn_Entry extends AppCompatActivity {
 
         TextView signupBttn = findViewById(R.id.login_entry_signup_bttn);
 
-        Button forgot_password_button = findViewById(R.id.login_entry_forgot_credentials);
+        //Button forgot_password_button = findViewById(R.id.login_entry_forgot_credentials);
 
         /* --- Navigation --- */ //TODO: Can U use the same launcher for multiple intents?
         Context context = this;
@@ -66,6 +66,7 @@ public class LogIn_Entry extends AppCompatActivity {
         });
 
         //LoginEntry -> EmailRecovery
+        /*
         ActivityResultLauncher<Intent> forgotPasswordLauncher = utils.afterLunchSnack(this, parentLayout);
         forgot_password_button.setOnClickListener(new View.OnClickListener() {
 
@@ -76,6 +77,8 @@ public class LogIn_Entry extends AppCompatActivity {
                 forgotPasswordLauncher.launch(intent);
             }
         });
+        */
+
 
         // LoginEntry -> Signup
         ActivityResultLauncher<Intent> signupLauncher = registerForActivityResult(
