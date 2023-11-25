@@ -2,7 +2,7 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import static androidx.core.content.ContextCompat.startActivity;
 import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController.getCurrentEvents;
-import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.SpaceController.getNearSpaces;
+import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController.getNearSpaces;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -23,7 +23,8 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.CoworkSpaces;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 
@@ -86,8 +87,8 @@ public class Main_Fragment extends Fragment {
 
         /* --- Set Spaces --- */
         //Adapter
-        Space[] nearSpaces = getNearSpaces().toArray(new Space[0]);
-        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearSpaces);
+        CoworkSpaces[] nearCoworkSpaces = getNearSpaces().toArray(new CoworkSpaces[0]);
+        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearCoworkSpaces);
         spacesList.setAdapter(spaceListAdapter);
 
         //Layout Manager
@@ -146,7 +147,6 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
                 Intent intent = new Intent(v.getContext() , Event_RSVP.class);
                 String eventId = eventDataSet[position].getId();
                 intent.putExtra("eventID", eventId);
-                startActivity(v.getContext(), intent, null);
                 eventLauncher.launch(intent);
             }
         });
@@ -163,7 +163,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
 }
 
 class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder> {
-    private Space[] spaceDataSet;
+    private CoworkSpaces[] coworkSpacesDataSet;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -179,8 +179,8 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
         }
 
     }
-    SpaceListAdapter (Space[] spaceDataSet) {
-         this.spaceDataSet = spaceDataSet;
+    SpaceListAdapter (CoworkSpaces[] coworkSpacesDataSet) {
+         this.coworkSpacesDataSet = coworkSpacesDataSet;
     }
 
     @Override
@@ -194,7 +194,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(SpaceListAdapter.ViewHolder holder, int position) {
         /* --- Set Widgets --- */
-        holder.spaceName.setText(spaceDataSet[position].getName());
+        holder.spaceName.setText(coworkSpacesDataSet[position].getName());
         //holder.spaceImage.setImageResource(spaceDataSet[position].getImage());
 
         /* --- Navigation --- */
@@ -202,7 +202,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Space_Info.class);
-                String eventId = spaceDataSet[position].getId();
+                String eventId = coworkSpacesDataSet[position].getId();
                 intent.putExtra("eventID", eventId);
                 startActivity(v.getContext(), intent, null);
             }
@@ -211,7 +211,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return spaceDataSet.length;
+        return coworkSpacesDataSet.length;
     }
 }
 
