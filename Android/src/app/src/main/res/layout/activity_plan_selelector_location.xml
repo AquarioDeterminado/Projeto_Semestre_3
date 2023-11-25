@@ -5,37 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/plant_selector_settings_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/plant_selector_settings_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/plant_selector_back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="@string/plant_selector_back_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/plant_selector_office_preview_image_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/plant_selector_image_description"
-        app:layout_constraintEnd_toEndOf="@+id/plant_selector_back_button"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteY="82dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="82dp" />
 
     <TextView
         android:id="@+id/plant_selector_coworking_name_4"
@@ -95,10 +73,9 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/plant_selector_image_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/plant_selector_back_button"
         app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteY="82dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="82dp" />
 
     <Button
         android:id="@+id/plant_selector_office_preview_button_company_4"
@@ -165,5 +142,13 @@
         android:layout_height="849dp"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="63dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
