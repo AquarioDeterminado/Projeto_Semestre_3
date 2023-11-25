@@ -24,7 +24,7 @@ import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 
 public class Main_Fragment extends Fragment {
@@ -72,7 +72,7 @@ public class Main_Fragment extends Fragment {
 
         /* --- Set Events --- */
         //Adapter
-        Event[] currentEvents = getCurrentEvents(new UserInfo("1")).toArray(new Event[0]);
+        Event[] currentEvents = getCurrentEvents(new User_Info("1")).toArray(new Event[0]);
         EventListAdapter enventListAdapter = new EventListAdapter(currentEvents);
         enventListAdapter.setEventLauncher(eventLauncher);
         eventsList.setAdapter(enventListAdapter);

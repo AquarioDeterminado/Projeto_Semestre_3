@@ -1,10 +1,12 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space;
 
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
-public class Space {
+public class Space implements Parcelable {
 
     private final String id;
     private String name;
@@ -45,5 +47,34 @@ public class Space {
             tags.add(tag);
         });
         return tags;
+    }
+
+    /* --- Parcelable --- */
+    protected Space(android.os.Parcel in) {
+        id = in.readString();
+        name = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Space> CREATOR = new Creator<Space>() {
+        @Override
+        public Space createFromParcel(android.os.Parcel in) {
+            return new Space(in);
+        }
+
+        @Override
+        public Space[] newArray(int size) {
+            return new Space[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(android.os.Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
     }
 }

@@ -5,7 +5,6 @@ import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.Subscriptio
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,13 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Subscription;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
-public class Usr_Spaces extends Fragment {
+public class Usr_Subscriptions extends Fragment {
 
-        public Usr_Spaces()
+        public Usr_Subscriptions()
         {
             super(R.layout.user_spaces_fragment);
         }
@@ -40,7 +38,7 @@ public class Usr_Spaces extends Fragment {
 
         /* ---  Subs List --- */
         //Adapter
-        Subscription[] subslist = getUserSubscriptions(new UserInfo("1")).toArray(new Subscription[0]);
+        Subscription[] subslist = getUserSubscriptions(new User_Info("1")).toArray(new Subscription[0]);
         SubsListAdapter subsListAdapter = new SubsListAdapter(subslist);
         recyclerView.setAdapter(subsListAdapter);
 
@@ -92,9 +90,8 @@ public class Usr_Spaces extends Fragment {
             holder.subMoreInfo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext() , .class);
-                    String spaceId = subsDataSet[position].getId();
-                    intent.putExtra("spaceId", spaceId);
+                    Intent intent = new Intent(v.getContext() , Subscription_Info.class);
+                    intent.putExtra("subscription", subsDataSet[position]);
                     startActivity(intent);
                 }
             });

@@ -13,7 +13,7 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
 
     /* --- Fragments --- */
     Main_Fragment mainFragment = new Main_Fragment();
-    Usr_Spaces usrSpacesFragment = new Usr_Spaces();
+    Usr_Subscriptions usrSpacesFragment = new Usr_Subscriptions();
     pt.iade.ricardodiasjoaocoelho.projetosolar.views.Cowork_Id Cowork_Id = new Cowork_Id();
 
     @Override
