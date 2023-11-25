@@ -3,31 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/plan_row_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/gray"
-        android:backgroundTint="@color/gray"
-        android:text="@string/plant_selector_office_preview_button_coworking_1"
-        android:textColor="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    android:background="#00FFFFFF"
+    android:backgroundTint="#00FFFFFF">
 
     <TextView
         android:id="@+id/plan_row_item_location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/plan_row_item"
-        app:layout_constraintEnd_toEndOf="@+id/plan_row_item"
-        app:layout_constraintStart_toStartOf="@+id/plan_row_item"
-        app:layout_constraintTop_toTopOf="@+id/plan_row_item" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/plan_row_item"
+        android:layout_width="161dp"
+        android:layout_height="52dp"
+        android:background="#00808080"
+        android:backgroundTint="#00808080"
+        android:text="@string/plant_selector_office_preview_button_coworking_1"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/plan_row_item_location_name"
+        app:layout_constraintEnd_toEndOf="@+id/plan_row_item_location_name"
+        app:layout_constraintStart_toStartOf="@+id/plan_row_item_location_name"
+        app:layout_constraintTop_toTopOf="@+id/plan_row_item_location_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

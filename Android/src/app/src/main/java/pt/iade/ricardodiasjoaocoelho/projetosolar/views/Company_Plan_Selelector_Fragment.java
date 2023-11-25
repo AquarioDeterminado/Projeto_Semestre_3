@@ -43,7 +43,7 @@ public class Company_Plan_Selelector_Fragment extends Fragment {
         locationRecycle.setAdapter(adapter);
 
         //Layout Manager
-        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         locationRecycle.setLayoutManager(layoutManager);
 
         locationRecycle.setHasFixedSize(true);
@@ -86,12 +86,13 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
                 Intent myIntent = new Intent(v.getContext(), Floor_Plan_Availabibity.class);
                 myIntent.putExtra("Floor Plan", locations[position]);
                 startActivity(v.getContext(), myIntent, null);
+
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return locations.length;
     }
 }
