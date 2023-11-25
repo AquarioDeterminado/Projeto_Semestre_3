@@ -1,8 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
-import static androidx.core.content.ContextCompat.startActivity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Company;
 
 public class Company_Plan_Selelector extends AppCompatActivity {
 
