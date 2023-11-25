@@ -1,14 +1,16 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
+import android.widget.Space;
+
 import java.util.ArrayList;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 
 public class SpaceController {
 
-    static public ArrayList<Space> getNearSpaces()
+    static public ArrayList<CoworkSpace> getNearSpaces()
     {
-        ArrayList<Space> spaces = new ArrayList<>();
-        spaces.add(new Space("1"));
-        spaces.add(new Space("2"));
+        ArrayList<CoworkSpace> spaces = new ArrayList<>();
+        spaces.add(new CoworkSpace("1", "Space1"));
+        spaces.add(new CoworkSpace("2", "Space2"));
         return spaces;
     }
 }
