@@ -51,7 +51,7 @@ public class CoworkSpace implements Parcelable {
     }
 
     /* --- Parcelable --- */
-    protected CoworkSpace(android.os.Parcel in) {
+    public CoworkSpace(android.os.Parcel in) {
         id = in.readString();
         name = in.readString();
     }
