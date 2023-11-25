@@ -1,26 +1,29 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space;
 
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
-public class Space {
+public class CoworkSpaces {
 
     private final String id;
     private String name;
+    private static ImageView logo;
 
-    public Space(String id)
+    public CoworkSpaces(String id, String name)
     {
         this.id = id;
+        this.name = name;
+    }
 
-        if (id == "1")
-        {
-            name = "Space Name";
-        }
-        else if (id == "2")
-        {
-            name = "Space Name 2";
-        }
+    public static ImageView getLogo() {
+        return logo;
+    }
+
+    public static void setLogo(ImageView logo) {
+        CoworkSpaces.logo = logo;
     }
 
     public String getId()
@@ -28,7 +31,7 @@ public class Space {
         return id;
     }
 
-    public String getName()
+    public static String getName()
     {
         return name;
     }

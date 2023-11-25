@@ -1,5 +1,7 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,39 +38,12 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
     private final CoworkSpaceController[] companies;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView companyName1;
-        private final TextView companyName2;
-        private final TextView companyName3;
-        private final TextView companyName4;
-
-        private final ImageView companyLogo1;
-        private final ImageView companyLogo2;
-        private final ImageView companyLogo3;
-        private final ImageView companyLogo4;
-
-        private final Button companyButton1;
-        private final Button companyButton2;
-        private final Button companyButton3;
-        private final Button companyButton4;
+        private final Button companyButton;
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            TextView companyName1 = (TextView) view.findViewById(R.id.plant_selector_coworking_name_1);
-            TextView companyName2 = (TextView) view.findViewById(R.id.plant_selector_coworking_name_2);
-            TextView companyName3 = (TextView) view.findViewById(R.id.plant_selector_coworking_name_3);
-            TextView companyName4 = (TextView) view.findViewById(R.id.plant_selector_coworking_name_4);
-
-            ImageView companyLogo1 = (ImageView) view.findViewById(R.id.plant_selector_office_preview_image_1);
-            ImageView companyLogo2 = (ImageView) view.findViewById(R.id.plant_selector_office_preview_image_2);
-            ImageView companyLogo3 = (ImageView) view.findViewById(R.id.plant_selector_office_preview_image_3);
-            ImageView companyLogo4 = (ImageView) view.findViewById(R.id.plant_selector_office_preview_image_4);
-
-
-            Button companyButton1 = (Button) view.findViewById(R.id.plant_selector_office_preview_button_company_1);
-            Button companyButton2 = (Button) view.findViewById(R.id.plant_selector_office_preview_button_company_2);
-            Button companyButton3 = (Button) view.findViewById(R.id.plant_selector_office_preview_button_company_3);
-            Button companyButton4 = (Button) view.findViewById(R.id.plant_selector_office_preview_button_company_4);
+            companyButton = (Button) view.findViewById(R.id.plan_row_item);
         }
     }
     public CompanyListAdapter(CoworkSpaceController[] companies) {
@@ -77,30 +52,20 @@ class CompanyListAdapter extends RecyclerView.Adapter<CompanyListAdapter.ViewHol
     @NonNull
     @Override
     public CompanyListAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_plan_selelector_location, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.plan_row_item, viewGroup, false);
         return new CompanyListAdapter.ViewHolder(view);
     }
     @Override
     public void onBindViewHolder(CompanyListAdapter.ViewHolder holder, final int position) {
         /* --- Set Widgets --- */
-
-        holder.companyName1.setText(companies[position].getName());
-        holder.companyName2.setText(companies[position].getName());
-        holder.companyName3.setText(companies[position].getName());
-        holder.companyName4.setText(companies[position].getName());
-
-        holder.companyLogo1.setImageResource(companies[position].getLogo());
-        holder.companyLogo2.setImageResource(companies[position].getLogo());
-        holder.companyLogo3.setImageResource(companies[position].getLogo());
-        holder.companyLogo4.setImageResource(companies[position].getLogo());
-
-        holder.companyButton1.setOnClickListener(new View.OnClickListener() {
+        holder.companyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), Floor_Plan_Availabibity.class);
-
+                myIntent.putExtra("Floor Plan", companies[position]);
+                startActivity(v.getContext(), myIntent, null);
             }
-        }
+        });
     }
 
     @Override

@@ -19,7 +19,7 @@
 
 
     <Button
-        android:id="@+id/plant_selector_office_preview_button_company_1"
+        android:id="@+id/plan_row_item"
         android:layout_width="100dp"
         android:layout_height="132dp"
         android:background="#00FFFFFF"

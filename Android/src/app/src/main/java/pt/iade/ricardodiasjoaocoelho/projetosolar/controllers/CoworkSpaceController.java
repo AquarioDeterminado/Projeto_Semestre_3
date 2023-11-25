@@ -1,24 +1,28 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
+import android.widget.ImageView;
+
 import java.util.ArrayList;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Space;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.Subscription;
+
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Space.CoworkSpaces;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Space_Info;
 
 public class CoworkSpaceController {
 
-    static public ArrayList<Space> getNearSpaces()
+    static public ArrayList<CoworkSpaces> getNearSpaces()
     {
-        ArrayList<Space> spaces = new ArrayList<>();
-        spaces.add(new Space("1"));
-        spaces.add(new Space("2"));
-        return spaces;
+        ArrayList<CoworkSpaces> coworkSpaces = new ArrayList<>();
+        coworkSpaces.add(new CoworkSpaces("1", "Big Compa"));
+        coworkSpaces.add(new CoworkSpaces("2", "Mega Compa"));
+        coworkSpaces.add(new CoworkSpaces("3", "Medium Compa"));
+        coworkSpaces.add(new CoworkSpaces("4", "Mini Compa"));
+        return coworkSpaces;
     }
 
     public String getName() {
-        ArrayList<Subscription> names = new ArrayList<>();
-        subs.add(new Subscription("Big Compa", user_id));
-        subs.add(new Subscription("Mega Compa", user_id));
-        subs.add(new Subscription("Medium Compa", user_id));
-        subs.add(new Subscription("Mini Compa", user_id));
-        return ;
+        return CoworkSpaces.getName();
+    }
+
+    public ImageView getLogo() {
+        return CoworkSpaces.getLogo();
     }
 }
