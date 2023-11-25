@@ -58,6 +58,7 @@
 
     <!-- Profile Page -->
     <string name="profile_email_display">email</string>
+    <string name="profile_settings_button">Settings</string>
     <string name="profile_name_display">Name</string>
     <string name="profile_avatar_display">User Avatar Photo</string>
     <string name="profile_back_button">Temp Buttton</string>
