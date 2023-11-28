@@ -52,6 +52,8 @@
     <string name="mainpage_events_datapicker_week">This Week...</string>
     <string name="mainpage_events_datapicker_month">This Month...</string>
     <string name="mainpage_events_datapicker_next">Up Next...</string>
+    <string name="mainpage_events_show_me_more_bttn">Show Me More!</string>
+    <string name="mainpage_spaces_show_me_more_bttn">Show Me More!</string>
 
     <!-- Main/MySpaces Page -->
     <string name="myspaces_page_title">My Spaces</string>

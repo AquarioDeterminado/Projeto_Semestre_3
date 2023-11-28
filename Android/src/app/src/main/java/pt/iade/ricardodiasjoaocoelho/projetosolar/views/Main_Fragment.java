@@ -126,6 +126,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
         holder.eventDate.setText(eventDataSet[position].getStartTime());
         //holder.eventImage.setImageResource(eventDataSet[position].getImage());
 
+        holder.eventRSVP.setText((R.string.mainpage_events_show_me_more_bttn));
         /* --- Navigation --- */
         holder.eventRSVP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,6 +184,7 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
         holder.spaceName.setText(coworkSpaceDataSet[position].getName());
         //holder.spaceImage.setImageResource(spaceDataSet[position].getImage());
 
+        holder.spaceBttn.setText((R.string.mainpage_spaces_show_me_more_bttn));
         /* --- Navigation --- */
         holder.spaceBttn.setOnClickListener(new View.OnClickListener() {
             @Override
