@@ -1,26 +1,37 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
+
 public class LogInController {
 
-    public static String CheckCredentials(String inputUsername, String inputPassword)
+    String error = "";
+
+    UserInfo user;
+
+    public void CheckCredentials(String inputUsername, String inputPassword)
     {
         /* Input Errors */
-        String error = "";
 
         String username = inputUsername.trim();
         String password = inputPassword.trim();
 
-        if (username.isEmpty() || password.isEmpty())
-        {
-            error = "Empty Fields";
-        }
         /* Invalid Credential */
-        else if (!username.equals("admin") || !password.equals("123"))
+        else if (!username.equals("admin") || !password.equals("admin"))
         {
             error = "Invalid Credentials";
         }
+        else
+        {
+            user = new UserInfo(username, password);
+        }
+    }
 
+    public String getError()
+    {
         return error;
     }
 
+    public boolean getUser() {
+
+    }
 }
