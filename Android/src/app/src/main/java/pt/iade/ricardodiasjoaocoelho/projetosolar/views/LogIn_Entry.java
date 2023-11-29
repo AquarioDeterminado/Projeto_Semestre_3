@@ -21,6 +21,8 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
 
 public class LogIn_Entry extends AppCompatActivity {
 
+    LogInController logInController = new LogInController();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /* --- Create --- */
@@ -52,8 +54,21 @@ public class LogIn_Entry extends AppCompatActivity {
                 String inputUsername = username_edit.getText().toString();
                 String inputPassword = password_edit.getText().toString();
 
-                String response = LogInController.CheckCredentials(inputUsername, inputPassword);
-                if (response.isEmpty())
+                logInController.CheckCredentials(inputUsername, inputPassword);
+                if (!inputUsername.isEmpty() || !inputPassword.isEmpty())
+                {
+                    LogInError("Invalid Credentials");
+                }
+                else if (logInController.getError().isEmpty())
+                {
+                    Intent mainPage = new Intent(context, MainPage.class);
+                    mainPage.putExtra("username", logInController.getUser());
+                    startActivity(mainPage);
+                }
+                else
+                {
+                    LogInError(logInController.getError());
+                }
                 {
                     Intent myIntent = new Intent(context, MainPage.class);
                     startActivity(myIntent);
