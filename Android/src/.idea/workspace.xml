@@ -9,15 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Prototype (oof);">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="reserve page on the way button tp access it not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Floor_Plan_Availabibity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Floor_Plan_Availabibity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/activity_desk_reserve_page.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Island_Reserve_Desk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_coworking_floor_plant_availabibity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_coworking_floor_plant_availabibity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_desk_reserve_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_island_desk_reserve_page.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,17 +75,17 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\layout\Settings" />
@@ -182,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700954657658</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="reserve page on the way button tp access it not working">
+      <created>1701177500547</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701177500547</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +210,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Prototype (oof);" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prototype (oof);" />
+    <MESSAGE value="reserve page on the way button tp access it not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="reserve page on the way button tp access it not working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
