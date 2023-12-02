@@ -1,6 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
 
+import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,14 +12,12 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
 
-public class LogIn_Entry extends AppCompatActivity {
+public class LogIn extends AppCompatActivity {
 
     LogInController logInController = new LogInController();
 
@@ -27,7 +25,7 @@ public class LogIn_Entry extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         /* --- Create --- */
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_entry);
+        setContentView(R.layout.activity_login);
         Utils utils = new Utils();
 
         /* ---  Widgets --- */
@@ -70,12 +68,9 @@ public class LogIn_Entry extends AppCompatActivity {
                     LogInError(logInController.getError());
                 }
                 {
+                    logInController.keepLogInInfo(context, inputUsername, inputPassword);
                     Intent myIntent = new Intent(context, MainPage.class);
                     startActivity(myIntent);
-                }
-                else
-                {
-                    LogInError(response);
                 }
             }
         });

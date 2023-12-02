@@ -3,10 +3,10 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.models.User;
 import android.os.Parcelable;
 
 public class LegalId implements Parcelable {
-    String usr_legal_document_id_num;
+    int usr_legal_document_id_num;
     int usr_legal_document_type_id;
 
-    LegalId(String usr_legal_document_id_num, int usr_legal_document_type_id)
+    LegalId(int usr_legal_document_id_num, int usr_legal_document_type_id)
     {
         this.usr_legal_document_id_num = usr_legal_document_id_num;
         this.usr_legal_document_type_id = usr_legal_document_type_id;
@@ -14,7 +14,7 @@ public class LegalId implements Parcelable {
 
     /* --- Parcelable --- */
     protected LegalId(android.os.Parcel in) {
-        usr_legal_document_id_num = in.readString();
+        usr_legal_document_id_num = in.readInt();
         usr_legal_document_type_id = in.readInt();
     }
 
@@ -37,7 +37,7 @@ public class LegalId implements Parcelable {
 
     @Override
     public void writeToParcel(android.os.Parcel dest, int flags) {
-        dest.writeString(usr_legal_document_id_num);
+        dest.writeInt(usr_legal_document_id_num);
         dest.writeInt(usr_legal_document_type_id);
     }
 }

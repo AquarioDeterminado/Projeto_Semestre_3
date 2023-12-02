@@ -12,8 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoSolar"
         tools:targetApi="31">
-        <activity android:name=".views.Floor_Plan_Availabibity"
+        <activity
+            android:name=".views.Floor_Plan_Availabibity"
             android:exported="false"/>
+        <activity
+            android:name=".views.Entry_Auto_LogIn"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".views.Change_Apperance"
             android:exported="false" />
@@ -54,13 +64,8 @@
             android:name=".views.Cowork_Id"
             android:exported="false" />
         <activity
-            android:name=".views.LogIn_Entry"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".views.LogIn"
+            android:exported="false">
         </activity>
         <activity
             android:name=".views.MainPage"

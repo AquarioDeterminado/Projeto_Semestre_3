@@ -59,7 +59,7 @@ public class Main_Fragment extends Fragment {
 
         /* --- Set Events --- */
         //Adapter
-        Event[] currentEvents = getCurrentEvents(new User_Info("1")).toArray(new Event[0]);
+        Event[] currentEvents = getCurrentEvents(User_Info.getUserById(1,"")).toArray(new Event[0]);
         EventListAdapter enventListAdapter = new EventListAdapter(currentEvents);
         enventListAdapter.setEventLauncher(eventLauncher);
         eventsList.setAdapter(enventListAdapter);

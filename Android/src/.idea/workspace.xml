@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Prototype (oof);">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Entry_Auto_LogIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_entry_auto_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/CoworkSpace/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/CoworkSpace/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/User/LegalId.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/User/LegalId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/User/User_Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/User/User_Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/LogIn_Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/LogIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Main_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Main_Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Settings_Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Settings_Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Usr_Subscriptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Usr_Subscriptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_entry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +35,15 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -28,6 +54,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2YgkM8lokcV9ZE843S2qXL6HNAl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -38,9 +65,17 @@
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="android.template.1047134015">
+      <recent name="pt.iade.ricardodiasjoaocoelho.projetosolar" />
+      <recent name="pt.iade.ricardodiasjoaocoelho.projetosolar.views" />
+      <recent name="pt.iade.ricardodiasjoaocoelho.projetosolar.controllers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="ProjetoSolar.app.main" />
@@ -127,6 +162,17 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Prototype (oof);" />

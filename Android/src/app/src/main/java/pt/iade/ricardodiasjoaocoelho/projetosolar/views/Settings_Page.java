@@ -78,7 +78,7 @@ public class Settings_Page extends AppCompatActivity {
             public void onClick(View view) {
                 // Start the Change_Name activity when the button is clicked
                 finishAffinity();
-                Intent myIntent = new Intent(context, LogIn_Entry.class);
+                Intent myIntent = new Intent(context, LogIn.class);
                 startActivity(myIntent);
             }
         });
