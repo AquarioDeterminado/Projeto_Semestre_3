@@ -42,7 +42,8 @@ public class LogInController {
     public static void deleteLogInInfo(Context context){
         SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
+        editor.remove("username");
+        editor.remove("password");
         editor.apply();
     }
 
