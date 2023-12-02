@@ -55,24 +55,19 @@ public class LogIn extends AppCompatActivity {
                 logInController.CheckCredentials(inputUsername, inputPassword);
                 if (!inputUsername.isEmpty() || !inputPassword.isEmpty())
                 {
-                    LogInError("Invalid Credentials");
+                    LogInError("Empty Fields");
                 }
                 else if (logInController.getError().isEmpty())
                 {
                     Intent mainPage = new Intent(context, MainPage.class);
                     mainPage.putExtra("username", logInController.getUser());
+                    logInController.keepLogInInfo(context, inputUsername, inputPassword);
                     startActivity(mainPage);
                 }
                 else
                 {
                     LogInError(logInController.getError());
                 }
-                {
-                    logInController.keepLogInInfo(context, inputUsername, inputPassword);
-                    Intent myIntent = new Intent(context, MainPage.class);
-                    startActivity(myIntent);
-                }
-            }
         });
 
         //LoginEntry -> EmailRecovery

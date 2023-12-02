@@ -3,10 +3,8 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class LogInController {
@@ -23,7 +21,6 @@ public class LogInController {
     /* --- Methods --- */
     public void CheckCredentials(String inputUsername, String inputPassword)
     {
-
         String username = inputUsername.trim();
         String password = inputPassword.trim();
 
