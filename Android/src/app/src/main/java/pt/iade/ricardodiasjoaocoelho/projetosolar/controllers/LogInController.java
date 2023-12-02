@@ -3,16 +3,12 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 import static android.content.Context.MODE_PRIVATE;
 import android.content.Context;
 import android.content.SharedPreferences;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 
 public class LogInController {
 
     String error = "";
     User_Info user;
-
-    Executor loginExecutor = Executors.newSingleThreadExecutor();
 
     /* --- Getters --- */
     public String getError() { return error; }
@@ -25,7 +21,7 @@ public class LogInController {
         String password = inputPassword.trim();
 
         /* Invalid Credential */
-        if (!username.equals("admin") || !password.equals("admin"))
+        if (!username.equals("admin") || !password.equals("123"))
         {
             error = "Invalid Credentials";
         }
@@ -35,13 +31,22 @@ public class LogInController {
         }
     }
 
-    public void keepLogInInfo(Context context, String username, String password){
+    public void saveLogInInfo(Context context, String username, String password){
         SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("username", username);
         editor.putString("password", password);
         editor.apply();
     }
+
+    public static void deleteLogInInfo(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
+
+
 
     public static LogInController newAutoLogInController(Context context){
         SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);

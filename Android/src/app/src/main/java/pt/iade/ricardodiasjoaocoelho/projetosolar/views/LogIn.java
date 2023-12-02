@@ -1,6 +1,5 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
-import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ public class LogIn extends AppCompatActivity {
         /* --- Create --- */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Utils utils = new Utils();
 
         /* ---  Widgets --- */
         //ImageView logo = (ImageView) findViewById(R.id.login_entry_logo);
@@ -53,21 +51,17 @@ public class LogIn extends AppCompatActivity {
                 String inputPassword = password_edit.getText().toString();
 
                 logInController.CheckCredentials(inputUsername, inputPassword);
-                if (!inputUsername.isEmpty() || !inputPassword.isEmpty())
-                {
+                if (inputUsername.isEmpty() || inputPassword.isEmpty()) {
                     LogInError("Empty Fields");
-                }
-                else if (logInController.getError().isEmpty())
-                {
+                } else if (logInController.getError().isEmpty()) {
                     Intent mainPage = new Intent(context, MainPage.class);
                     mainPage.putExtra("username", logInController.getUser());
-                    logInController.keepLogInInfo(context, inputUsername, inputPassword);
+                    logInController.saveLogInInfo(context, inputUsername, inputPassword);
                     startActivity(mainPage);
-                }
-                else
-                {
+                } else {
                     LogInError(logInController.getError());
                 }
+            }
         });
 
         //LoginEntry -> EmailRecovery

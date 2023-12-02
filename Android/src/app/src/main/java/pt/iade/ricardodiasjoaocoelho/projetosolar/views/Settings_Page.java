@@ -12,6 +12,8 @@ import android.widget.Button;
 import com.google.android.material.snackbar.Snackbar;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
+
 public class Settings_Page extends AppCompatActivity {
 
     @Override
@@ -78,6 +80,7 @@ public class Settings_Page extends AppCompatActivity {
             public void onClick(View view) {
                 // Start the Change_Name activity when the button is clicked
                 finishAffinity();
+                LogInController.deleteLogInInfo(context);
                 Intent myIntent = new Intent(context, LogIn.class);
                 startActivity(myIntent);
             }
