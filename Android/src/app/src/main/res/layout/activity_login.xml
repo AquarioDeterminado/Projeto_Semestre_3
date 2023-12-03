@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
-        android:text="@string/login_entry_logIn_signup_button"
+        android:text="@string/login_entry_signup_button"
         android:textColor="#892FBA"
         app:layout_constraintEnd_toEndOf="@+id/login_entry_login_button"
         app:layout_constraintStart_toStartOf="@+id/login_entry_login_button"
