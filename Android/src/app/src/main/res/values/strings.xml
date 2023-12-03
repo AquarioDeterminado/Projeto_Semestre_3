@@ -19,7 +19,7 @@
     <string name="login_entry_password">Password</string>
     <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
     <string name="login_entry_logIn_button">LogIn</string>
-    <string name="login_entry_logIn_signup_button">U New? Join Us!</string>
+    <string name="login_entry_signup_button">U New? Join Us!</string>
 
     <!-- Signup User Page -->
     <string name="signup_usr_title">Signup</string>
@@ -146,6 +146,9 @@
     <string name="change_apperance_page_title">Change Appearance</string>
     <string name="change_apperance_page_button_lightmode">Light Mode</string>
     <string name="change_apperance_page_button_darkmode">Dark Mode</string>
+    <!--- Qr-Camera Page -->
+    <string name="qr_camera_preview_title">Scan a Qr Code</string>
+
 
     <!--- Island Reserve Desk Page -->
     <string name="idrp_title">Reserve a Desk</string>

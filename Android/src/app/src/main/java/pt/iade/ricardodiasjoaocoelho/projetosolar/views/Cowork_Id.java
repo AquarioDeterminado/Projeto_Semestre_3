@@ -3,14 +3,13 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class Cowork_Id extends Fragment {
@@ -29,10 +28,9 @@ public class Cowork_Id extends Fragment {
 
         ImageButton cameraBttn = view.findViewById(R.id.cowork_id_camera_button);
 
+        Context context = view.getContext();
         cameraBttn.setOnClickListener(v -> {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-
+            Intent intent = new Intent(context, Qr_Camera.class);
             startActivity(intent);
         });
 
