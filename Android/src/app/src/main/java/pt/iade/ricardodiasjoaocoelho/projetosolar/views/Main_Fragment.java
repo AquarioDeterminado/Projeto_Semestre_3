@@ -100,10 +100,10 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
         private final Button eventRSVP;
         public ViewHolder(View view) {
             super(view);
-            eventDate = view.findViewById(R.id.event_row_item_start_time);
-            eventImage = view.findViewById(R.id.event_row_item_img);
-            eventTitle = view.findViewById(R.id.event_row_item_title);
-            eventRSVP = view.findViewById(R.id.event_row_item_more_button);
+            eventDate = view.findViewById(R.id.mainpage_event_row_item_start_time);
+            eventImage = view.findViewById(R.id.mainpage_event_row_item_img);
+            eventTitle = view.findViewById(R.id.mainpage_event_row_item_title);
+            eventRSVP = view.findViewById(R.id.mainpage_event_row_item_more_button);
         }
 
     }
@@ -114,7 +114,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
     @Override
     public EventListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.event_row_item, parent, false);
+                .inflate(R.layout.mainpage_event_row_item, parent, false);
 
         return new ViewHolder(view);
     }
@@ -123,7 +123,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
     public void onBindViewHolder(EventListAdapter.ViewHolder holder, int position) {
         /* --- Set Widgets --- */
         holder.eventTitle.setText(eventDataSet[position].getTitle());
-        holder.eventDate.setText(eventDataSet[position].getStartTime());
+        holder.eventDate.setText(eventDataSet[position].getStartTime().toString());
         //holder.eventImage.setImageResource(eventDataSet[position].getImage());
 
         /* --- Navigation --- */
@@ -131,7 +131,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Event_RSVP.class);
-                String eventId = eventDataSet[position].getId();
+                int eventId = eventDataSet[position].getId();
                 intent.putExtra("eventID", eventId);
                 eventLauncher.launch(intent);
             }
