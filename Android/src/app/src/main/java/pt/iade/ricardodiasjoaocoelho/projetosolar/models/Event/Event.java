@@ -1,8 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event;
 
-import java.text.DateFormat;
 import java.util.Date;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class Event {
@@ -14,15 +12,16 @@ public class Event {
     private int spaceID;
     private String location;
 
-    public Event(int id)
-    {
+    public Event(int id) {
         this.id = id;
 
         if (id == 1)
         {
             title = "Event Title";
-            initDate = DateFormat.getDateInstance().parse("2021-01-01");
-            endDate = DateFormat.getDateInstance().parse("2021-01-01");
+
+            initDate = new Date();
+            endDate = new Date();
+
             descrip = "Event Description";
             spaceID = 1;
             location = "Event Location";
@@ -30,8 +29,10 @@ public class Event {
         else if (id == 2)
         {
             title = "Event Title 2";
-            initDate = DateFormat.getDateInstance().parse("2021-01-01");
-            endDate = DateFormat.getDateInstance().parse("2021-01-01");
+
+            initDate = new Date();
+            endDate = new Date();
+
             descrip = "Event Description 2";
             spaceID = 2;
             location = "Event Location 2";

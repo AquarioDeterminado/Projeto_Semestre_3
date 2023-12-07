@@ -9,8 +9,8 @@ public class EventController {
     public static ArrayList<Event> getCurrentEvents(User_Info user)
     {
         ArrayList<Event> eventArrayList = new ArrayList<>();
-        eventArrayList.add(new Event("1"));
-        eventArrayList.add(new Event("2"));
+        eventArrayList.add(new Event(1));
+        eventArrayList.add(new Event(2));
         return eventArrayList;
     }
 }

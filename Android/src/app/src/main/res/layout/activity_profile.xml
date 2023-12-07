@@ -34,9 +34,9 @@
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/profile_avatar_display"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@drawable/ic_launcher_foreground"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:srcCompat="@drawable/ic_launcher_foreground" />
 
     <Button
         android:id="@+id/profile_settings_button"

@@ -1,8 +1,8 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,10 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
@@ -45,12 +48,16 @@ public class Profile extends AppCompatActivity {
         });
 
 
+        ArrayList<CalendarItem> calendarDataSet = new ArrayList<>();
+        calendarDataSet.add(new CalendarItem(new Event(1)));
+        calendarDataSet.add(new CalendarItem(new Event(2)));
+
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         calendarView.setLayoutManager(layoutManager);
 
-        CalendarAdapter adapter = new CalendarAdapter();
-
-
+        CalendarAdapter adapter = new CalendarAdapter(calendarDataSet.toArray(new CalendarItem[0]));
+        calendarView.setAdapter(adapter);
     }
 }
 
@@ -58,25 +65,20 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
 
     CalendarItem[] calendarDataSet;
 
-    public static class EventViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView title;
         private TextView hour;
+        private  TextView day;
 
-        public EventViewHolder(@NonNull View view) {
+        private ConstraintLayout background;
+
+        public ViewHolder(@NonNull View view) {
             super(view);
             title = view.findViewById(R.id.calendar_event_row_item_title);
             hour = view.findViewById(R.id.calendar_envent_row_item_starting_hour);
-        }
-    }
-
-    public static class DayViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView day;
-
-        public DayViewHolder(@NonNull View view) {
-            super(view);
             day = view.findViewById(R.id.calendar_day_row_item_day);
+            background = view.findViewById(R.id.calendar_event_row_item_background);
         }
     }
 
@@ -88,14 +90,47 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
         View view;
 
         if(viewType == 0) view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_day_row_item, parent, false);
-        else view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_event_row_item, parent, false);
-
+        else if (viewType == 1)  view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_event_row_item, parent, false);
+        else view = null;
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public int getItemViewType(int position) {
+        if(!isEvent(position)) return 0;
+        else return 1;
+    }
 
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        if(!isEvent(position)) {
+            Calendar calendar = GregorianCalendar.getInstance();
+            calendar.setTime(calendarDataSet[position].initDate);
+            SimpleDateFormat sdf = new SimpleDateFormat("DD");
+            holder.day.setText(sdf.format(calendar.getTime()));
+        }
+        else {
+            holder.title.setText(calendarDataSet[position].title);
+
+            Calendar calendar = GregorianCalendar.getInstance();
+            calendar.setTime(calendarDataSet[position].initDate);
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+            holder.hour.setText(sdf.format(calendar.getTime()));
+
+            holder.background.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Start the SettingsActivity when the button is clicked
+                    Intent eventPage = new Intent(view.getContext(), Event_Page.class);
+                    eventPage.putExtra("event", calendarDataSet[position].event);
+                    view.getContext().startActivity(myintent);
+                }
+            });
+        }
+    }
+
+    private boolean isEvent(int position) {
+        return calendarDataSet[position].title == null;
     }
 
     @Override
@@ -107,6 +142,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
 class CalendarItem {
 
     String title;
+    Event event;
     Date initDate;
 
     CalendarItem (Date day) {
@@ -115,6 +151,7 @@ class CalendarItem {
 
     CalendarItem (Event event) {
         this.title = event.getTitle();
+        this.event = event;
         this.initDate = event.getStartTime();
     }
 }
