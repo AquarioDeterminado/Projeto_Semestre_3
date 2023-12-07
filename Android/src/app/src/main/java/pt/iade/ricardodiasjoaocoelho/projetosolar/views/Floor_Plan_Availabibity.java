@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,22 +25,12 @@ public class Floor_Plan_Availabibity extends AppCompatActivity {
         location = getIntent().getParcelableExtra("location");
 
         /* ---  Widgets --- */
-        ImageView floorPlan = findViewById(R.id.cfpa_floor_image);
 
         TextView floorPlanName = findViewById(R.id.cfpa_home_title);
 
-        ArrayList<Button> islandBttns = new ArrayList<>();
-
-        islandBttns.add(findViewById(R.id.cfpa_island_1));
-        islandBttns.add(findViewById(R.id.cfpa_island_2));
-        islandBttns.add(findViewById(R.id.cfpa_island_3));
-        islandBttns.add(findViewById(R.id.cfpa_island_4));
-        islandBttns.add(findViewById(R.id.cfpa_island_5));
-        islandBttns.add(findViewById(R.id.cfpa_island_6));
-        islandBttns.add(findViewById(R.id.cfpa_island_7));
-        islandBttns.add(findViewById(R.id.cfpa_island_8));
-        islandBttns.add(findViewById(R.id.cfpa_island_9));
-
+        WebView floor_image = new WebView(this);
+        setContentView(floor_image);
+        floor_image.loadUrl("https://www.google.com");
         /* --- Set Value --- */
         floorPlanName.setText(location.getName());
 
@@ -47,6 +38,7 @@ public class Floor_Plan_Availabibity extends AppCompatActivity {
         View.OnClickListener islandBttnListener;
 
         Context context = this;
+        /*
         islandBttns.forEach(islandBttn -> islandBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,9 +46,9 @@ public class Floor_Plan_Availabibity extends AppCompatActivity {
                 intent.putExtra("location", location);
                 intent.putExtra("island", v.getId());
                 startActivity(intent);
-            }
-        })
+                }
+            })
         );
-
+        */
     }
 }
