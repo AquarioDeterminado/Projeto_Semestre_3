@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ public class Floor_Plan_Availabibity extends AppCompatActivity {
         location = getIntent().getParcelableExtra("location");
 
         /* ---  Widgets --- */
+        ImageView floorPlan = findViewById(R.id.cfpa_floor_image);
 
         TextView floorPlanName = findViewById(R.id.cfpa_home_title);
 
