@@ -5,6 +5,7 @@ import static androidx.core.content.ContextCompat.startActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +15,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -57,14 +57,15 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
     private final Location[] locations;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final Button availabilityButton;
-
+        private final ConstraintLayout background;
+        private final TextView capacityRate;
         private final TextView locationName;
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            availabilityButton = (Button) view.findViewById(R.id.plan_row_item);
+            background = (ConstraintLayout) view.findViewById(R.id.plan_row_item_background);
+            capacityRate = (TextView) view.findViewById(R.id.plan_row_item_capacity_rate);
             locationName = (TextView) view.findViewById(R.id.plan_row_item_location_name);
         }
     }
@@ -80,8 +81,10 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
     @Override
     public void onBindViewHolder(LocationListAdapter.ViewHolder holder, final int position) {
         /* --- Set Widgets --- */
+        holder.capacityRate.setText(locations[position].getCapacityRate() + "%");
+
         holder.locationName.setText(locations[position].getName());
-        holder.availabilityButton.setOnClickListener(new View.OnClickListener() {
+        holder.background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), Floor_Plan_Availabibity.class);
