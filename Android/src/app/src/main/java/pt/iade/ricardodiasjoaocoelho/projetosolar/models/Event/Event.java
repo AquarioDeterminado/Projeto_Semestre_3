@@ -1,9 +1,16 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.util.Date;
+import java.util.GregorianCalendar;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class Event {
+public class Event implements Parcelable {
     private final int id;
     private String title;
     private Date initDate;
@@ -19,8 +26,13 @@ public class Event {
         {
             title = "Event Title";
 
-            initDate = new Date();
-            endDate = new Date();
+            GregorianCalendar cal = new GregorianCalendar();
+            cal.set(2021, 5, 3);
+
+            initDate = cal.getTime();
+
+            cal.set(2021, 5, 4);
+            endDate = cal.getTime();
 
             descrip = "Event Description";
             spaceID = 1;
@@ -30,14 +42,20 @@ public class Event {
         {
             title = "Event Title 2";
 
-            initDate = new Date();
-            endDate = new Date();
+            GregorianCalendar cal = new GregorianCalendar();
+            cal.set(2021, 5, 1);
+
+            initDate = cal.getTime();
+
+            cal.set(2021, 5, 2);
+            endDate = cal.getTime();
 
             descrip = "Event Description 2";
             spaceID = 2;
             location = "Event Location 2";
         }
     }
+
 
     public String getTitle()
     {
@@ -63,5 +81,42 @@ public class Event {
 
     public int getImage() {
         return R.drawable.ic_launcher_background;
+    }
+
+    /* --- Parcelable --- */
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    protected Event(Parcel in) {
+        id = in.readInt();
+        title = in.readString();
+        descrip = in.readString();
+        spaceID = in.readInt();
+        location = in.readString();
+    }
+
+    public static final Creator<Event> CREATOR = new Creator<Event>() {
+        @Override
+        public Event createFromParcel(Parcel in) {
+            return new Event(in);
+        }
+
+        @Override
+        public Event[] newArray(int size) {
+            return new Event[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(title);
+        dest.writeLong(initDate.getTime());
+        dest.writeLong(endDate.getTime());
+        dest.writeString(descrip);
+        dest.writeInt(spaceID);
+        dest.writeString(location);
     }
 }

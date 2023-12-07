@@ -18,10 +18,13 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 
 public class Profile extends AppCompatActivity {
@@ -47,16 +50,13 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-
-        ArrayList<CalendarItem> calendarDataSet = new ArrayList<>();
-        calendarDataSet.add(new CalendarItem(new Event(1)));
-        calendarDataSet.add(new CalendarItem(new Event(2)));
-
+        ArrayList<Event> eventList = EventController.getUserEvents();
+        CalendarItem[] calendarDataSet = CalendarItem.makeCalendarDataSet(eventList);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         calendarView.setLayoutManager(layoutManager);
 
-        CalendarAdapter adapter = new CalendarAdapter(calendarDataSet.toArray(new CalendarItem[0]));
+        CalendarAdapter adapter = new CalendarAdapter(calendarDataSet);
         calendarView.setAdapter(adapter);
     }
 }
@@ -64,6 +64,9 @@ public class Profile extends AppCompatActivity {
 class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
 
     CalendarItem[] calendarDataSet;
+
+    private final int EVENT = 1;
+    private final int DAY = 0;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -89,16 +92,16 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
     public CalendarAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
 
-        if(viewType == 0) view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_day_row_item, parent, false);
-        else if (viewType == 1)  view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_event_row_item, parent, false);
+        if(viewType == DAY) view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_day_row_item, parent, false);
+        else if (viewType == EVENT)  view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_event_row_item, parent, false);
         else view = null;
         return new ViewHolder(view);
     }
 
     @Override
     public int getItemViewType(int position) {
-        if(!isEvent(position)) return 0;
-        else return 1;
+        if(isEvent(position)) return EVENT;
+        else return DAY;
     }
 
     @Override
@@ -106,7 +109,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
         if(!isEvent(position)) {
             Calendar calendar = GregorianCalendar.getInstance();
             calendar.setTime(calendarDataSet[position].initDate);
-            SimpleDateFormat sdf = new SimpleDateFormat("DD");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
             holder.day.setText(sdf.format(calendar.getTime()));
         }
         else {
@@ -123,14 +126,14 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
                     // Start the SettingsActivity when the button is clicked
                     Intent eventPage = new Intent(view.getContext(), Event_Page.class);
                     eventPage.putExtra("event", calendarDataSet[position].event);
-                    view.getContext().startActivity(myintent);
+                    view.getContext().startActivity(eventPage);
                 }
             });
         }
     }
 
     private boolean isEvent(int position) {
-        return calendarDataSet[position].title == null;
+        return calendarDataSet[position].event != null;
     }
 
     @Override
@@ -142,7 +145,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
 class CalendarItem {
 
     String title;
-    Event event;
+    Event event = null;
     Date initDate;
 
     CalendarItem (Date day) {
@@ -153,5 +156,79 @@ class CalendarItem {
         this.title = event.getTitle();
         this.event = event;
         this.initDate = event.getStartTime();
+    }
+
+    //TODO: There are some events that last more than a day, so we need to find a way to show them
+    public static CalendarItem[] makeCalendarDataSet(ArrayList<Event> eventList) {
+        ArrayList<CalendarItem[]> calendarList = new ArrayList<>();
+        ArrayList<CalendarItem> dayList = new ArrayList<>();
+
+        Calendar calendar = GregorianCalendar.getInstance();
+        calendar.setTime(eventList.get(0).getStartTime());
+
+        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+        int currentMonth = calendar.get(Calendar.MONTH);
+        int currentYear = calendar.get(Calendar.YEAR);
+
+        dayList.add(new CalendarItem(eventList.get(0).getStartTime()));
+        for (Event event : eventList) {
+            calendar.setTime(event.getStartTime());
+            int eventDay = calendar.get(Calendar.DAY_OF_MONTH);
+            int eventMonth = calendar.get(Calendar.MONTH);
+            int eventYear = calendar.get(Calendar.YEAR);
+
+            if(eventDay != currentDay || eventMonth != currentMonth || eventYear != currentYear) {
+                addDayList(calendarList, dayList);
+
+                dayList.clear();
+
+                dayList.add(new CalendarItem(event.getStartTime()));
+
+                currentDay = eventDay;
+                currentMonth = eventMonth;
+                currentYear = eventYear;
+            }
+
+            dayList.add(new CalendarItem(event));
+        }
+        addDayList(calendarList, dayList);
+
+        ArrayList<CalendarItem> calendarDataSet = orderDaylists(calendarList);
+
+        return calendarDataSet.toArray(new CalendarItem[0]);
+    }
+
+    private static ArrayList<CalendarItem> orderDaylists(ArrayList<CalendarItem[]> dayList) {
+        ArrayList<CalendarItem> calendarDataSet = new ArrayList<>();
+
+        dayList.sort(compareDays());
+
+        for (CalendarItem[] calendarItems : dayList)
+            Collections.addAll(calendarDataSet, calendarItems);
+
+        return calendarDataSet;
+    }
+
+    private static void addDayList(ArrayList<CalendarItem[]> calendarList, ArrayList<CalendarItem> calendarDaySet) {
+        calendarDaySet.sort(compareHours());
+        calendarList.add(calendarDaySet.toArray(new CalendarItem[0]));
+    }
+
+@NonNull
+    private static Comparator<? super CalendarItem> compareHours() {
+        return (calendarItem, t1) -> {
+            if (calendarItem.initDate.before(t1.initDate)) return -1;
+            else if (calendarItem.initDate.after(t1.initDate)) return 1;
+            else return 0;
+        };
+    }
+
+    @NonNull
+    private static Comparator<CalendarItem[]> compareDays() {
+        return (calendarItems, t1) -> {
+            if (calendarItems[0].initDate.before(t1[0].initDate)) return -1;
+            else if (calendarItems[0].initDate.after(t1[0].initDate)) return 1;
+            else return 0;
+        };
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoSolar"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".views.Event_Page"
+            android:exported="false" />
         <activity
             android:name=".views.Floor_Plan_Availabibity"
             android:exported="false" />
         <activity
             android:name=".views.Entry_Auto_LogIn"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,8 +68,7 @@
             android:exported="false" />
         <activity
             android:name=".views.LogIn"
-            android:exported="false" >
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".views.MainPage"
             android:exported="false" />

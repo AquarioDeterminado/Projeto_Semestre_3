@@ -13,4 +13,11 @@ public class EventController {
         eventArrayList.add(new Event(2));
         return eventArrayList;
     }
+
+    public static ArrayList<Event> getUserEvents() {
+        ArrayList<Event> eventArrayList = new ArrayList<>();
+        eventArrayList.add(new Event(1));
+        eventArrayList.add(new Event(2));
+        return eventArrayList;
+    }
 }
