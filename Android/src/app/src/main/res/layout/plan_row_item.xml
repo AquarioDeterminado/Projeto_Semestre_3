@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plan_row_item_background"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#00FFFFFF"
@@ -11,6 +12,8 @@
         android:id="@+id/plan_row_item_location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         android:text="TextView"
         android:textColor="@color/black"
@@ -20,16 +23,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/plan_row_item"
-        android:layout_width="161dp"
-        android:layout_height="100dp"
-        android:background="#00808080"
-        android:backgroundTint="#00808080"
-        android:text="@string/plant_selector_office_preview_button_coworking_1"
-        android:textColor="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/plan_row_item_location_name"
-        app:layout_constraintEnd_toEndOf="@+id/plan_row_item_location_name"
+    <TextView
+        android:id="@+id/plan_row_item_capacity_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/plan_row_item_location_name"
+        app:layout_constraintEnd_toStartOf="@+id/plan_row_item_location_name"
         app:layout_constraintStart_toStartOf="@+id/plan_row_item_location_name"
         app:layout_constraintTop_toTopOf="@+id/plan_row_item_location_name" />
 
