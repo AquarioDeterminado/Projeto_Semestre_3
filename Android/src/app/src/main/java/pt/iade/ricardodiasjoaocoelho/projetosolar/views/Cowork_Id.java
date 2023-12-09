@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class Cowork_Id extends Fragment {
@@ -26,7 +28,11 @@ public class Cowork_Id extends Fragment {
         //Makes sense and Android Studio likes it
         assert view != null;
 
+        ImageView qrImage = view.findViewById(R.id.cowork_id_card);
+
         ImageButton cameraBttn = view.findViewById(R.id.cowork_id_camera_button);
+
+        //qrImage.setImageBitmap();
 
         Context context = view.getContext();
         cameraBttn.setOnClickListener(v -> {

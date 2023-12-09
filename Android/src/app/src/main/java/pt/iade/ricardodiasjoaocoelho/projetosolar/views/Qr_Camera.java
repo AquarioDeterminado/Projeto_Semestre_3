@@ -85,10 +85,8 @@ public class Qr_Camera extends AppCompatActivity {
                         results.addOnSuccessListener(barcodes -> {
                                     for (Barcode barcode : barcodes) {
                                         String rawValue = barcode.getRawValue();
-
                                     }
                                     image.close();
-
                                 });
                     }
                 });
