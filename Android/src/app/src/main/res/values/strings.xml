@@ -19,7 +19,7 @@
     <string name="login_entry_password">Password</string>
     <string name="login_entry_forgot_credentials_button">Forgot Username or Password</string>
     <string name="login_entry_logIn_button">LogIn</string>
-    <string name="login_entry_logIn_signup_button">U New? Join Us!</string>
+    <string name="login_entry_signup_button">U New? Join Us!</string>
 
     <!-- Signup User Page -->
     <string name="signup_usr_title">Signup</string>
@@ -156,5 +156,8 @@
     <string name="idrp_desk_5_code">Desk 5</string>
     <string name="idrp_desk_6_code">Desk 6</string>
     <string name="idrp_desk_reserve_button">Reserve</string>
+
+    <!--- Qr-Camera Page -->
+    <string name="qr_camera_preview_title">Scan a Qr Code</string>
 
 </resources>

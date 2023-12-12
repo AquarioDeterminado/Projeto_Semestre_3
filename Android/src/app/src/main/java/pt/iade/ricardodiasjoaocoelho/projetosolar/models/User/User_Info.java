@@ -1,5 +1,6 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.User;
 
+import android.graphics.Bitmap;
 import android.os.Parcelable;
 
 import java.sql.Date;
@@ -73,6 +74,10 @@ public class User_Info implements Parcelable {
 
     public String getUsername() { return usr_name; }
 
+    /* --- Methods --- */
+    /*public Bitmap getQrCode() {
+        QREncoder qrEncoder = new QREncoder();
+    }*/
 
     /* --- Parcelable --- */
     protected User_Info(android.os.Parcel in) {
