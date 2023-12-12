@@ -51,6 +51,15 @@ public class Profile extends AppCompatActivity {
         });
 
         ArrayList<Event> eventList = EventController.getUserEvents();
+        eventList.sort(new Comparator<Event>() {
+            @Override
+            public int compare(Event event, Event t1) {
+                if (event.getStartTime().before(t1.getStartTime())) return -1;
+                else if (event.getStartTime().after(t1.getStartTime())) return 1;
+                else return 0;
+            }
+        });
+
         CalendarItem[] calendarDataSet = CalendarItem.makeCalendarDataSet(eventList);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -160,8 +169,7 @@ class CalendarItem {
 
     //TODO: There are some events that last more than a day, so we need to find a way to show them
     public static CalendarItem[] makeCalendarDataSet(ArrayList<Event> eventList) {
-        ArrayList<CalendarItem[]> calendarList = new ArrayList<>();
-        ArrayList<CalendarItem> dayList = new ArrayList<>();
+        ArrayList<CalendarItem> calendarList = new ArrayList<>();
 
         Calendar calendar = GregorianCalendar.getInstance();
         calendar.setTime(eventList.get(0).getStartTime());
@@ -170,7 +178,7 @@ class CalendarItem {
         int currentMonth = calendar.get(Calendar.MONTH);
         int currentYear = calendar.get(Calendar.YEAR);
 
-        dayList.add(new CalendarItem(eventList.get(0).getStartTime()));
+        calendarList.add(new CalendarItem(eventList.get(0).getStartTime()));
         for (Event event : eventList) {
             calendar.setTime(event.getStartTime());
             int eventDay = calendar.get(Calendar.DAY_OF_MONTH);
@@ -178,24 +186,16 @@ class CalendarItem {
             int eventYear = calendar.get(Calendar.YEAR);
 
             if(eventDay != currentDay || eventMonth != currentMonth || eventYear != currentYear) {
-                addDayList(calendarList, dayList);
-
-                dayList.clear();
-
-                dayList.add(new CalendarItem(event.getStartTime()));
+                calendarList.add(new CalendarItem(event.getStartTime()));
 
                 currentDay = eventDay;
                 currentMonth = eventMonth;
                 currentYear = eventYear;
             }
-
-            dayList.add(new CalendarItem(event));
+            calendarList.add(new CalendarItem(event));
         }
-        addDayList(calendarList, dayList);
 
-        ArrayList<CalendarItem> calendarDataSet = orderDaylists(calendarList);
-
-        return calendarDataSet.toArray(new CalendarItem[0]);
+        return calendarList.toArray(new CalendarItem[0]);
     }
 
     private static ArrayList<CalendarItem> orderDaylists(ArrayList<CalendarItem[]> dayList) {
@@ -207,20 +207,6 @@ class CalendarItem {
             Collections.addAll(calendarDataSet, calendarItems);
 
         return calendarDataSet;
-    }
-
-    private static void addDayList(ArrayList<CalendarItem[]> calendarList, ArrayList<CalendarItem> calendarDaySet) {
-        calendarDaySet.sort(compareHours());
-        calendarList.add(calendarDaySet.toArray(new CalendarItem[0]));
-    }
-
-@NonNull
-    private static Comparator<? super CalendarItem> compareHours() {
-        return (calendarItem, t1) -> {
-            if (calendarItem.initDate.before(t1.initDate)) return -1;
-            else if (calendarItem.initDate.after(t1.initDate)) return 1;
-            else return 0;
-        };
     }
 
     @NonNull
