@@ -160,4 +160,7 @@
     <string name="idrp_desk_6_code">Desk 6</string>
     <string name="idrp_desk_reserve_button">Reserve</string>
 
+    <!--- Qr-Camera Page -->
+    <string name="qr_camera_preview_title">Scan a Qr Code</string>
+
 </resources>
