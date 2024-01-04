@@ -38,15 +38,6 @@
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <CalendarView
-        android:id="@+id/profile_calendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_email_display" />
-
     <Button
         android:id="@+id/profile_settings_button"
         android:layout_width="wrap_content"
@@ -56,5 +47,28 @@
         android:text="@string/profile_settings_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/profile_calendar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_calendar_title" />
+
+    <TextView
+        android:id="@+id/profile_calendar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/calendar_title"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/profile_calendar"
+        app:layout_constraintTop_toBottomOf="@+id/profile_email_display" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

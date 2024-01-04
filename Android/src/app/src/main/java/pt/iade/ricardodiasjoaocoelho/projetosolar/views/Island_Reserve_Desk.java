@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class activity_desk_reserve_page extends AppCompatActivity {
+public class Island_Reserve_Desk extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_desk_reserve_page);
+        setContentView(R.layout.activity_island_desk_reserve_page);
     }
 }

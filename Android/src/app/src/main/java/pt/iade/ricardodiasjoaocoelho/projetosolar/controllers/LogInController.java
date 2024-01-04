@@ -1,26 +1,64 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 
+import static android.content.Context.MODE_PRIVATE;
+import android.content.Context;
+import android.content.SharedPreferences;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
+
 public class LogInController {
 
-    public static String CheckCredentials(String inputUsername, String inputPassword)
-    {
-        /* Input Errors */
-        String error = "";
+    String error = "";
+    User_Info user;
 
+    /* --- Getters --- */
+    public String getError() { return error; }
+    public User_Info getUser() { return user; }
+
+    /* --- Methods --- */
+    public void CheckCredentials(String inputUsername, String inputPassword)
+    {
         String username = inputUsername.trim();
         String password = inputPassword.trim();
 
-        if (username.isEmpty() || password.isEmpty())
-        {
-            error = "Empty Fields";
-        }
         /* Invalid Credential */
-        else if (!username.equals("admin") || !password.equals("123"))
+        if (!username.equals("admin") || !password.equals("123"))
         {
             error = "Invalid Credentials";
         }
-
-        return error;
+        else
+        {
+            user = User_Info.getUserByCredentials(username, password);
+        }
     }
 
+    public void saveLogInInfo(Context context, String username, String password){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username", username);
+        editor.putString("password", password);
+        editor.apply();
+    }
+
+    public static void deleteLogInInfo(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("username");
+        editor.remove("password");
+        editor.apply();
+    }
+
+
+
+    public static LogInController newAutoLogInController(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
+        String password = sharedPreferences.getString("password", "");
+        LogInController logInController = new LogInController();
+        logInController.CheckCredentials(username, password);
+        return logInController;
+    }
+
+    public boolean readyToLogIn(){
+        return user != null && error.isEmpty();
+    }
 }

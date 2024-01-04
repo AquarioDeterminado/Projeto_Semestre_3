@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.activity_desk_reserve_page">
+    tools:context=".views.Event_Page">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

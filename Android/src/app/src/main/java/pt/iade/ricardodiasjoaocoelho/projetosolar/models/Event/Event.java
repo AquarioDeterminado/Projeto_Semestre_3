@@ -1,54 +1,76 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class Event {
-    private final String id;
+public class Event implements Parcelable {
+    private final int id;
     private String title;
-    private String initDate;
-    private String endDate;
+    private Date initDate;
+    private Date endDate;
     private String descrip;
-    private String spaceID;
+    private int spaceID;
     private String location;
 
-    public Event(String id)
-    {
+    public Event(int id) {
         this.id = id;
 
-        if (id == "1")
+        if (id == 1)
         {
             title = "Event Title";
-            initDate = "2021-01-01";
-            endDate = "2021-01-01";
+
+            GregorianCalendar cal = new GregorianCalendar();
+            cal.set(2021, 5, 3);
+
+            initDate = cal.getTime();
+
+            cal.set(2021, 5, 4);
+            endDate = cal.getTime();
+
             descrip = "Event Description";
-            spaceID = "1";
+            spaceID = 1;
             location = "Event Location";
         }
-        else if (id == "2")
+        else if (id == 2)
         {
             title = "Event Title 2";
-            initDate = "2021-01-01";
-            endDate = "2021-01-01";
+
+            GregorianCalendar cal = new GregorianCalendar();
+            cal.set(2021, 5, 1);
+
+            initDate = cal.getTime();
+
+            cal.set(2021, 5, 2);
+            endDate = cal.getTime();
+
             descrip = "Event Description 2";
-            spaceID = "2";
+            spaceID = 2;
             location = "Event Location 2";
         }
     }
+
 
     public String getTitle()
     {
         return title;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getStartTime() {
+    public Date getStartTime() {
         return initDate;
     }
 
-    public String getEndTime() {
+    public Date getEndTime() {
         return endDate;
     }
 
@@ -59,5 +81,42 @@ public class Event {
 
     public int getImage() {
         return R.drawable.ic_launcher_background;
+    }
+
+    /* --- Parcelable --- */
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    protected Event(Parcel in) {
+        id = in.readInt();
+        title = in.readString();
+        descrip = in.readString();
+        spaceID = in.readInt();
+        location = in.readString();
+    }
+
+    public static final Creator<Event> CREATOR = new Creator<Event>() {
+        @Override
+        public Event createFromParcel(Parcel in) {
+            return new Event(in);
+        }
+
+        @Override
+        public Event[] newArray(int size) {
+            return new Event[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(title);
+        dest.writeLong(initDate.getTime());
+        dest.writeLong(endDate.getTime());
+        dest.writeString(descrip);
+        dest.writeInt(spaceID);
+        dest.writeString(location);
     }
 }

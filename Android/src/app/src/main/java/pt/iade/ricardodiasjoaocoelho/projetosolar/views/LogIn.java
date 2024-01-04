@@ -1,5 +1,4 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.Utils.Utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,21 +11,20 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
 
-public class LogIn_Entry extends AppCompatActivity {
+public class LogIn extends AppCompatActivity {
+
+    LogInController logInController = new LogInController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /* --- Create --- */
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_entry);
-        Utils utils = new Utils();
+        setContentView(R.layout.activity_login);
 
         /* ---  Widgets --- */
         //ImageView logo = (ImageView) findViewById(R.id.login_entry_logo);
@@ -52,15 +50,16 @@ public class LogIn_Entry extends AppCompatActivity {
                 String inputUsername = username_edit.getText().toString();
                 String inputPassword = password_edit.getText().toString();
 
-                String response = LogInController.CheckCredentials(inputUsername, inputPassword);
-                if (response.isEmpty())
-                {
-                    Intent myIntent = new Intent(context, MainPage.class);
-                    startActivity(myIntent);
-                }
-                else
-                {
-                    LogInError(response);
+                logInController.CheckCredentials(inputUsername, inputPassword);
+                if (inputUsername.isEmpty() || inputPassword.isEmpty()) {
+                    LogInError("Empty Fields");
+                } else if (logInController.getError().isEmpty()) {
+                    Intent mainPage = new Intent(context, MainPage.class);
+                    mainPage.putExtra("username", logInController.getUser());
+                    logInController.saveLogInInfo(context, inputUsername, inputPassword);
+                    startActivity(mainPage);
+                } else {
+                    LogInError(logInController.getError());
                 }
             }
         });

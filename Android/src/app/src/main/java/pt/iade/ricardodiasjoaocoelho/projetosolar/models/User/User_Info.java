@@ -6,8 +6,8 @@ import java.sql.Date;
 
 public class User_Info implements Parcelable {
     //ID
-    String usr_id;
-    String usr_cmp_id;
+    int usr_id;
+    int usr_cmp_id;
 
     //LogIn Info
     String usr_email;
@@ -25,7 +25,8 @@ public class User_Info implements Parcelable {
     Date usr_creation_date;
     boolean usr_active;
 
-    public User_Info(String usr_email, String usr_password, String usr_name, Date usr_bdate, String usr_phone, String usr_legal_document_id_num, int usr_legal_document_type_id, Date usr_creation_date, boolean usr_active)
+    /* --- Constructors --- */
+    public User_Info(String usr_email, String usr_password, String usr_name, Date usr_bdate, String usr_phone, int usr_legal_document_id_num, int usr_legal_document_type_id, Date usr_creation_date, boolean usr_active)
     {
         this.usr_email = usr_email;
         this.usr_password = usr_password;
@@ -38,26 +39,45 @@ public class User_Info implements Parcelable {
         this.usr_legal_document = new LegalId(usr_legal_document_id_num, usr_legal_document_type_id);
     }
 
-    public User_Info(String id) {
-        this.usr_id = id;
-        this.usr_password = "123456";
-        this.usr_email = "";
-        this.usr_name = "";
-        this.usr_bdate = new Date(0);
-        this.usr_phone = "";
-        this.usr_legal_document = new LegalId("", 0);
-        this.usr_creation_date = new Date(0);
-        this.usr_active = false;
+    public static User_Info getUserById(int id, String usr_password) {
+        //TODO: Get user info from database; Verify password;
+        return new User_Info("a@gmail.com",
+                "123456",
+                "",
+                new Date(0),
+                "910000000",
+                0,
+                0,
+                new Date(0),
+                false);
     }
 
-    public String getId() {
+    public static User_Info getUserByCredentials(String usr_email, String usr_password)
+    {
+        User_Info user =new User_Info("a@gmail.com",
+                "123456",
+                "",
+                new Date(0),
+                "910000000",
+                0,
+                0,
+                new Date(0),
+                false);
+        return user;
+    }
+
+    /* --- Getters --- */
+    public int getId() {
         return usr_id;
     }
 
+    public String getUsername() { return usr_name; }
+
+
     /* --- Parcelable --- */
     protected User_Info(android.os.Parcel in) {
-        usr_id = in.readString();
-        usr_cmp_id = in.readString();
+        usr_id = in.readInt();
+        usr_cmp_id = in.readInt();
         usr_email = in.readString();
         usr_password = in.readString();
         usr_name = in.readString();
@@ -86,8 +106,8 @@ public class User_Info implements Parcelable {
 
     @Override
     public void writeToParcel(android.os.Parcel dest, int flags) {
-        dest.writeString(usr_id);
-        dest.writeString(usr_cmp_id);
+        dest.writeInt(usr_id);
+        dest.writeInt(usr_cmp_id);
         dest.writeString(usr_email);
         dest.writeString(usr_password);
         dest.writeString(usr_name);
@@ -96,4 +116,5 @@ public class User_Info implements Parcelable {
         dest.writeLong(usr_creation_date.getTime());
         dest.writeByte((byte) (usr_active ? 1 : 0));
     }
+
 }

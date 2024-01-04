@@ -58,13 +58,6 @@
     <!-- Main/MySpaces Page -->
     <string name="myspaces_page_title">My Spaces</string>
 
-    <!-- Profile Page -->
-    <string name="profile_email_display">email</string>
-    <string name="profile_settings_button">Settings</string>
-    <string name="profile_name_display">Name</string>
-    <string name="profile_avatar_display">User Avatar Photo</string>
-    <string name="profile_back_button">Temp Buttton</string>
-
     <!-- Plant Selector -->
     <string name="plant_selector_title">Select a Space</string>
     <string name="plant_selector_coworking_name_1">Coworking 1</string>
@@ -118,6 +111,20 @@
     <string name="plan_contact_title">Would you like to contact the coworkSpace?"</string>
     <string name="plan_contact_bttn">Contact</string>
 
+    <!-- Profile Page -->
+    <string name="profile_email_display">email</string>
+    <string name="profile_settings_button">Settings</string>
+    <string name="profile_name_display">Name</string>
+    <string name="profile_avatar_display">User Avatar Photo</string>
+    <string name="profile_back_button">Temp Buttton</string>
+
+    <!--- Calendar -->
+    <string name="calendar_title">Your Calendar</string>
+    <string name="calendar_event_name_default">Yoga and Stuff</string>
+    <string name="calendar_event_descrip_default">Yoga and Stuff</string>
+    <string name="calendar_event_start_time_default">12:30</string>
+    <string name="calendar_day_default">TODAY</string>
+
     <!--- Settings Page -->
     <string name="settings_page_title">Settings</string>
     <string name="settings_page_button_1">Change Name</string>
@@ -139,4 +146,15 @@
     <string name="change_apperance_page_title">Change Appearance</string>
     <string name="change_apperance_page_button_lightmode">Light Mode</string>
     <string name="change_apperance_page_button_darkmode">Dark Mode</string>
+
+    <!--- Island Reserve Desk Page -->
+    <string name="idrp_title">Reserve a Desk</string>
+    <string name="idrp_desk_1_code">Desk 1</string>
+    <string name="idrp_desk_2_code">Desk 2</string>
+    <string name="idrp_desk_3_code">Desk 3</string>
+    <string name="idrp_desk_4_code">Desk 4</string>
+    <string name="idrp_desk_5_code">Desk 5</string>
+    <string name="idrp_desk_6_code">Desk 6</string>
+    <string name="idrp_desk_reserve_button">Reserve</string>
+
 </resources>

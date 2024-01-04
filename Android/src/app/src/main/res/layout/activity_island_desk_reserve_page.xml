@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.Island_Reserve_Desk">
+
+    <TextView
+        android:id="@+id/idrp_tile_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/idrp_title"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="258dp"
+        android:layout_height="503dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idrp_tile_page">
+
+        <TextView
+            android:id="@+id/idrp_desk_1_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_1_code" />
+
+        <Button
+            android:id="@+id/idrp_desk_1_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_reserve_button" />
+
+        <TextView
+            android:id="@+id/idrp_desk_2_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_2_code" />
+
+        <Button
+            android:id="@+id/idrp_desk_2_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_reserve_button" />
+
+        <TextView
+            android:id="@+id/idrp_desk_3_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_3_code" />
+
+        <Button
+            android:id="@+id/idrp_desk_3_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_reserve_button" />
+
+        <TextView
+            android:id="@+id/idrp_desk_4_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_4_code" />
+
+        <Button
+            android:id="@+id/idrp_desk_4_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_reserve_button" />
+
+        <TextView
+            android:id="@+id/idrp_desk_5_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_5_code" />
+
+        <Button
+            android:id="@+id/idrp_desk_5_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_reserve_button" />
+
+        <TextView
+            android:id="@+id/idrp_desk_6_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_6_code" />
+
+        <Button
+            android:id="@+id/idrp_desk_6_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idrp_desk_reserve_button" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

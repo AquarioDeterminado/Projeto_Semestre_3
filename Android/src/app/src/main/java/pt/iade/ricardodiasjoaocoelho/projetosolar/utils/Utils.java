@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.Utils;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;

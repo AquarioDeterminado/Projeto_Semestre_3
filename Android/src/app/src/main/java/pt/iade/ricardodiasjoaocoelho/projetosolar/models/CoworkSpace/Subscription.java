@@ -24,10 +24,10 @@ public class Subscription implements Parcelable {
     public Subscription(String id, User_Info user) {
         this.id = id;
         this.user = user;
-        String userId = user.getId();
+        int userId = user.getId();
 
 
-        if(userId == "1") {
+        if(userId == 1) {
             if (id.equals("1")){
                 title = "All Day, Every Day";
                 space = new CoworkSpace("1", "Space1");

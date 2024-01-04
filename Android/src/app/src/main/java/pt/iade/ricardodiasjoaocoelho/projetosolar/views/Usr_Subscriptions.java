@@ -42,7 +42,7 @@ public class Usr_Subscriptions extends Fragment {
 
         /* ---  Widgets --- */
         RecyclerView recyclerView = view.findViewById(R.id.myspaces_spaces_list);
-        ArrayList<Subscription> subslist = getUserSubscriptions(new User_Info("1"));
+        ArrayList<Subscription> subslist = getUserSubscriptions(User_Info.getUserById(1, ""));
 
 
         /* ---  Navigation --- */

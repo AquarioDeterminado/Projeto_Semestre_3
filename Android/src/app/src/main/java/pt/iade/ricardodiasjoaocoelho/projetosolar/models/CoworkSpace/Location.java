@@ -76,4 +76,9 @@ public class Location implements Parcelable {
     public int getFloorPlan() {
         return floorPlan;
     }
+
+    public int getCapacityRate() {
+        //TODO:Get capacity rate from database
+        return 32;
+    }
 }

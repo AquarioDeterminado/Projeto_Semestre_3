@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00FFFFFF">
-
-    <ImageView
-        android:id="@+id/cfpa_floor_image"
-        android:layout_width="372dp"
-        android:layout_height="493dp"
-        android:layout_marginTop="28dp"
-        android:contentDescription="@string/cfpa_floor_image_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cfpa_home_title"
-        app:srcCompat="@drawable/mapa_teste___coworking_" />
 
     <TextView
         android:id="@+id/cfpa_home_title"
@@ -27,104 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/cfpa_island_1"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_1"
-        android:textColor="#00FF0000"
-        app:layout_constraintEnd_toEndOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_8"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="12dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_8"
-        app:layout_constraintEnd_toEndOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_9"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="14dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_9"
-        app:layout_constraintEnd_toEndOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_2"
-        android:layout_width="48dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="76dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_2"
-        app:layout_constraintStart_toStartOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_3"
-        android:layout_width="48dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="76dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_3"
-        app:layout_constraintStart_toStartOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_7"
-        android:layout_width="48dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="368dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_7"
-        app:layout_constraintStart_toStartOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_4"
-        android:layout_width="48dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="120dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_4"
-        app:layout_constraintStart_toStartOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_6"
-        android:layout_width="48dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="360dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_6"
-        app:layout_constraintStart_toStartOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
-
-    <Button
-        android:id="@+id/cfpa_island_5"
-        android:layout_width="48dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="360dp"
-        android:background="#00FFFFFF"
-        android:text="@string/cfa_floor_plant_button_5"
-        app:layout_constraintStart_toStartOf="@+id/cfpa_floor_image"
-        app:layout_constraintTop_toTopOf="@+id/cfpa_floor_image" />
+    <WebView
+        android:id="@+id/cfpa_plan_webview"
+        android:layout_width="412dp"
+        android:layout_height="488dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cfpa_home_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
