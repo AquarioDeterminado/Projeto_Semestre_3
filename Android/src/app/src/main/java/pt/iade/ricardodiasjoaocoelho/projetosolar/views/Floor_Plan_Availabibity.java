@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.net.URL;
 import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Location;
@@ -30,7 +32,7 @@ public class Floor_Plan_Availabibity extends AppCompatActivity {
 
         WebView floor_image = new WebView(this);
         setContentView(floor_image);
-        floor_image.loadUrl("https://www.google.com");
+        floor_image.loadUrl("./app/src/main/res/html/mapa_teste_Coworking.html");
         /* --- Set Value --- */
         floorPlanName.setText(location.getName());
 
