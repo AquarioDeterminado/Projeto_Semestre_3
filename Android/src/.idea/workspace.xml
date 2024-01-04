@@ -4,23 +4,77 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_change_apperance.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_coworking_floor_plant_availabibity.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_email_recovery.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/circle_menu.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/main_fragment.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/mainpage_events.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_menu.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="capacity rate placeholders added;">
+    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Ignorar isto esta terrivel (pra n dizer nada que me retire pontos da nota final)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/RingEffectView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_availibility.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_close.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_id.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_main_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_myspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_profile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/circle_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/buttons.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/User/User_Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/User/User_Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Cowork_Id.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Cowork_Id.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Qr_Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Qr_Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/mainpage_events.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/mainpage_events.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_menu.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/joaocoelho/.android/avd/Pixel_6a_API_30.avd]" />
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ricar\.android\avd\Pixel_7_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -30,15 +84,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="valueResourceFile" />
         <option value="layoutResourceFile" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/../.." value="dev-API" />
+        <entry key="$PROJECT_DIR$/../.." value="circular-menu_BAD_ONE" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -85,8 +140,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "android-custom-viewC:/Users/ricar/OneDrive/Desktop/IADE/Projeto movel/projetoSolar/Android/src/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java_SELECTED": "CircleMenuView",
+    "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/ricar/Downloads/circle-menu-testing/circle-menu-android-master/circle-menu-simple-example",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
@@ -95,6 +153,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\layout" />
+      <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\drawable" />
+      <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\java\pt\iade\ricardodiasjoaocoelho\projetosolar\views" />
+    </key>
     <key name="android.template.1047134015">
       <recent name="pt.iade.ricardodiasjoaocoelho.projetosolar" />
       <recent name="pt.iade.ricardodiasjoaocoelho.projetosolar.views" />
@@ -112,6 +178,7 @@
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
@@ -199,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701536814536</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ignorar isto esta terrivel (pra n dizer nada que me retire pontos da nota final)">
+      <option name="closed" value="true" />
+      <created>1704334487674</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704334487674</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +292,7 @@
     <MESSAGE value="Prototype (oof);" />
     <MESSAGE value="Remember LogIn working;" />
     <MESSAGE value="Register now verifies input;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register now verifies input;" />
+    <MESSAGE value="Ignorar isto esta terrivel (pra n dizer nada que me retire pontos da nota final)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignorar isto esta terrivel (pra n dizer nada que me retire pontos da nota final)" />
   </component>
 </project>

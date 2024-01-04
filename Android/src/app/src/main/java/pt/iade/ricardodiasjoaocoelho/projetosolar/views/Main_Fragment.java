@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -120,7 +122,7 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(EventListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(EventListAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         /* --- Set Widgets --- */
         holder.eventTitle.setText(eventDataSet[position].getTitle());
         holder.eventDate.setText(eventDataSet[position].getStartTime().toString());

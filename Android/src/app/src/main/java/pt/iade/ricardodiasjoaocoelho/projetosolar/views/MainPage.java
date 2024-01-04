@@ -3,12 +3,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationBarView;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class MainPage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class MainPage extends AppCompatActivity{
 
     NavigationBarView navBar;
 
@@ -24,45 +25,53 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage_events);
 
-        /* --- Widgets --- */
+        final CircleMenuView menu = (CircleMenuView) findViewById(R.id.circle_menu);
+        menu.setEventListener(new CircleMenuView.EventListener() {
+            @Override
+            public void onMenuOpenAnimationStart(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuOpenAnimationStart");
+            }
 
-        navBar = findViewById(R.id.mainpage_bottom_navigator);
+            @Override
+            public void onMenuOpenAnimationEnd(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuOpenAnimationEnd");
+            }
 
+            @Override
+            public void onMenuCloseAnimationStart(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuCloseAnimationStart");
+            }
 
-        /* --- NavBar --- */
-        navBar.setOnItemSelectedListener(this);
+            @Override
+            public void onMenuCloseAnimationEnd(@NonNull CircleMenuView view) {
+                Log.d("D", "onMenuCloseAnimationEnd");
+            }
 
-        navBar.setSelectedItemId(R.id.nav_home);
+            @Override
+            public void onButtonClickAnimationStart(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonClickAnimationStart| index: " + index);
+            }
 
-    }
+            @Override
+            public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonClickAnimationEnd| index: " + index);
+            }
+            @Override
+            public boolean onButtonLongClick(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonLongClick| index: " + index);
+                return true;
+            }
 
+            @Override
+            public void onButtonLongClickAnimationStart(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonLongClickAnimationStart| index: " + index);
+            }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home)
-        {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, mainFragment).commit();
-            return true;
-        } else if (id == R.id.nav_spaces) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
-            return true;
-        } else if (id == R.id.nav_availability) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, planSelectorFragment).commit();
-            return true;
-        } else if (id == R.id.nav_id) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, coworkIdFragment).commit();
-
-            return true;
-        } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this, Profile.class);
-            startActivity(intent);
-            return true;
-        } else {
-            throw new IllegalStateException("Unexpected value: " + item.getItemId());
-        }
+            @Override
+            public void onButtonLongClickAnimationEnd(@NonNull CircleMenuView view, int index) {
+                Log.d("D", "onButtonLongClickAnimationEnd| index: " + index);
+            }
+        });
     }
 }
 

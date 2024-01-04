@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/ring_menu_main_page</item>
+        <item>@drawable/ring_menu_close</item>
+        <item>@drawable/ring_menu_availibility</item>
+        <item>@drawable/ring_menu_id</item>
+        <item>@drawable/ring_menu_myspace</item>
+        <item>@drawable/ring_menu_profile</item>
+    </array>
+    <array name="colors">
+        <item>@android:color/holo_blue_light</item>
+        <item>@android:color/holo_green_dark</item>
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_purple</item>
+        <item>@android:color/holo_orange_light</item>
+        <item>@android:color/holo_green_light</item>
+    </array>
+
+</resources>
