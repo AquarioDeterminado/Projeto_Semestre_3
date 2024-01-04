@@ -170,6 +170,8 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
          this.coworkSpaceDataSet = coworkSpaceDataSet;
     }
 
+
+
     @Override
     public SpaceListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -202,5 +204,5 @@ class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder>
         return coworkSpaceDataSet.length;
     }
 }
-
+/* --- For the 90º menu --- */
 

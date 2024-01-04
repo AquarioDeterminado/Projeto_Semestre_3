@@ -57,15 +57,15 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
     private final Location[] locations;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final ConstraintLayout background;
-        private final TextView capacityRate;
+        //private final ConstraintLayout background;
+        //private final TextView capacityRate;
         private final TextView locationName;
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            background = (ConstraintLayout) view.findViewById(R.id.plan_row_item_background);
-            capacityRate = (TextView) view.findViewById(R.id.plan_row_item_capacity_rate);
+            //background = (ConstraintLayout) view.findViewById(R.id.plan_row_item_background);
+            //capacityRate = (TextView) view.findViewById(R.id.plan_row_item_capacity_rate);
             locationName = (TextView) view.findViewById(R.id.plan_row_item_location_name);
         }
     }
@@ -81,9 +81,10 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
     @Override
     public void onBindViewHolder(LocationListAdapter.ViewHolder holder, final int position) {
         /* --- Set Widgets --- */
-        holder.capacityRate.setText(locations[position].getCapacityRate() + "%");
+        //holder.capacityRate.setText(locations[position].getCapacityRate() + "%");
 
         holder.locationName.setText(locations[position].getName());
+        /*
         holder.background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +93,7 @@ class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewH
                 startActivity(v.getContext(), myIntent, null);
             }
         });
+    */
     }
 
     @Override

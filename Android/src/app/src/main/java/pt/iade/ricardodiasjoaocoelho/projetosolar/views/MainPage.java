@@ -26,7 +26,7 @@ public class MainPage extends AppCompatActivity implements NavigationBarView.OnI
 
         /* --- Widgets --- */
 
-        navBar = findViewById(R.id.mainpage_bottom_navigator);
+        navBar = findViewById(R.id.circle_menu);
 
 
         /* --- NavBar --- */
