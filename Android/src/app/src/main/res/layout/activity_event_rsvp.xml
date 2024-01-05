@@ -34,7 +34,7 @@
             android:layout_height="48dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/rsvp_accept_message"
+            android:text="@string/rsvp_accept_bttn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
