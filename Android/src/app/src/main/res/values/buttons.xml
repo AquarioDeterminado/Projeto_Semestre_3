@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="icons">
-        <item>@drawable/main_menu_ring_menu_icon</item>
-        <item>@drawable/profile_ring_menu_icon</item>
-        <item>@drawable/availibility_ring_menu_icon</item>
-        <item>@drawable/id_ring_menu_icon</item>
-        <item>@drawable/profile_ring_menu_icon</item>
+        <item>@drawable/ring_menu_main_page</item>
+        <item>@drawable/ring_menu_myspace</item>
+        <item>@drawable/ring_menu_availibility</item>
+        <item>@drawable/ring_menu_id</item>
+        <item>@drawable/ring_menu_profile</item>
     </array>
     <array name="colors">
         <item>@android:color/holo_blue_light</item>

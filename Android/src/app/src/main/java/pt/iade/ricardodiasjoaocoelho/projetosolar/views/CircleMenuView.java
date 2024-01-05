@@ -41,7 +41,7 @@ public class CircleMenuView extends FrameLayout {
 
     private static final int DEFAULT_BUTTON_SIZE = 56;
     private static final float DEFAULT_DISTANCE = DEFAULT_BUTTON_SIZE * 1.5f;
-    private static final float DEFAULT_RING_SCALE_RATIO = 1.3f;
+    private static final float DEFAULT_RING_SCALE_RATIO = 1f;
     private static final float DEFAULT_CLOSE_ICON_ALPHA = 0.3f;
 
     private final List<View> mButtons = new ArrayList<>();
@@ -225,8 +225,8 @@ public class CircleMenuView extends FrameLayout {
                 iconsIds.recycle();
             }
 
-            mIconMenu = a.getResourceId(R.styleable.CircleMenuView_icon_menu, R.drawable.main_menu_ring_menu_icon);
-            mIconClose = a.getResourceId(R.styleable.CircleMenuView_icon_close, R.drawable.close_ring_menu_icon);
+            mIconMenu = a.getResourceId(R.styleable.CircleMenuView_icon_menu, R.drawable.ring_menu_main_page);
+            mIconClose = a.getResourceId(R.styleable.CircleMenuView_icon_close, R.drawable.ring_menu_close);
 
             mDurationRing = a.getInteger(R.styleable.CircleMenuView_duration_ring, getResources().getInteger(android.R.integer.config_mediumAnimTime));
             mLongClickDurationRing = a.getInteger(R.styleable.CircleMenuView_long_click_duration_ring, getResources().getInteger(android.R.integer.config_longAnimTime));
@@ -259,8 +259,8 @@ public class CircleMenuView extends FrameLayout {
         final float density = context.getResources().getDisplayMetrics().density;
         final float defaultDistance = DEFAULT_DISTANCE * density;
 
-        mIconMenu = R.drawable.main_menu_ring_menu_icon;
-        mIconClose = R.drawable.close_ring_menu_icon;
+        mIconMenu = R.drawable.ring_menu_main_page;
+        mIconClose = R.drawable.ring_menu_close;
 
         mDurationRing = getResources().getInteger(android.R.integer.config_mediumAnimTime);
         mLongClickDurationRing = getResources().getInteger(android.R.integer.config_longAnimTime);
@@ -382,17 +382,25 @@ public class CircleMenuView extends FrameLayout {
 
     private void offsetAndScaleButtons(float centerX, float centerY, float angleStep, float offset, float scale) {
         for (int i = 0, cnt = mButtons.size(); i < cnt; i++) {
-            final float angle = angleStep * i - 90;
-            final float x = (float) Math.cos(Math.toRadians(angle)) * offset;
-            final float y = (float) Math.sin(Math.toRadians(angle)) * offset;
+            final float angle = 90f + angleStep * i; // Start from 90 degrees and increase the angle
+
+            final float radianAngle = (float) Math.toRadians(angle);
+
+            final float x = (float) Math.cos(radianAngle) * offset;
+            final float y = (float) Math.sin(radianAngle) * offset;
 
             final View button = mButtons.get(i);
-            button.setX(centerX + x);
-            button.setY(centerY + y);
+            button.setX(centerX - x); // Adjusting for second quadrant
+            button.setY(centerY - y); // Adjusting for second quadrant
             button.setScaleX(1.0f * scale);
             button.setScaleY(1.0f * scale);
+            button.setVisibility(View.VISIBLE); // Make the button visible
+
         }
     }
+
+
+
 
     private Animator getButtonClickAnimation(final @NonNull FloatingActionButton button) {
         final int buttonNumber = mButtons.indexOf(button) + 1;

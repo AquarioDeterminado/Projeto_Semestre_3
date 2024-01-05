@@ -96,28 +96,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Occupancy Rate Added;">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/RingEffectView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/availibility_ring_menu_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/close_ring_menu_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/id_ring_menu_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/main_menu_ring_menu_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/my_spaces_ring_menu_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/profile_ring_menu_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/circle_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/buttons.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment=":(">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Company_Plan_Selelector_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Company_Plan_Selelector_Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Main_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Main_Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/availibility_ring_menu_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_availibility.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/close_ring_menu_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_close.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/id_ring_menu_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_id.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/main_menu_ring_menu_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_main_page.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/my_spaces_ring_menu_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_myspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/profile_ring_menu_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ring_menu_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/mainpage_events.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/mainpage_events.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/buttons.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/buttons.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,11 +117,49 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ricar\.android\avd\Pixel_7_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ricar\.android\avd\Pixel_7_API_30_2.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjetoSolar" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjetoSolar" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjetoSolar" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProjetoSolar" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,6 +177,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -189,13 +218,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DEBUGGABLE_DEVICE": "Pixel_6a_API_30 [emulator-5554]",
+    "DEBUGGABLE_DEVICE": "Pixel_7_API_30_2 [emulator-5556]",
     "DEBUGGABLE_PROCESS": "pt.iade.ricardodiasjoaocoelho.projetosolar",
     "DEBUGGER_ID": "Auto",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHOW_ALL_PROCESSES": "false",
+    "android-custom-viewC:/Users/ricar/AppData/Local/Android/Sdk/sources/android-34/android/view/View.java_SELECTED": "View",
     "android-custom-viewC:/Users/ricar/OneDrive/Desktop/IADE/Projeto movel/projetoSolar/Android/src/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java_SELECTED": "CircleMenuView",
     "android-custom-viewC:/Users/ricar/OneDrive/Desktop/IADE/Projeto movel/projetoSolar/Android/src/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/RingEffectView.java_SELECTED": "RingEffectView",
     "cf.first.check.clang-format": "false",
@@ -337,7 +367,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="circular-menu_BAD_ONE" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -348,5 +390,36 @@
     <MESSAGE value="Remember LogIn working;" />
     <MESSAGE value="Register now verifies input;" />
     <option name="LAST_COMMIT_MESSAGE" value="Register now verifies input;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java</url>
+          <line>531</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java</url>
+          <line>391</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java</url>
+          <line>396</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java</url>
+          <line>246</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/CircleMenuView.java</url>
+          <line>314</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
