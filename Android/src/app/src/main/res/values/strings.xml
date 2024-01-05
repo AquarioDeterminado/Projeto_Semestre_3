@@ -46,6 +46,7 @@
 
 
     <!-- Main/Event Page -->
+    <string name="mainpage_datePicker_label">Events</string>
     <string name="mainpage_events_events_scroll_descrip">Current Events</string>
     <string name="mainpage_events_space_info_button">See More …</string>
     <string name="mainpage_events_datapicker_today">Today...</string>
@@ -54,6 +55,7 @@
     <string name="mainpage_events_datapicker_next">Up Next...</string>
     <string name="mainpage_events_show_me_more_bttn">Show Me More!</string>
     <string name="mainpage_spaces_show_me_more_bttn">More information</string>
+    <string name="mainpage_spaces_title">Coworks near you</string>
 
     <!-- Main/MySpaces Page -->
     <string name="myspaces_page_title">My Spaces</string>
