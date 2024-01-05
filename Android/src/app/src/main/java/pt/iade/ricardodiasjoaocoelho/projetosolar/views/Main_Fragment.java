@@ -100,9 +100,9 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
         private final Button eventRSVP;
         public ViewHolder(View view) {
             super(view);
-            eventDate = view.findViewById(R.id.mainpage_event_row_item_start_time);
+            eventDate = view.findViewById(R.id.mainpage_event_row_item_name1);
             eventImage = view.findViewById(R.id.mainpage_event_row_item_img);
-            eventTitle = view.findViewById(R.id.mainpage_event_row_item_title);
+            eventTitle = view.findViewById(R.id.mainpage_event_row_item_name2);
             eventRSVP = view.findViewById(R.id.mainpage_event_row_item_more_button);
         }
 
