@@ -50,7 +50,8 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        ArrayList<Event> eventList = EventController.getUserEvents();
+        ArrayList<Event> eventList = new ArrayList<>();
+        //eventList = EventController.getUserEvents();
         CalendarItem[] calendarDataSet = CalendarItem.makeCalendarDataSet(eventList);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
