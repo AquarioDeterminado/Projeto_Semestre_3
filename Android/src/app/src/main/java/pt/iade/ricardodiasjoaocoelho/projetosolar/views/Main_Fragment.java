@@ -1,6 +1,5 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
-import static androidx.core.content.ContextCompat.startActivity;
 import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController.getCurrentEvents;
 import static pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController.getNearSpaces;
 import androidx.activity.result.ActivityResultLauncher;
@@ -16,17 +15,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
+import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.adapters.EventListAdapter;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.adapters.SpaceListAdapter;
 
 
 public class Main_Fragment extends Fragment {
+    
+    Activity currentActivity;
+    
+    private RecyclerView eventsList;
+    private RecyclerView spacesList;
+    
     public Main_Fragment() {
         super(R.layout.mainpage_events);
     }
@@ -34,44 +39,32 @@ public class Main_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        currentActivity = getActivity();
         View view = inflater.inflate(R.layout.main_fragment, container, false);
 
         /* ---  Widgets --- */
         //Spinner datePicker = view.findViewById(R.id.mainpage_datePicker);
 
-        RecyclerView eventsList = view.findViewById(R.id.mainpage_events_list);
-        RecyclerView spacesList = view.findViewById(R.id.mainpage_spaces_list);
-
+        eventsList = view.findViewById(R.id.mainpage_events_list);
+        spacesList = view.findViewById(R.id.mainpage_spaces_list);
 
         /* --- Navigation --- */
         //MainPage -> Event
-        ActivityResultLauncher<Intent> eventLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent data = result.getData();
-                        String message = data.getStringExtra("message");
-                        Snackbar confirmation = Snackbar.make(view , message, Snackbar.LENGTH_LONG);
-                        confirmation.setText(message);
-                        confirmation.show();
-                    }
-                });
+
+        /* --- Get User Info--- */
+        Intent intent = getActivity().getIntent();
+        int userId = intent.getIntExtra("userID", 0);
 
         /* --- Set Events --- */
-        //Adapter
-        Event[] currentEvents = getCurrentEvents(User_Info.getUserById(1,"")).toArray(new Event[0]);
-        EventListAdapter enventListAdapter = new EventListAdapter(currentEvents);
-        enventListAdapter.setEventLauncher(eventLauncher);
-        eventsList.setAdapter(enventListAdapter);
-
-        //Layout Manager
-        LinearLayoutManager eventLayoutManager = new LinearLayoutManager(getContext());
-        eventLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        eventsList.setLayoutManager(eventLayoutManager);
-
-        eventsList.setHasFixedSize(true);
+        setEventsRecycleView(userId);
 
         /* --- Set Spaces --- */
+        setSpacesRecycleView(userId);
+
+        return view;
+    }
+
+    private void setSpacesRecycleView(int user_id) {
         //Adapter
         CoworkSpace[] nearCoworkSpaces = getNearSpaces().toArray(new CoworkSpace[0]);
         SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearCoworkSpaces);
@@ -82,125 +75,62 @@ public class Main_Fragment extends Fragment {
         spacesList.setLayoutManager(spaceLayoutManager);
 
         spacesList.setHasFixedSize(true);
-
-        return view;
-    }
-}
-
-class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder> {
-    private Event[] eventDataSet;
-    private ActivityResultLauncher<Intent> eventLauncher;
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private final TextView eventDate;
-
-        private final ImageView eventImage;
-        private final TextView eventTitle;
-        private final Button eventRSVP;
-        public ViewHolder(View view) {
-            super(view);
-            eventDate = view.findViewById(R.id.mainpage_event_row_item_name1);
-            eventImage = view.findViewById(R.id.mainpage_event_row_item_img);
-            eventTitle = view.findViewById(R.id.mainpage_event_row_item_name2);
-            eventRSVP = view.findViewById(R.id.mainpage_event_row_item_more_button);
-        }
-
-    }
-    public EventListAdapter(Event[] eventDataSet) {
-         this.eventDataSet = eventDataSet;
+        updateSpaceList(user_id);
     }
 
-    @Override
-    public EventListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.mainpage_event_row_item, parent, false);
-
-        return new ViewHolder(view);
+    private void updateSpaceList(int userId) {
     }
 
-    @Override
-    public void onBindViewHolder(EventListAdapter.ViewHolder holder, int position) {
-        /* --- Set Widgets --- */
-        holder.eventTitle.setText(eventDataSet[position].getTitle());
-        holder.eventDate.setText(eventDataSet[position].getStartTime().toString());
-        //holder.eventImage.setImageResource(eventDataSet[position].getImage());
+    private void setEventsRecycleView(int userId) {
+        ArrayList<Event> currentEvents = new ArrayList<>();
 
-        holder.eventRSVP.setText((R.string.mainpage_events_show_me_more_bttn));
-        /* --- Navigation --- */
-        holder.eventRSVP.setOnClickListener(new View.OnClickListener() {
+        EventListAdapter eventListAdapter = new EventListAdapter(currentEvents.toArray(new Event[0]));
+        ActivityResultLauncher<Intent> eventLauncher = getLauncher(getView());
+        eventListAdapter.setEventLauncher(eventLauncher);
+        eventsList.setAdapter(eventListAdapter);
+
+        //Layout Manager
+        LinearLayoutManager eventLayoutManager = new LinearLayoutManager(getContext());
+        eventLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        eventsList.setLayoutManager(eventLayoutManager);
+
+        eventsList.setHasFixedSize(true);
+
+        updateEventList(eventLauncher, userId);
+    }
+
+    private void updateEventList(ActivityResultLauncher<Intent> eventLauncher, int userId) {
+        currentActivity.runOnUiThread(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext() , Event_RSVP.class);
-                int eventId = eventDataSet[position].getId();
-                intent.putExtra("eventID", eventId);
-                eventLauncher.launch(intent);
+            public void run() {
+                getCurrentEvents(userId, new EventController.ReturnEvents() {
+                    @Override
+                    public void response(Event[] events) {
+                        EventListAdapter enventListAdapter = new EventListAdapter(events);
+                        enventListAdapter.setEventLauncher(eventLauncher);
+                        eventsList.swapAdapter(enventListAdapter, true);
+                    }
+                });
             }
         });
     }
 
-    public void setEventLauncher(ActivityResultLauncher<Intent> eventLauncher) {
-        this.eventLauncher = eventLauncher;
-    }
-
-    @Override
-    public int getItemCount() {
-        return eventDataSet.length;
-    }
-}
-
-class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder> {
-    private CoworkSpace[] coworkSpaceDataSet;
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private final TextView spaceName;
-        private final ImageView spaceImage;
-        private final Button spaceBttn;
-
-        public ViewHolder(View view) {
-            super(view);
-            spaceName = view.findViewById(R.id.space_row_item_name);
-            spaceImage = view.findViewById(R.id.space_row_item_img);
-            spaceBttn = view.findViewById(R.id.space_row_item_button);
-        }
-
-    }
-    SpaceListAdapter (CoworkSpace[] coworkSpaceDataSet) {
-         this.coworkSpaceDataSet = coworkSpaceDataSet;
-    }
-
-    @Override
-    public SpaceListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.space_row_item, parent, false);
-
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(SpaceListAdapter.ViewHolder holder, int position) {
-        /* --- Set Widgets --- */
-        holder.spaceName.setText(coworkSpaceDataSet[position].getName());
-        //holder.spaceImage.setImageResource(spaceDataSet[position].getImage());
-
-        holder.spaceBttn.setText((R.string.mainpage_spaces_show_me_more_bttn));
-        /* --- Navigation --- */
-        holder.spaceBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext() , Space_Info.class);
-                String eventId = coworkSpaceDataSet[position].getId();
-                intent.putExtra("eventID", eventId);
-                startActivity(v.getContext(), intent, null);
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return coworkSpaceDataSet.length;
+    @NonNull
+    private ActivityResultLauncher<Intent> getLauncher(View view) {
+        ActivityResultLauncher<Intent> eventLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        String message = data.getStringExtra("message");
+                        Snackbar confirmation = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
+                        confirmation.setText(message);
+                        confirmation.show();
+                    }
+                });
+        return eventLauncher;
     }
 }
+
 
 
