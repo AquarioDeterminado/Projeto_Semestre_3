@@ -23,7 +23,7 @@ public class Entry_Auto_LogIn extends AppCompatActivity {
                 LogInController logInController = LogInController.newAutoLogInController(getApplicationContext());
                 if (logInController.readyToLogIn()) {
                     Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                    intent.putExtra("user", logInController.getUser());
+                    intent.putExtra("userID", logInController.getUser().getId());
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(getApplicationContext(), LogIn.class);
