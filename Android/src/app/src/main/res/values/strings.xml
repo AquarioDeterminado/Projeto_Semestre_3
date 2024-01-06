@@ -2,8 +2,8 @@
     <!-- App Info -->
     <string name="app_name">ProjetoSolar</string>
 
-    <!-- Utils -->
-    <string name="utils_back_button_icon"> &lt; </string>
+    <!-- Configs -->
+    <string name="preference_file_key"> &lt; </string>
 
     <!-- Nav Bar \ -->
     <string name="nav_home_page">Home</string>
@@ -11,7 +11,6 @@
     <string name="nav_availability">Availability</string>
     <string name="nav_id_page">ID</string>
     <string name="nav_profile_page">Profile</string>
-
 
     <!-- LogIn Entry Page -->
     <string name="login_entry_company_img_descript">logo</string>
@@ -43,7 +42,6 @@
 
     <!-- Id Page -->
     <string name="id_page_card_img">Id Card</string>
-
 
     <!-- Main/Event Page -->
     <string name="mainpage_datePicker_label">Events</string>
