@@ -15,6 +15,7 @@ public class MainPage extends AppCompatActivity {
     Usr_Subscriptions usrSpacesFragment = new Usr_Subscriptions();
     Company_Plan_Selelector_Fragment planSelectorFragment = new Company_Plan_Selelector_Fragment();
     Cowork_Id coworkIdFragment = new Cowork_Id();
+    Profile_Fragment profileFragment = new Profile_Fragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,7 @@ public class MainPage extends AppCompatActivity {
         } else if (id == 3) {
             setFragment(R.id.mainpage_fragment_frame, coworkIdFragment);
         } else if (id == 4) {
-            Intent intent = new Intent(MainPage.this, Profile.class);
-            startActivity(intent);
+            setFragment(R.id.mainpage_fragment_frame, profileFragment);
         } else throw new IllegalStateException("Unexpected value: " + id);
     }
     private void setFragment(int id , Fragment fragment) {

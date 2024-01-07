@@ -32,7 +32,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.profile_fragment);
 
         // Find the settings button by its ID
         Button settingsButton = findViewById(R.id.profile_settings_button);
