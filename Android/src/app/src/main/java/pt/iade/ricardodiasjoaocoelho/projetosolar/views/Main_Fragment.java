@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.CoworkSpaceController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
@@ -67,8 +68,8 @@ public class Main_Fragment extends Fragment {
 
     private void setSpacesRecycleView(int user_id) {
         //Adapter
-        CoworkSpace[] nearCoworkSpaces = getNearSpaces().toArray(new CoworkSpace[0]);
-        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearCoworkSpaces);
+        ArrayList<CoworkSpace> nearCoworkSpaces = new ArrayList<>();
+        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(nearCoworkSpaces.toArray(new CoworkSpace[0]));
         spacesList.setAdapter(spaceListAdapter);
 
         //Layout Manager
@@ -80,6 +81,18 @@ public class Main_Fragment extends Fragment {
     }
 
     private void updateSpaceList(int userId) {
+        getNearSpaces(userId, new CoworkSpaceController.ReturnCoworkSpaces() {
+            @Override
+            public void response(ArrayList<CoworkSpace> spaces) {
+                currentActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        SpaceListAdapter spaceListAdapter = new SpaceListAdapter(spaces.toArray(new CoworkSpace[0]));
+                        spacesList.swapAdapter(spaceListAdapter, true);
+                    }
+                });
+            }
+        });
     }
 
     private void setEventsRecycleView(int userId) {

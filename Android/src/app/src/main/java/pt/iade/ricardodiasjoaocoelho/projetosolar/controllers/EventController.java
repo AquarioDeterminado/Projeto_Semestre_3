@@ -8,12 +8,12 @@ import com.google.gson.JsonArray;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
 
 public class EventController {
+
+    private static final String BASE_URL = WebRequest.LOCALHOST + "/events";
 
     public static void getCurrentEvents(int userId, ReturnEvents returnEvents) {
         ArrayList<Event> items = new ArrayList<>();
@@ -25,7 +25,7 @@ public class EventController {
                     try {
                         // This is a brand new object and must be a INSERT in the database.
                         WebRequest req = new WebRequest(new URL(
-                                WebRequest.LOCALHOST + "/getAvailableEvents"));
+                                BASE_URL + "/getAvailableEvents"));
                         Log.i("WebRequest", "Post made to API: Events for user");
                         Id id = new Id(userId);
                         String response = req.performPostRequest(id);
@@ -58,7 +58,7 @@ public class EventController {
                     try {
                         // This is a brand new object and must be a INSERT in the database.
                         WebRequest req = new WebRequest(new URL(
-                                WebRequest.LOCALHOST + "/Solar/events/getRSVP"));
+                                BASE_URL + "/getUserEvents"));
                         Log.i("WebRequest", "Post made to API: Events RSVP'ed by user");
                         String response = req.performPostRequest(userId);
 
