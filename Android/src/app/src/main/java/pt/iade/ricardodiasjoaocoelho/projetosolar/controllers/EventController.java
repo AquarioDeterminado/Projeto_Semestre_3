@@ -1,13 +1,15 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 
 import android.util.Log;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+
 import java.net.URL;
 import java.util.ArrayList;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
 
 public class EventController {
@@ -59,7 +61,8 @@ public class EventController {
                         WebRequest req = new WebRequest(new URL(
                                 BASE_URL + "/getUserEvents"));
                         Log.i("WebRequest", "Post made to API: Events RSVP'ed by user");
-                        String response = req.performPostRequest(userId);
+                        Id id = new Id(userId);
+                        String response = req.performPostRequest(id);
 
                         // Get the new ID from the server's response.
                         JsonArray availableEvents = new Gson().fromJson(response, JsonArray.class);

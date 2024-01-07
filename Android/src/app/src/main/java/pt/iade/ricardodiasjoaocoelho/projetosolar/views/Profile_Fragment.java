@@ -35,7 +35,7 @@ public class Profile_Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         Intent intent = getActivity().getIntent();
-        int userId = intent.getIntExtra("userId", 0);
+        int userId = intent.getIntExtra("userID", 0);
 
         //TextViews
         TextView name = view.findViewById(R.id.profile_name_display);
