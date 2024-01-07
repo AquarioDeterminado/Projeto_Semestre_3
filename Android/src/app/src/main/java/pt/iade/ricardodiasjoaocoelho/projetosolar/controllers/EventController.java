@@ -1,8 +1,10 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 
+import java.net.URL;
 import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
 
 public class EventController {
 
