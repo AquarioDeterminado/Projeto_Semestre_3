@@ -1,6 +1,8 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +23,8 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.views.adapters.LocationListAda
 
 public class Company_Plan_Selelector_Fragment extends Fragment {
 
+    private Activity currentActiviy = getActivity();
+
     public Company_Plan_Selelector_Fragment() { super(R.layout.activity_plan_selelector_location); }
 
 
@@ -28,18 +32,20 @@ public class Company_Plan_Selelector_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_plan_selelector_location, container, false);
+        Intent intent = getActivity().getIntent();
+        int userId = intent.getIntExtra("userID", 0);
 
         /* ---  Widgets --- */
         RecyclerView locationRecycle = view.findViewById(R.id.plan_selector_company_list);
 
         /* --- Set Events --- */
         //Adapter
-        setSpacesRecycleView(locationRecycle);
+        setSpacesRecycleView(userId, locationRecycle);
 
         return view;
     }
 
-    private void setSpacesRecycleView(RecyclerView locationRecycle) {
+    private void setSpacesRecycleView(int userId, RecyclerView locationRecycle) {
         ArrayList<Location> locations = new ArrayList<>();
         Location[] locationsArray = locations.toArray(new Location[0]);
         LocationListAdapter adapter = new LocationListAdapter(locationsArray);
@@ -51,7 +57,18 @@ public class Company_Plan_Selelector_Fragment extends Fragment {
 
         locationRecycle.setHasFixedSize(true);
 
-        LocationController.getUserAccessibleLocations();
+        LocationController.getUserAccessibleLocations(userId, new LocationController.ReturnLocations() {
+            @Override
+            public void response(ArrayList<Location> locations) {
+                currentActiviy.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.setLocations(locations);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
     }
 
 }
