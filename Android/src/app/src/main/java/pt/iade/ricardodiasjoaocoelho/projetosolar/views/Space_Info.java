@@ -20,10 +20,10 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
 public class Space_Info extends AppCompatActivity {
 
-    private static String id;
+    private static int id;
     private static String name;
 
-    public static String getId() { return id; }
+    public static int getId() { return id; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class Space_Info extends AppCompatActivity {
         setContentView(R.layout.activity_space_info);
 
         /* --- Get Space --- */
-        id = getIntent().getStringExtra("id");
+        id = getIntent().getIntExtra("id", 0);
         CoworkSpace coworkSpace = new CoworkSpace(id, name);
 
         /* --- Widgets --- */

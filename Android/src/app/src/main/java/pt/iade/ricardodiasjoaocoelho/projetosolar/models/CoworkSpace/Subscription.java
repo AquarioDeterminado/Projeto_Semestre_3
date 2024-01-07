@@ -30,12 +30,12 @@ public class Subscription implements Parcelable {
         if(userId == 1) {
             if (id.equals("1")){
                 title = "All Day, Every Day";
-                space = new CoworkSpace("1", "Space1");
+                space = new CoworkSpace(1, "Space1");
                 Instant instant1 = Instant.parse("2021-05-01T10:15:30.00Z");
                 nextRenewalDate = Date.from(instant1);
             } else if (id.equals("2")){
                 title = "One time a month";
-                space = new CoworkSpace("2", "Space2");
+                space = new CoworkSpace(2, "Space2");
                 Instant instant2 = Instant.parse("2026-02-01T10:15:30.00Z");
                 nextRenewalDate = Date.from(instant2);
             }

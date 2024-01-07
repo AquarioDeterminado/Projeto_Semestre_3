@@ -9,8 +9,8 @@ public class SpaceController {
     static public ArrayList<CoworkSpace> getNearSpaces()
     {
         ArrayList<CoworkSpace> spaces = new ArrayList<>();
-        spaces.add(new CoworkSpace("1", "Space1"));
-        spaces.add(new CoworkSpace("2", "Space2"));
+        spaces.add(new CoworkSpace(1, "Space1"));
+        spaces.add(new CoworkSpace(2, "Space2"));
         return spaces;
     }
 }

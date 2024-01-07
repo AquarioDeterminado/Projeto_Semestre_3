@@ -60,9 +60,12 @@ public class WebRequest {
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
             result = readStreamToString(in);
             Log.i("WebRequest-Response", result);
+        } catch (Exception e) {
+            Log.e("WebRequest", e.toString());
         } finally {
             urlConnection.disconnect();
         }
+
 
         return result;
     }

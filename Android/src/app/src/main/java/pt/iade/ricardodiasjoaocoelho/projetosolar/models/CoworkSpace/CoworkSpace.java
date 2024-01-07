@@ -8,11 +8,11 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
 public class CoworkSpace implements Parcelable {
 
-    private final String id;
+    private final int id;
     private String name;
     private static ImageView logo;
 
-    public CoworkSpace(String id, String name)
+    public CoworkSpace(int id, String name)
     {
         this.id = id;
         this.name = name;
@@ -26,7 +26,7 @@ public class CoworkSpace implements Parcelable {
         CoworkSpace.logo = logo;
     }
 
-    public String getId()
+    public int getId()
     {
         return id;
     }
@@ -52,7 +52,7 @@ public class CoworkSpace implements Parcelable {
 
     /* --- Parcelable --- */
     public CoworkSpace(android.os.Parcel in) {
-        id = in.readString();
+        id = in.readInt();
         name = in.readString();
     }
 
@@ -75,7 +75,7 @@ public class CoworkSpace implements Parcelable {
 
     @Override
     public void writeToParcel(android.os.Parcel dest, int flags) {
-        dest.writeString(id);
+        dest.writeInt(id);
         dest.writeString(name);
     }
 }

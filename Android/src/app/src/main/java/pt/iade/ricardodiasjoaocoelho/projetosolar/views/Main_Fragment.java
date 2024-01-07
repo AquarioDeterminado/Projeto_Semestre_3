@@ -53,7 +53,8 @@ public class Main_Fragment extends Fragment {
 
         /* --- Get User Info--- */
         Intent intent = getActivity().getIntent();
-        int userId = intent.getIntExtra("userID", 0);
+        //int userId = intent.getIntExtra("userID", 0); //TODO replace
+        int userId = 1;
 
         /* --- Set Events --- */
         setEventsRecycleView(userId);
@@ -100,20 +101,24 @@ public class Main_Fragment extends Fragment {
     }
 
     private void updateEventList(ActivityResultLauncher<Intent> eventLauncher, int userId) {
-        currentActivity.runOnUiThread(new Runnable() {
+
+        getCurrentEvents(userId, new EventController.ReturnEvents() {
             @Override
-            public void run() {
-                getCurrentEvents(userId, new EventController.ReturnEvents() {
+            public void response(ArrayList<Event> events) {
+                currentActivity.runOnUiThread(new Runnable() {
                     @Override
-                    public void response(Event[] events) {
-                        EventListAdapter enventListAdapter = new EventListAdapter(events);
+                    public void run() {
+                        EventListAdapter enventListAdapter = new EventListAdapter(events.toArray(new Event[0]));
                         enventListAdapter.setEventLauncher(eventLauncher);
                         eventsList.swapAdapter(enventListAdapter, true);
                     }
                 });
+
             }
         });
     }
+
+
 
     @NonNull
     private ActivityResultLauncher<Intent> getLauncher(View view) {

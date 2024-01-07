@@ -16,8 +16,9 @@ public class Event implements Parcelable {
     private Date initDate;
     private Date endDate;
     private String descrip;
-    private int spaceID;
     private String location;
+    private boolean full;
+    private boolean reachedMin;
 
     public Event(int id) {
         this.id = id;
@@ -35,7 +36,6 @@ public class Event implements Parcelable {
             endDate = cal.getTime();
 
             descrip = "Event Description";
-            spaceID = 1;
             location = "Event Location";
         }
         else if (id == 2)
@@ -51,7 +51,6 @@ public class Event implements Parcelable {
             endDate = cal.getTime();
 
             descrip = "Event Description 2";
-            spaceID = 2;
             location = "Event Location 2";
         }
     }
@@ -90,11 +89,14 @@ public class Event implements Parcelable {
     }
 
     protected Event(Parcel in) {
-        id = in.readInt();
-        title = in.readString();
-        descrip = in.readString();
-        spaceID = in.readInt();
-        location = in.readString();
+        this.id = in.readInt();
+        this.title = in.readString();
+        this.descrip = in.readString();
+        this.initDate = new Date(in.readLong());
+        this.endDate = new Date(in.readLong());
+        this.location = in.readString();
+        this.full = in.readInt() == 1;
+        this.reachedMin = in.readInt() == 1;
     }
 
     public static final Creator<Event> CREATOR = new Creator<Event>() {
@@ -116,7 +118,8 @@ public class Event implements Parcelable {
         dest.writeLong(initDate.getTime());
         dest.writeLong(endDate.getTime());
         dest.writeString(descrip);
-        dest.writeInt(spaceID);
         dest.writeString(location);
+        dest.writeInt(full ? 1 : 0);
+        dest.writeInt(reachedMin ? 1 : 0);
     }
 }
