@@ -15,6 +15,16 @@
           <theme>@style/Theme.ProjetoSolar</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_change_password.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_cowork_id.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_coworking_floor_plant_availabibity.xml">
         <config>
           <theme>@style/Theme.ProjetoSolar</theme>
@@ -41,6 +51,26 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_plan_selelector_location.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_plan_subscript.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_settings_page.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_space_info.xml">
         <config>
           <theme>@style/Theme.ProjetoSolar</theme>
         </config>
@@ -75,6 +105,11 @@
           <theme>@style/Theme.ProjetoSolar</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/mainpage_event_row_item.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/mainpage_events.xml">
         <config>
           <theme>@style/Theme.ProjetoSolar</theme>
@@ -86,6 +121,36 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/qr_camera_activity.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/signup_user_info.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/signup_user_password.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/signup_usr.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/space_row_item.xml">
+        <config>
+          <theme>@style/Theme.ProjetoSolar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/sub_row_item.xml">
         <config>
           <theme>@style/Theme.ProjetoSolar</theme>
         </config>
@@ -107,10 +172,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Neew colors added and fragment creation for profile on the way">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/avatar_profile_picture.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile_Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +183,9 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ricar\.android\avd\Pixel_7_API_30_2.avd]" />
   <component name="ExternalProjectsData">

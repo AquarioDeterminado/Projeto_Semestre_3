@@ -8,6 +8,7 @@ import com.google.gson.JsonArray;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
 
