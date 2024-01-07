@@ -39,16 +39,8 @@ public class Profile extends AppCompatActivity {
 
         RecyclerView calendarView = findViewById(R.id.profile_calendar);
 
-        // Set a click listener for the settings button
-        Context context = this;
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Start the SettingsActivity when the button is clicked
-                Intent myintent = new Intent(context, Settings_Page.class);
-                startActivity(myintent);
-            }
-        });
+
+
 
         ArrayList<Event> eventList = EventController.getUserEvents();
         eventList.sort(new Comparator<Event>() {
@@ -59,95 +51,6 @@ public class Profile extends AppCompatActivity {
                 else return 0;
             }
         });
-
-        CalendarItem[] calendarDataSet = CalendarItem.makeCalendarDataSet(eventList);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        calendarView.setLayoutManager(layoutManager);
-
-        CalendarAdapter adapter = new CalendarAdapter(calendarDataSet);
-        calendarView.setAdapter(adapter);
-    }
-}
-
-class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.ViewHolder> {
-
-    CalendarItem[] calendarDataSet;
-
-    private final int EVENT = 1;
-    private final int DAY = 0;
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private TextView title;
-        private TextView hour;
-        private  TextView day;
-
-        private ConstraintLayout background;
-
-        public ViewHolder(@NonNull View view) {
-            super(view);
-            title = view.findViewById(R.id.calendar_event_row_item_title);
-            hour = view.findViewById(R.id.calendar_envent_row_item_starting_hour);
-            day = view.findViewById(R.id.calendar_day_row_item_day);
-            background = view.findViewById(R.id.calendar_event_row_item_background);
-        }
-    }
-
-    public CalendarAdapter(CalendarItem[] calendarDataSet) {this.calendarDataSet = calendarDataSet;}
-
-    @NonNull
-    @Override
-    public CalendarAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view;
-
-        if(viewType == DAY) view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_day_row_item, parent, false);
-        else if (viewType == EVENT)  view = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_event_row_item, parent, false);
-        else view = null;
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if(isEvent(position)) return EVENT;
-        else return DAY;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(!isEvent(position)) {
-            Calendar calendar = GregorianCalendar.getInstance();
-            calendar.setTime(calendarDataSet[position].initDate);
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
-            holder.day.setText(sdf.format(calendar.getTime()));
-        }
-        else {
-            holder.title.setText(calendarDataSet[position].title);
-
-            Calendar calendar = GregorianCalendar.getInstance();
-            calendar.setTime(calendarDataSet[position].initDate);
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-            holder.hour.setText(sdf.format(calendar.getTime()));
-
-            holder.background.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Start the SettingsActivity when the button is clicked
-                    Intent eventPage = new Intent(view.getContext(), Event_Page.class);
-                    eventPage.putExtra("event", calendarDataSet[position].event);
-                    view.getContext().startActivity(eventPage);
-                }
-            });
-        }
-    }
-
-    private boolean isEvent(int position) {
-        return calendarDataSet[position].event != null;
-    }
-
-    @Override
-    public int getItemCount() {
-        return calendarDataSet.length;
     }
 }
 

@@ -106,12 +106,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Button working needs to change the change fragment of profile from intent to fragment">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile_Fragment.java" afterDir="false" />
+    <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Neew colors added and fragment creation for profile on the way">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/avatar_profile_picture.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile_Fragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,9 +262,9 @@
       <recent name="pt.iade.ricardodiasjoaocoelho.projetosolar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\drawable" />
       <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\layout" />
       <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\menu" />
-      <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\res\drawable" />
       <recent name="C:\Users\ricar\OneDrive\Desktop\IADE\Projeto movel\projetoSolar\Android\src\app\src\main\java\pt\iade\ricardodiasjoaocoelho\projetosolar\views" />
     </key>
     <key name="android.template.1047134015">
@@ -388,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704645383895</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Neew colors added and fragment creation for profile on the way">
+      <option name="closed" value="true" />
+      <created>1704647797976</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704647797976</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,7 +409,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="circular-menu_BAD_ONE" />
+                        <option value="circular-menu_real_one" />
                       </list>
                     </value>
                   </entry>
@@ -420,7 +427,8 @@
     <MESSAGE value="Register now verifies input;" />
     <MESSAGE value="Occupancy Rate Added;" />
     <MESSAGE value="Button working needs to change the change fragment of profile from intent to fragment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Button working needs to change the change fragment of profile from intent to fragment" />
+    <MESSAGE value="Neew colors added and fragment creation for profile on the way" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neew colors added and fragment creation for profile on the way" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
