@@ -8,6 +8,7 @@ import com.google.gson.JsonArray;
 import java.net.URL;
 import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
 
 public class CoworkSpaceController {
@@ -44,7 +45,7 @@ public class CoworkSpaceController {
         void response(ArrayList<CoworkSpace> spaces);
     }
 
-    public interface ReturnCoweorkSpace {
+    public interface ReturnCoworkSpace {
         void response(CoworkSpace coworkSpace);
     }
 }

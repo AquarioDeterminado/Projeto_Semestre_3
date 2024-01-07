@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage;
 
 
 import static androidx.core.content.ContextCompat.startActivity;
@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LocationController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Location;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Floor_Plan_Availabibity;
 
 public class Company_Plan_Selelector_Fragment extends Fragment {
 

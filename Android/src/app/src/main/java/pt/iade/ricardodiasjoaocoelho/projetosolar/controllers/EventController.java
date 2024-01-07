@@ -1,11 +1,9 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.controllers;
 
 import android.util.Log;
-
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -91,10 +89,3 @@ public class EventController {
     }
 }
 
-class Id implements Serializable {
-    int id;
-
-    public Id(int id) {
-        this.id = id;
-    }
-}

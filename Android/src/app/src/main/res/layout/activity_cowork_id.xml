@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.Cowork_Id">
+    tools:context=".views.MainPage.Cowork_Id">
 
     <ImageView
         android:id="@+id/cowork_id_card"

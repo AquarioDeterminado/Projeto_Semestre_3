@@ -51,13 +51,13 @@
             android:name=".views.Settings_Page"
             android:exported="false" />
         <activity
-            android:name=".views.Company_Plan_Selelector_Fragment"
+            android:name=".views.MainPage.Company_Plan_Selelector_Fragment"
             android:exported="false" />
         <activity
             android:name=".views.Subscription_Info"
             android:exported="false" />
         <activity
-            android:name=".views.Usr_Subscriptions"
+            android:name=".views.MainPage.Usr_Subscriptions"
             android:exported="false" />
         <activity
             android:name=".views.SignUp.Signup_User"
@@ -75,16 +75,16 @@
             android:name=".views.Email_Recovery"
             android:exported="false" />
         <activity
-            android:name=".views.Cowork_Id"
+            android:name=".views.MainPage.Cowork_Id"
             android:exported="false" />
         <activity
             android:name=".views.LogIn"
             android:exported="false"/>
         <activity
-            android:name=".views.MainPage"
+            android:name=".views.MainPage.MainPage"
             android:exported="false" />
         <activity
-            android:name=".views.Profile"
+            android:name=".views.MainPage.Profile"
             android:exported="false" />
     </application>
 
