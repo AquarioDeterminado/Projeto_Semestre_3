@@ -2,10 +2,8 @@ package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
-import com.ramotion.circlemenu.CircleMenuView;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
 public class MainPage extends AppCompatActivity {
@@ -27,29 +25,29 @@ public class MainPage extends AppCompatActivity {
         circleMenu = findViewById(R.id.circle_menu);
         circleMenu.setEventListener(new CircleMenuView.EventListener() {
             @Override
-            public void onButtonLongClickAnimationEnd(@NonNull CircleMenuView view, int index) {
+            public void onButtonLongClickAnimationStart(@NonNull CircleMenuView view, int index) {
                 changeFragment(index);
             }
             @Override
-            public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
+            public void onButtonClickAnimationStart(@NonNull CircleMenuView view, int index) {
                 changeFragment(index);
             }
         });
     }
     private void changeFragment(int id) {
-            if (id == 0) {
-                setFragment(R.id.mainpage_fragment_frame, mainFragment);
-            } else if (id == 1) {
-                setFragment(R.id.mainpage_fragment_frame, usrSpacesFragment);
-            } else if (id == 2) {
-                setFragment(R.id.mainpage_fragment_frame, planSelectorFragment);
-            } else if (id == 3) {
-                setFragment(R.id.mainpage_fragment_frame, coworkIdFragment);
-            } else if (id == 4) {
-                Intent intent = new Intent(MainPage.this, Profile.class);
-                startActivity(intent);
-            } else throw new IllegalStateException("Unexpected value: " + id);
-        }
+        if (id == 0) {
+            setFragment(R.id.mainpage_fragment_frame, mainFragment);
+        } else if (id == 1) {
+            setFragment(R.id.mainpage_fragment_frame, usrSpacesFragment);
+        } else if (id == 2) {
+            setFragment(R.id.mainpage_fragment_frame, planSelectorFragment);
+        } else if (id == 3) {
+            setFragment(R.id.mainpage_fragment_frame, coworkIdFragment);
+        } else if (id == 4) {
+            Intent intent = new Intent(MainPage.this, Profile.class);
+            startActivity(intent);
+        } else throw new IllegalStateException("Unexpected value: " + id);
+    }
     private void setFragment(int id , Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(id, fragment).commit();
     }

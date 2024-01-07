@@ -61,7 +61,7 @@ public class RingEffectView extends View {
         return mAngle;
     }
 
-    public void setAngle(@FloatRange(from = 0.0, to = 90.0) float angle) {
+    public void setAngle(@FloatRange(from = 0.0, to = 360.0) float angle) {
         final float diff = angle - mAngle;
         final int stepCount = (int) (diff / STEP_DEGREE);
         final float stepMod = diff % STEP_DEGREE;
@@ -90,16 +90,16 @@ public class RingEffectView extends View {
         return mStartAngle;
     }
 
-    public void setStartAngle(@FloatRange(from = 0.0, to = 90.0) float startAngle) {
+    public void setStartAngle(@FloatRange(from = 0.0, to = 360.0) float startAngle) {
         mStartAngle = startAngle;
         mAngle = 0;
 
-        final float sw = mPaint.getStrokeWidth() * 0.5f;
+        final float sw = mPaint.getStrokeWidth() * 0.6f;
         final float radius = mRadius - sw;
 
         mPath.reset();
-        final float x = (float) Math.cos(Math.toRadians(startAngle)) * radius;
-        final float y = (float) Math.sin(Math.toRadians(startAngle)) * radius;
+        final float y = (float) Math.cos(Math.toRadians(startAngle)) * radius;
+        final float x = (float) Math.sin(Math.toRadians(startAngle)) * radius;
         mPath.moveTo(x, y);
     }
 
