@@ -1,68 +1,54 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.google.android.material.navigation.NavigationBarView;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class MainPage extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class MainPage extends AppCompatActivity {
 
-    NavigationBarView navBar;
+    CircleMenuView circleMenu;
 
     /* --- Fragments --- */
     Main_Fragment mainFragment = new Main_Fragment();
     Usr_Subscriptions usrSpacesFragment = new Usr_Subscriptions();
     Company_Plan_Selelector_Fragment planSelectorFragment = new Company_Plan_Selelector_Fragment();
-
     Cowork_Id coworkIdFragment = new Cowork_Id();
+    Profile_Fragment profileFragment = new Profile_Fragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainpage_events);
+        setFragment(R.id.mainpage_fragment_frame, mainFragment);
 
-        /* --- Widgets --- */
-
-        navBar = findViewById(R.id.mainpage_bottom_navigator);
-
-
-        /* --- NavBar --- */
-        navBar.setOnItemSelectedListener(this);
-
-        navBar.setSelectedItemId(R.id.nav_home);
-
+        circleMenu = findViewById(R.id.circle_menu);
+        circleMenu.setEventListener(new CircleMenuView.EventListener() {
+            @Override
+            public void onButtonLongClickAnimationStart(@NonNull CircleMenuView view, int index) {
+                changeFragment(index);
+            }
+            @Override
+            public void onButtonClickAnimationStart(@NonNull CircleMenuView view, int index) {
+                changeFragment(index);
+            }
+        });
     }
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home)
-        {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, mainFragment).commit();
-            return true;
-        } else if (id == R.id.nav_spaces) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, usrSpacesFragment).commit();
-            return true;
-        } else if (id == R.id.nav_availability) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, planSelectorFragment).commit();
-            return true;
-        } else if (id == R.id.nav_id) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.mainpage_fragment_frame, coworkIdFragment).commit();
-
-            return true;
-        } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this, Profile.class);
-            startActivity(intent);
-            return true;
-        } else {
-            throw new IllegalStateException("Unexpected value: " + item.getItemId());
-        }
+    private void changeFragment(int id) {
+        if (id == 0) {
+            setFragment(R.id.mainpage_fragment_frame, mainFragment);
+        } else if (id == 1) {
+            setFragment(R.id.mainpage_fragment_frame, usrSpacesFragment);
+        } else if (id == 2) {
+            setFragment(R.id.mainpage_fragment_frame, planSelectorFragment);
+        } else if (id == 3) {
+            setFragment(R.id.mainpage_fragment_frame, coworkIdFragment);
+        } else if (id == 4) {
+            setFragment(R.id.mainpage_fragment_frame, profileFragment);
+        } else throw new IllegalStateException("Unexpected value: " + id);
+    }
+    private void setFragment(int id , Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(id, fragment).commit();
     }
 }
-

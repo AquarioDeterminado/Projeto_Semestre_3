@@ -12,6 +12,7 @@
     <string name="nav_id_page">ID</string>
     <string name="nav_profile_page">Profile</string>
 
+
     <!-- LogIn Entry Page -->
     <string name="login_entry_company_img_descript">logo</string>
     <string name="login_entry_username">Username</string>
@@ -158,5 +159,8 @@
     <string name="idrp_desk_5_code">Desk 5</string>
     <string name="idrp_desk_6_code">Desk 6</string>
     <string name="idrp_desk_reserve_button">Reserve</string>
+
+    <!--- Qr-Camera Page -->
+    <string name="qr_camera_preview_title">Scan a Qr Code</string>
 
 </resources>
