@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
 
 public class LogIn extends AppCompatActivity {
@@ -50,16 +51,26 @@ public class LogIn extends AppCompatActivity {
                 String inputUsername = username_edit.getText().toString();
                 String inputPassword = password_edit.getText().toString();
 
-                logInController.CheckCredentials(inputUsername, inputPassword);
                 if (inputUsername.isEmpty() || inputPassword.isEmpty()) {
                     LogInError("Empty Fields");
-                } else if (logInController.getError().isEmpty()) {
-                    Intent mainPage = new Intent(context, MainPage.class);
-                    mainPage.putExtra("username", logInController.getUser());
-                    logInController.saveLogInInfo(context, inputUsername, inputPassword);
-                    startActivity(mainPage);
-                } else {
+                } else if (!logInController.getError().isEmpty()) {
                     LogInError(logInController.getError());
+
+                } else {
+                    logInController.CheckCredentials(context, inputUsername, inputPassword, new LogInController.ReturnId() {
+                        @Override
+                        public void response(Id id) {
+                            int userId = id.getId();
+                            if (userId > 0) {
+                                Intent mainPage = new Intent(context, MainPage.class);
+                                mainPage.putExtra("userID", id);
+                                logInController.saveLogInInfo(context, inputUsername, inputPassword);
+                                startActivity(mainPage);
+                            } else {
+                                LogInError("Wrong Credentials");
+                            }
+                        }
+                    });
                 }
             }
         });

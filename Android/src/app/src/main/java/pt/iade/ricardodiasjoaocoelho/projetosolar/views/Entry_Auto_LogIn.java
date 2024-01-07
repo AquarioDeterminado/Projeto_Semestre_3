@@ -1,36 +1,35 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
 
 public class Entry_Auto_LogIn extends AppCompatActivity {
-
-    private  ExecutorService loginExecutor = Executors.newSingleThreadExecutor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry_auto_login);
 
-        loginExecutor.execute(new Runnable() {
+        Context context = this;
+
+        LogInController.newAutoLogInController(getApplicationContext(), new LogInController.ReturnId() {
             @Override
-            public void run() {
-                LogInController logInController = LogInController.newAutoLogInController(getApplicationContext());
-                if (logInController.readyToLogIn()) {
-                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                    intent.putExtra("userID", logInController.getUser().getId());
-                    startActivity(intent);
+            public void response(Id id) {
+                Intent intent;
+                if (id.getId() > 0) {
+                    intent = new Intent(context, MainPage.class);
+                    intent.putExtra("userID", id.getId());
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), LogIn.class);
-                    startActivity(intent);
+                    intent = new Intent(context, LogIn.class);
                 }
+
+                context.startActivity(intent);
             }
         });
     }
-
 }

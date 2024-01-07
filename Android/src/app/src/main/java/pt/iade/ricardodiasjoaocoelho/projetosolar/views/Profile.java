@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,9 +20,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 
 public class Profile extends AppCompatActivity {
@@ -161,6 +157,8 @@ class CalendarItem {
 
     //TODO: There are some events that last more than a day, so we need to find a way to show them
     public static CalendarItem[] makeCalendarDataSet(ArrayList<Event> eventList) {
+        if (eventList.isEmpty()) return new CalendarItem[0];
+
         ArrayList<CalendarItem[]> calendarList = new ArrayList<>();
         ArrayList<CalendarItem> dayList = new ArrayList<>();
 
