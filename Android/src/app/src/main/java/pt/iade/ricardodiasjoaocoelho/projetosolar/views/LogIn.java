@@ -15,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage.MainPage;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.SignUp.Signup_User;
 
 public class LogIn extends AppCompatActivity {

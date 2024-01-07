@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.LogInController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage.MainPage;
 
 public class Entry_Auto_LogIn extends AppCompatActivity {
 

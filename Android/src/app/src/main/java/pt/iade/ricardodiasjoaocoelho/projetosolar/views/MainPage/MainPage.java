@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
