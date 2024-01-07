@@ -9,18 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f14cfa3-d595-4783-bda8-a964164ad197" name="Changes" comment="Changed Cowrk id to Int;&#10;CoWorkSpaceInfo in production;">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/Utils/Id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/Utils/LogInInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/adapters/SubsListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/CoworkSpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/CoworkSpaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Entry_Auto_LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Entry_Auto_LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Profile.java" afterDir="false" />
-    </list>
+    <list default="true" id="2f14cfa3-d595-4783-bda8-a964164ad197" name="Changes" comment="Changed Cowrk id to Int;&#10;CoWorkSpaceInfo in production;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +69,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/../.." value="dev" />
+        <entry key="$PROJECT_DIR$/../.." value="subscription" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -95,12 +84,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="events" />
-                    <option name="lastUsedInstant" value="1704483693" />
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1704654801" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1704483692" />
+                    <option name="branchName" value="events" />
+                    <option name="lastUsedInstant" value="1704483693" />
                   </RecentBranch>
                 </list>
               </option>
@@ -235,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704630289968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Auto LogIn Checks API and works;&#10;Log In Checking API but not showing error to user;">
+      <created>1704654792677</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704654792677</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +250,8 @@
     <MESSAGE value="AAA MERGE CONFLICTS;" />
     <MESSAGE value="Started connecting API to EventController;" />
     <MESSAGE value="Changed Cowrk id to Int;&#10;CoWorkSpaceInfo in production;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Cowrk id to Int;&#10;CoWorkSpaceInfo in production;" />
+    <MESSAGE value="Auto LogIn Checks API and works;&#10;Log In Checking API but not showing error to user;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auto LogIn Checks API and works;&#10;Log In Checking API but not showing error to user;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
