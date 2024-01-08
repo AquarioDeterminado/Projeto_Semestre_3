@@ -19,13 +19,11 @@ public class SubsListAdapter extends RecyclerView.Adapter<SubsListAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView spaceName;
         private final TextView subTitle;
         private final ImageView subImage;
         private final Button subMoreInfo;
         public ViewHolder(View view) {
             super(view);
-            spaceName = view.findViewById(R.id.sub_row_item_space_name);
             subTitle = view.findViewById(R.id.sub_row_item_sub);
             subImage = view.findViewById(R.id.sub_row_item_img);
             subMoreInfo = view.findViewById(R.id.sub_row_item_bttn);

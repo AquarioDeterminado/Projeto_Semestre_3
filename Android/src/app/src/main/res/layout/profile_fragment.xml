@@ -28,15 +28,16 @@
 
     <ImageView
         android:id="@+id/profile_avatar_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="35dp"
+        android:background="@android:drawable/ic_dialog_info"
         android:contentDescription="@string/profile_avatar_display"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:srcCompat="@drawable/ic_launcher_foreground" />
+        tools:srcCompat="@drawable/avatar_profile_picture" />
 
     <Button
         android:id="@+id/profile_settings_button"

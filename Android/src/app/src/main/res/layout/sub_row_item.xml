@@ -14,8 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:srcCompat="@drawable/ic_launcher_foreground" />
+        tools:srcCompat="@mipmap/cowork_space_default" />
 
     <Button
         android:id="@+id/sub_row_item_bttn"
@@ -40,13 +39,4 @@
         app:layout_constraintEnd_toStartOf="@+id/sub_row_item_img"
         app:layout_constraintStart_toStartOf="@+id/sub_row_item_img" />
 
-    <TextView
-        android:id="@+id/sub_row_item_space_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/sub_row_item_sub"
-        app:layout_constraintStart_toStartOf="@+id/sub_row_item_sub" />
 </androidx.constraintlayout.widget.ConstraintLayout>
