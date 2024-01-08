@@ -1,13 +1,14 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -20,7 +21,7 @@ public class Settings_Page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_page);
-
+        int userId = getIntent().getIntExtra("userID", 0);
         // Find the change name button by its ID
 
         Button changeNameButton = findViewById(R.id.settings_page_button_1);
@@ -47,6 +48,7 @@ public class Settings_Page extends AppCompatActivity {
             public void onClick(View view) {
                 // Start the Change_Name activity when the button is clicked
                 Intent myIntent = new Intent(context, Change_Name.class);
+                myIntent.putExtra("userID", userId);
                 confirmationLauncher.launch(myIntent);
             }
         });
@@ -58,6 +60,7 @@ public class Settings_Page extends AppCompatActivity {
             public void onClick(View view) {
                 // Start the Change_Name activity when the button is clicked
                 Intent myIntent = new Intent(context, Change_Password.class);
+                myIntent.putExtra("userID", userId);
                 confirmationLauncher.launch(myIntent);
             }
         });

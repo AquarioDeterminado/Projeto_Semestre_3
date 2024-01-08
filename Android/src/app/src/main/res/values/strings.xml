@@ -143,6 +143,7 @@
     <!--- Change Password Page -->
     <string name="change_password_page_title">Insert new Password</string>
     <string name="change_password_page_hint">New Password</string>
+    <string name="change_password_page_old_password">Current Password</string>
     <string name="change_password_page_button">Confirm</string>
 
     <!--- Change Apperance Page -->

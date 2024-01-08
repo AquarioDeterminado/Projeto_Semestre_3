@@ -57,8 +57,9 @@ public class Profile_Fragment extends Fragment {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myintent = new Intent(getActivity(), Settings_Page.class);
-                startActivity(myintent);
+                Intent myIntent = new Intent(getActivity(), Settings_Page.class);
+                myIntent.putExtra("userID", userId);
+                startActivity(myIntent);
             }
         });
 
