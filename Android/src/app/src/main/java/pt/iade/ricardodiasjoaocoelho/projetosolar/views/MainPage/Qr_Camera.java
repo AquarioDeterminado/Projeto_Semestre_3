@@ -1,9 +1,14 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage;
+
+import static androidx.core.content.ContextCompat.getMainExecutor;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.ImageProxy;
@@ -11,55 +16,64 @@ import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
+
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.mlkit.vision.barcode.BarcodeScanner;
 import com.google.mlkit.vision.barcode.BarcodeScanning;
 import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.common.InputImage;
+
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 
-public class Qr_Camera extends AppCompatActivity {
+public class Qr_Camera extends Fragment {
 
     ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
 
+    View view;
+
+    public Qr_Camera() {super(R.layout.qr_camera_activity);}
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.qr_camera_activity);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = super.onCreateView(inflater, container, savedInstanceState);
         LifecycleOwner lifecycleOwner = this;
 
-        PreviewView previewView = findViewById(R.id.qr_camera_preview);
+        PreviewView previewView = view.findViewById(R.id.qr_camera_preview);
 
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(view.getContext(), android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             startCamera(lifecycleOwner, previewView);
         }
         else
         {
             requestPermissions(new String[]{android.Manifest.permission.CAMERA}, 101);
         }
+        return view;
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PreviewView previewView = findViewById(R.id.qr_camera_preview);
+        PreviewView previewView = view.findViewById(R.id.qr_camera_preview);
         LifecycleOwner lifecycleOwner = this;
 
         if (requestCode == 101) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startCamera(lifecycleOwner, previewView);
             } else {
-                finish();
+                Snackbar.make(previewView, "Camera permission is required.", Snackbar.LENGTH_SHORT).show();
             }
         }
     }
 
     private void startCamera(LifecycleOwner lifecycleOwner, PreviewView previewView) {
-        cameraProviderFuture = ProcessCameraProvider.getInstance(this);
+        cameraProviderFuture = ProcessCameraProvider.getInstance(view.getContext());
 
         cameraProviderFuture.addListener(new Runnable() {
             @Override
@@ -73,7 +87,7 @@ public class Qr_Camera extends AppCompatActivity {
 
                 ImageAnalysis imageAnalysis = new ImageAnalysis.Builder().build();
 
-                imageAnalysis.setAnalyzer(getMainExecutor(), new ImageAnalysis.Analyzer() {
+                imageAnalysis.setAnalyzer(getMainExecutor(view.getContext()), new ImageAnalysis.Analyzer() {
                     @Override
                     public void analyze(@NonNull ImageProxy image) {
                         InputImage inputImage = InputImage.fromMediaImage(image.getImage(), image.getImageInfo().getRotationDegrees());
@@ -85,6 +99,7 @@ public class Qr_Camera extends AppCompatActivity {
                         results.addOnSuccessListener(barcodes -> {
                                     for (Barcode barcode : barcodes) {
                                         String rawValue = barcode.getRawValue();
+                                        Snackbar.make(previewView, rawValue, Snackbar.LENGTH_SHORT).show();
                                     }
                                     image.close();
                                 });
@@ -97,6 +112,6 @@ public class Qr_Camera extends AppCompatActivity {
                 preview.setSurfaceProvider(previewView.getSurfaceProvider());
                 cameraProvider.bindToLifecycle(lifecycleOwner, cameraSelector, preview, imageAnalysis);
             }
-        }, getMainExecutor());
+        }, getMainExecutor(view.getContext()));
     }
 }

@@ -10,7 +10,8 @@ public class CoworkSpace implements Parcelable {
 
     private final int id;
     private String name;
-    private static ImageView logo;
+    private ImageView logo;
+    private ArrayList<Subscription> subscriptions;
 
     public CoworkSpace(int id, String name)
     {
@@ -18,12 +19,12 @@ public class CoworkSpace implements Parcelable {
         this.name = name;
     }
 
-    public static ImageView getLogo() {
+    public  ImageView getLogo() {
         return logo;
     }
 
-    public static void setLogo(ImageView logo) {
-        CoworkSpace.logo = logo;
+    public  void setLogo(ImageView logo) {
+        this.logo = logo;
     }
 
     public int getId()

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.RSVPResponseInfo;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
 
 public class EventController {
@@ -83,12 +84,64 @@ public class EventController {
         thread.start();
     }
 
+    public static void attend(int userId, int eventId, ReturnRSVP returnEvent) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    try {
+                        WebRequest req = new WebRequest(new URL(
+                                BASE_URL + "/attendEvent/" + eventId));
+                        Log.i("WebRequest", "Post made to API: RSVP to event");
+                        Id id = new Id(userId);
+                        String response = req.performPostRequest(id);
+
+                        RSVPResponseInfo event = new Gson().fromJson(response, RSVPResponseInfo.class);
+
+                        returnEvent.response(event);
+                    } catch (Exception e) {
+                        Log.e("TodoItem", e.toString());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public static void notify(int userId, int eventId) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    try {
+                        WebRequest req = new WebRequest(new URL(
+                                BASE_URL + "/setNotifyUser/" + eventId));
+                        Log.i("WebRequest", "Post made to API: RSVP to event");
+                        Id id = new Id(userId);
+                        String response = req.performPostRequest(id);
+                    } catch (Exception e) {
+                        Log.e("TodoItem", e.toString());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
     public interface ReturnEvents {
         void response(ArrayList<Event> events);
     }
 
     interface ReturnEvent {
         void response(Event event);
+    }
+
+    public interface ReturnRSVP {
+        void response(RSVPResponseInfo rsvp);
     }
 }
 

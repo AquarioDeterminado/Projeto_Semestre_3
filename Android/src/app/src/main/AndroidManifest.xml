@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.Qr_Camera"
+            android:name=".views.MainPage.Qr_Camera"
             android:exported="false" />
         <activity
             android:name=".views.Change_Apperance"
@@ -73,9 +73,6 @@
             android:exported="false" />
         <activity
             android:name=".views.Email_Recovery"
-            android:exported="false" />
-        <activity
-            android:name=".views.MainPage.Cowork_Id"
             android:exported="false" />
         <activity
             android:name=".views.LogIn"

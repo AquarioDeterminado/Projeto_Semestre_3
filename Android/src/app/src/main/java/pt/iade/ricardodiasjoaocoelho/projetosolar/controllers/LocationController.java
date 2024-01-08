@@ -106,6 +106,34 @@ public class LocationController {
         thread.start();
     }
 
+    public static void checkOut(int tableId, int userId, ReturnInt reponse) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    try {
+                        // This is a brand new object and must be a INSERT in the database.
+                        WebRequest req = new WebRequest(new URL(
+                                BASE_URL + "/checkout/" + tableId));
+                        Log.i("WebRequest", "Post made to API: Events for user");
+                        Id id = new Id(userId);
+                        String response = req.performPostRequest(id);
+
+                        // Get the new ID from the server's response.
+                        int newId = new Gson().fromJson(response, int.class);
+                        reponse.response(newId);
+
+                    } catch (Exception e) {
+                        Log.e("DeskReserve", e.toString());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
     public interface ReturnLocations {
         void response(ArrayList<Location> locations);
     }

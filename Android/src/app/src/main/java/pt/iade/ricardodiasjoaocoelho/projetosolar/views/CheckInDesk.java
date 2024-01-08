@@ -30,7 +30,12 @@ public class CheckInDesk extends AppCompatActivity {
 
     }
 
-    public void checkIn(int tableId, int userId, LocationController.ReturnInt reponse){
+    private void checkIn(int tableId, int userId, LocationController.ReturnInt reponse){
         LocationController.reserveDesk(tableId, userId, reponse);
     }
+
+    private void checkOut(int tableId, int userId, LocationController.ReturnInt reponse){
+        LocationController.checkOut(tableId, userId, reponse);
+    }
+
 }

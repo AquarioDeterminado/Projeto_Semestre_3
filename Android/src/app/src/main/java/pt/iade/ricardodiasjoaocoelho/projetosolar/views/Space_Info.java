@@ -1,29 +1,30 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 
 public class Space_Info extends AppCompatActivity {
 
-    private static int id;
+    private static CoworkSpace coworkSpace;
     private static String name;
-
-    public static int getId() { return id; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,7 @@ public class Space_Info extends AppCompatActivity {
         setContentView(R.layout.activity_space_info);
 
         /* --- Get Space --- */
-        id = getIntent().getIntExtra("id", 0);
-        CoworkSpace coworkSpace = new CoworkSpace(id, name);
+        coworkSpace = getIntent().getParcelableExtra("space");
 
         /* --- Widgets --- */
         //TextView spaceTitle = findViewById(R.id.space_info_title);

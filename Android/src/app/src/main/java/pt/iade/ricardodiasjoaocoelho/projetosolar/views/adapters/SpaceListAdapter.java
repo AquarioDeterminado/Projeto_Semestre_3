@@ -59,8 +59,8 @@ public class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.View
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Space_Info.class);
-                int eventId = coworkSpaceDataSet[position].getId();
-                intent.putExtra("eventID", eventId);
+                CoworkSpace space = coworkSpaceDataSet[position];
+                intent.putExtra("space", space);
                 startActivity(v.getContext(), intent, null);
             }
         });

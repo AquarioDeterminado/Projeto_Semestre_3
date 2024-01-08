@@ -14,7 +14,7 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscriptio
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Subscription_Info;
 
 public class SubsListAdapter extends RecyclerView.Adapter<SubsListAdapter.ViewHolder> {
-    public Subscription[] subsDataSet;
+    private Subscription[] subsDataSet;
     private ActivityResultLauncher<Intent> subscriptionInfoLauncher;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -68,5 +68,9 @@ public class SubsListAdapter extends RecyclerView.Adapter<SubsListAdapter.ViewHo
 
     public void setSubscriptionInfoLauncher(ActivityResultLauncher<Intent> subscriptionInfoLauncher) {
         this.subscriptionInfoLauncher = subscriptionInfoLauncher;
+    }
+
+    public void setSubsDataSet(Subscription[] subsDataSet) {
+        this.subsDataSet = subsDataSet;
     }
 }
