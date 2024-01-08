@@ -1,23 +1,28 @@
 package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.SubscriptionController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscription;
 
 public class Subscription_Info extends AppCompatActivity {
+
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription_info);
+        Intent intent = getIntent();
+        userId = intent.getIntExtra("userID", 0);
 
         Subscription sub = getIntent().getExtras().getParcelable("subscription");
 
@@ -31,9 +36,9 @@ public class Subscription_Info extends AppCompatActivity {
 
         /* --- Set Data --- */
         subTitle.setText(sub.getTitle());
-        spaceName.setText(sub.getSpace().getName());
+        spaceName.setText(sub.getSpaceName());
         nextRenewalDate.setText(sub.getNextRenewalDate().toString());
-        suId.setText(sub.getId());
+        suId.setText(String.valueOf(sub.getId()));
         subValue.setText(sub.getPrice() + "€");
 
         /* --- Set Listeners --- */
@@ -46,10 +51,16 @@ public class Subscription_Info extends AppCompatActivity {
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent();
-                        intent.putExtra("subscription", sub);
-                        setResult(RESULT_OK, intent);
-                        finish();
+                        SubscriptionController.RemoveSubscription(sub, new SubscriptionController.ReturnSubscription() {
+                            @Override
+                            public void response(Subscription subscription) {
+                                Intent intent = new Intent();
+                                intent.putExtra("subscription", subscription);
+                                setResult(RESULT_OK, intent);
+                                finish();
+                            }
+
+                        });
                     }
                 });
                 builder.setNegativeButton("No", null);

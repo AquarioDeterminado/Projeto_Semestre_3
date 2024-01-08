@@ -14,18 +14,16 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscriptio
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Subscription_Info;
 
 public class SubsListAdapter extends RecyclerView.Adapter<SubsListAdapter.ViewHolder> {
-    public Subscription[] subsDataSet;
+    private Subscription[] subsDataSet;
     private ActivityResultLauncher<Intent> subscriptionInfoLauncher;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView spaceName;
         private final TextView subTitle;
         private final ImageView subImage;
         private final Button subMoreInfo;
         public ViewHolder(View view) {
             super(view);
-            spaceName = view.findViewById(R.id.sub_row_item_space_name);
             subTitle = view.findViewById(R.id.sub_row_item_sub);
             subImage = view.findViewById(R.id.sub_row_item_img);
             subMoreInfo = view.findViewById(R.id.sub_row_item_bttn);
@@ -68,5 +66,9 @@ public class SubsListAdapter extends RecyclerView.Adapter<SubsListAdapter.ViewHo
 
     public void setSubscriptionInfoLauncher(ActivityResultLauncher<Intent> subscriptionInfoLauncher) {
         this.subscriptionInfoLauncher = subscriptionInfoLauncher;
+    }
+
+    public void setSubsDataSet(Subscription[] subsDataSet) {
+        this.subsDataSet = subsDataSet;
     }
 }

@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import com.google.gson.Gson;
 import java.net.URL;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Id;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.LogInInfo;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.utils.WebRequest;
@@ -18,11 +18,11 @@ public class LogInController {
     private static final String BASE_URL = WebRequest.LOCALHOST + "/login";
 
     String error = "";
-    User_Info user;
+    UserInfo user;
 
     /* --- Getters --- */
     public String getError() { return error; }
-    public User_Info getUser() { return user; }
+    public UserInfo getUser() { return user; }
 
     /* --- Methods --- */
     public void CheckCredentials(Context context, String inputUsername, String inputPassword, ReturnId returnId)

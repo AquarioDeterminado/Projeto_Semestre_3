@@ -17,7 +17,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="250dp"
         android:background="@android:drawable/alert_light_frame"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/ligth_beige"
         android:backgroundTintMode="src_atop"
         android:clipToPadding="false"
         android:fadingEdge="vertical"
@@ -34,6 +34,7 @@
             android:layout_height="48dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/blue_accent"
             android:text="@string/rsvp_accept_bttn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -44,6 +45,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/blue_accent"
             android:text="@string/rsvp_notify_bttn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -76,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:background="@android:drawable/alert_light_frame"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/ligth_beige"
         android:backgroundTintMode="src_in"
         android:text="@string/rsvp_date"
         app:layout_constraintBottom_toTopOf="@+id/rsvp_container"

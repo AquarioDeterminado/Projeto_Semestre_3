@@ -39,7 +39,7 @@
     <!--- Email Recovery Page -->
     <string name="email_recovery_email_hint">Email</string>
     <string name="email_recovery_send_button">Send</string>
-    <string name="email_recovery_intro_message">Email Recovery BlaBlaBla</string>
+    <string name="email_recovery_intro_message">We will send you an email shortly.</string>
 
     <!-- Id Page -->
     <string name="id_page_card_img">Id Card</string>
@@ -143,6 +143,7 @@
     <!--- Change Password Page -->
     <string name="change_password_page_title">Insert new Password</string>
     <string name="change_password_page_hint">New Password</string>
+    <string name="change_password_page_old_password">Current Password</string>
     <string name="change_password_page_button">Confirm</string>
 
     <!--- Change Apperance Page -->

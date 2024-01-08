@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.CircleMenuView;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Profile_Fragment;
 
 public class MainPage extends AppCompatActivity {
 
@@ -18,7 +17,7 @@ public class MainPage extends AppCompatActivity {
     Main_Fragment mainFragment = new Main_Fragment();
     Usr_Subscriptions usrSpacesFragment = new Usr_Subscriptions();
     Company_Plan_Selelector_Fragment planSelectorFragment = new Company_Plan_Selelector_Fragment();
-    Cowork_Id coworkIdFragment = new Cowork_Id();
+    Qr_Camera qrCameraFragment = new Qr_Camera();
     Profile_Fragment profileFragment = new Profile_Fragment();
 
     @Override
@@ -47,7 +46,7 @@ public class MainPage extends AppCompatActivity {
         } else if (id == 2) {
             setFragment(R.id.mainpage_fragment_frame, planSelectorFragment);
         } else if (id == 3) {
-            setFragment(R.id.mainpage_fragment_frame, coworkIdFragment);
+            setFragment(R.id.mainpage_fragment_frame, qrCameraFragment);
         } else if (id == 4) {
             setFragment(R.id.mainpage_fragment_frame, profileFragment);
         } else throw new IllegalStateException("Unexpected value: " + id);

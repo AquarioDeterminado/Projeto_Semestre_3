@@ -73,8 +73,6 @@ insert into facility (fac_name) values ("WorkShop");
 insert into facility (fac_name) values ("Monthly");
 insert into facility (fac_name) values ("Yearly");
 
-
-
 #individual
 insert into individual (ind_ent_id, ind_email, ind_password, ind_name, ind_bdate, ind_account_creation_date, ind_active) 
 values (1, "clarinha@carlinha.com", "carlinha2004!", "Clara", str_to_date("2004.01.20",'%Y.%m.%d'), now(), true);

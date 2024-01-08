@@ -19,6 +19,7 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Event_RSVP;
 public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder> {
     private Event[] eventDataSet;
     private ActivityResultLauncher<Intent> eventLauncher;
+    private int userId;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -36,8 +37,9 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
         }
 
     }
-    public EventListAdapter(Event[] eventDataSet) {
+    public EventListAdapter(Event[] eventDataSet, int userId) {
         this.eventDataSet = eventDataSet;
+        this.userId = userId;
     }
 
     @Override
@@ -61,8 +63,9 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Event_RSVP.class);
-                int eventId = eventDataSet[position].getId();
-                intent.putExtra("eventID", eventId);
+                Event event = eventDataSet[position];
+                intent.putExtra("event", event);
+                intent.putExtra("userID", userId);
                 eventLauncher.launch(intent);
             }
         });

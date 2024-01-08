@@ -5,14 +5,13 @@
     android:id="@+id/plan_row_item_background"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#00FFFFFF"
-    android:backgroundTint="#00FFFFFF">
+    android:background="@color/ligth_beige">
 
     <TextView
         android:id="@+id/plan_row_item_location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         android:text="TextView"
@@ -27,10 +26,10 @@
         android:id="@+id/plan_row_item_capacity_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/plan_row_item_location_name"
         app:layout_constraintEnd_toStartOf="@+id/plan_row_item_location_name"
-        app:layout_constraintStart_toStartOf="@+id/plan_row_item_location_name"
-        app:layout_constraintTop_toTopOf="@+id/plan_row_item_location_name" />
+        app:layout_constraintStart_toStartOf="@+id/plan_row_item_location_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
