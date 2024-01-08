@@ -10,9 +10,14 @@ public class Location implements Parcelable {
     private final int  id;
     private final String name;
     private final String address;
+    private final double occupationRate;
 
     public String getName() {
         return name;
+    }
+
+    public double getOccupanctRate() {
+        return occupationRate;
     }
 
     @Override
@@ -25,6 +30,7 @@ public class Location implements Parcelable {
         dest.writeInt(id);
         dest.writeString(name);
         dest.writeString(address);
+        dest.writeDouble(occupationRate);
     }
 
     public static final Parcelable.Creator<Location> CREATOR = new Parcelable.Creator<Location>() {
@@ -43,11 +49,10 @@ public class Location implements Parcelable {
         id = in.readInt();
         name = in.readString();
         address = in.readString();
+        occupationRate = in.readDouble();
     }
 
-
-    public int getCapacityRate() {
-        //TODO:Get capacity rate from database
-        return 32;
+    public int getId() {
+        return id;
     }
 }

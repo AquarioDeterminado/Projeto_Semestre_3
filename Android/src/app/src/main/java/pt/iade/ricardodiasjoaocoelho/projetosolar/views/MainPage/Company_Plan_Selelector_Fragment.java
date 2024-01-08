@@ -23,7 +23,7 @@ import pt.iade.ricardodiasjoaocoelho.projetosolar.views.adapters.LocationListAda
 
 public class Company_Plan_Selelector_Fragment extends Fragment {
 
-    private Activity currentActiviy = getActivity();
+    private Activity currentActiviy;
 
     public Company_Plan_Selelector_Fragment() { super(R.layout.activity_plan_selelector_location); }
 
@@ -32,6 +32,7 @@ public class Company_Plan_Selelector_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_plan_selelector_location, container, false);
+        currentActiviy = getActivity();
         Intent intent = getActivity().getIntent();
         int userId = intent.getIntExtra("userID", 0);
 
@@ -49,6 +50,7 @@ public class Company_Plan_Selelector_Fragment extends Fragment {
         ArrayList<Location> locations = new ArrayList<>();
         Location[] locationsArray = locations.toArray(new Location[0]);
         LocationListAdapter adapter = new LocationListAdapter(locationsArray);
+        adapter.setUserId(userId);
         locationRecycle.setAdapter(adapter);
 
         //Layout Manager

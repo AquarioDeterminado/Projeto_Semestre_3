@@ -31,6 +31,7 @@ public class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.View
             spaceName = view.findViewById(R.id.space_row_item_name);
             spaceImage = view.findViewById(R.id.space_row_item_img);
             spaceBttn = view.findViewById(R.id.space_row_item_button);
+
         }
 
     }

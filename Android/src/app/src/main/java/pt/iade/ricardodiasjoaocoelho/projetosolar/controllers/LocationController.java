@@ -25,7 +25,7 @@ public class LocationController {
                     try {
                         // This is a brand new object and must be a INSERT in the database.
                         WebRequest req = new WebRequest(new URL(
-                                BASE_URL + "/getAvailableEvents"));
+                                BASE_URL + "/spaceslist"));
                         Log.i("WebRequest", "Post made to API: Events for user");
                         Id id = new Id(userId);
                         String response = req.performPostRequest(id);
@@ -39,7 +39,64 @@ public class LocationController {
                         returnLocations.response(locations);
 
                     } catch (Exception e) {
-                        Log.e("AvailableEvents", e.toString());
+                        Log.e("LocarionList", e.toString());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public static void getFloorPlan(int userId, Location location, ReturnString returnFloorPlan) {
+        int locationId = location.getId();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    try {
+                        // This is a brand new object and must be a INSERT in the database.
+                        WebRequest req = new WebRequest(new URL(
+                                BASE_URL + "/showSpaceLayout/" + locationId));
+                        Log.i("WebRequest", "Post made to API: Events for user");
+                        Id id = new Id(userId);
+                        String response = req.performPostRequest(id);
+
+                        // Get the new ID from the server's response.
+
+                        returnFloorPlan.response(response);
+
+                    } catch (Exception e) {
+                        Log.e("FloorPlan", e.toString());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public static void reserveDesk(int tableId, int userId, ReturnInt returnId) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    try {
+                        // This is a brand new object and must be a INSERT in the database.
+                        WebRequest req = new WebRequest(new URL(
+                                BASE_URL + "/reserveTable/" + tableId));
+                        Log.i("WebRequest", "Post made to API: Events for user");
+                        Id id = new Id(userId);
+                        String response = req.performPostRequest(id);
+
+                        // Get the new ID from the server's response.
+                        int newId = new Gson().fromJson(response, int.class);
+                        returnId.response(newId);
+
+                    } catch (Exception e) {
+                        Log.e("DeskReserve", e.toString());
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -51,5 +108,13 @@ public class LocationController {
 
     public interface ReturnLocations {
         void response(ArrayList<Location> locations);
+    }
+
+    public interface ReturnString {
+        void response(String floorPlan);
+    }
+
+    public interface ReturnInt {
+        void response(int id);
     }
 }

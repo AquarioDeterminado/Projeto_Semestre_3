@@ -86,6 +86,9 @@
         <activity
             android:name=".views.MainPage.Profile"
             android:exported="false" />
+        <activity
+            android:name=".views.CheckInDesk"
+            android:exported="false" />
     </application>
 
 </manifest>
