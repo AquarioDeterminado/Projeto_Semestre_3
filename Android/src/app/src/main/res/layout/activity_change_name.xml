@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_change_name">
+    tools:context=".views.Change_Name"
+    android:background="@color/ligth_beige">
 
     <Button
         android:id="@+id/change_apperance_page_confirm_button"
         android:layout_width="284dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/blue_accent"
         android:text="@string/change_name_page_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +22,7 @@
         android:id="@+id/change_name_page_hint"
         android:layout_width="342dp"
         android:layout_height="43dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:hint="@string/change_name_page_hint"
         android:inputType="text"
