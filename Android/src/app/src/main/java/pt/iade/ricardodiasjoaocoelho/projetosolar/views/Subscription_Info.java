@@ -61,10 +61,6 @@ public class Subscription_Info extends AppCompatActivity {
                             }
 
                         });
-                        Intent intent = new Intent();
-                        intent.putExtra("subscription", sub);
-                        setResult(RESULT_OK, intent);
-                        finish();
                     }
                 });
                 builder.setNegativeButton("No", null);

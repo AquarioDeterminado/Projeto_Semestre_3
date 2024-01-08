@@ -1,5 +1,6 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,13 +21,17 @@ import java.util.Comparator;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.EventController;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.controllers.UserInfoController;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Event.Event;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.CalendarItem;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Settings_Page;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.adapters.CalendarAdapter;
 
 public class Profile_Fragment extends Fragment {
 
     private RecyclerView calendarView;
+    Activity currentActivity;
 
     public Profile_Fragment() {super(R.layout.profile_fragment);}
 
@@ -34,24 +39,17 @@ public class Profile_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
+        currentActivity = getActivity();
         Intent intent = getActivity().getIntent();
         int userId = intent.getIntExtra("userID", 0);
 
         //TextViews
         TextView name = view.findViewById(R.id.profile_name_display);
         TextView email = view.findViewById(R.id.profile_email_display);
-
         //ImageView
         ImageView avatar = view.findViewById(R.id.profile_avatar_display);
-
-        //Set text to replace later on
-        name.setText("John Doe");
-        email.setText("johndoe@gmail.com");
-        avatar.setImageResource(R.drawable.avatar_profile_picture);
-
         //Settings Button
         Button settingsButton = view.findViewById(R.id.profile_settings_button);
-
         //Calender
         calendarView = view.findViewById(R.id.profile_calendar);
 
@@ -64,8 +62,29 @@ public class Profile_Fragment extends Fragment {
             }
         });
 
+        setUserInfo(userId, name, email, avatar);
+        setCalendarRecycler(view, userId);
 
+        return view;
+    }
 
+    private  void setUserInfo(int userId, TextView name, TextView email, ImageView avatar) {
+        UserInfoController.getUserInfo(userId, new UserInfoController.ReturnUserInfo() {
+            @Override
+            public void response(UserInfo user) {
+                currentActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        name.setText(user.getUsername());
+                        email.setText(user.getEmail());
+                        avatar.setImageResource(R.drawable.avatar_profile_picture);
+                    }
+                });
+            }
+        });
+    }
+
+    private void setCalendarRecycler(View view, int userId) {
         //adapter
         ArrayList<CalendarItem> calendarDataSet = new ArrayList<>();
         //CalendarItem.makeCalendarDataSet(eventList);
@@ -76,6 +95,10 @@ public class Profile_Fragment extends Fragment {
         CalendarAdapter adapter = new CalendarAdapter(calendarDataSet.toArray(new CalendarItem[0]));
         calendarView.setAdapter(adapter);
 
+        updateCalendarDataSet(userId);
+    }
+
+    private void updateCalendarDataSet(int userId) {
         EventController.getUserEvents(userId, new EventController.ReturnEvents() {
             @Override
             public void response(ArrayList<Event> events) {
@@ -100,7 +123,5 @@ public class Profile_Fragment extends Fragment {
                 });
             }
         });
-
-        return view;
     }
 }

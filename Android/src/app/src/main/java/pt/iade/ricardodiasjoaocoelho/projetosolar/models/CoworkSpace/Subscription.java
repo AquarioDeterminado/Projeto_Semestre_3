@@ -8,11 +8,11 @@ import androidx.annotation.NonNull;
 
 import java.util.Date;
 
-import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.User_Info;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.User.UserInfo;
 
 public class Subscription implements Parcelable {
     private final int id;
-    private User_Info user;
+    private UserInfo user;
     private String title;
     double price;
     private Icon subIcon;
@@ -45,7 +45,7 @@ public class Subscription implements Parcelable {
 
     protected Subscription(Parcel in) {
         id = in.readInt();
-        user = in.readParcelable(User_Info.class.getClassLoader());
+        user = in.readParcelable(UserInfo.class.getClassLoader());
         title = in.readString();
         subIcon = in.readParcelable(Icon.class.getClassLoader());
         nextRenewalDate = new Date(in.readLong());

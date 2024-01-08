@@ -1,4 +1,4 @@
-package pt.iade.ricardodiasjoaocoelho.projetosolar.views.MainPage;
+package pt.iade.ricardodiasjoaocoelho.projetosolar.views;
 
 import android.content.Context;
 import android.content.Intent;

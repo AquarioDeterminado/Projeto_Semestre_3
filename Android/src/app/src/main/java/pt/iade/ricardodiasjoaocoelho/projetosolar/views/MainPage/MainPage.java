@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.CircleMenuView;
-import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Profile_Fragment;
 
 public class MainPage extends AppCompatActivity {
 
