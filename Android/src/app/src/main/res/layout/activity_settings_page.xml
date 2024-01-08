@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ligth_beige">
 
     <TextView
         android:id="@+id/settings_page_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:text="@string/settings_page_title"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,14 +18,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="341dp"
-        android:layout_height="756dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="100dp"
+        android:layout_width="353dp"
+        android:layout_height="598dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_page_title">
@@ -33,24 +30,28 @@
             android:id="@+id/settings_page_button_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_accent"
             android:text="@string/settings_page_button_1" />
 
         <Button
             android:id="@+id/settings_page_button_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_accent"
             android:text="@string/settings_page_button_2" />
 
         <Button
             android:id="@+id/settings_page_button_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_accent"
             android:text="@string/settings_page_button_3" />
 
         <Button
             android:id="@+id/settings_page_button_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_accent"
             android:text="@string/settings_page_button_4" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

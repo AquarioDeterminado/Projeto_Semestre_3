@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_entry_"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ligth_beige">
 
     <ImageView
         android:id="@+id/login_entry_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="120dp"
         android:contentDescription="@string/login_entry_company_img_descript"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +22,7 @@
         android:id="@+id/login_entry_username_input"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="@string/login_entry_username"
         android:inputType="textEmailAddress"
@@ -33,7 +34,7 @@
         android:id="@+id/login_entry_password_input"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/login_entry_password"
         android:inputType="textPassword"
@@ -56,21 +57,22 @@
         android:id="@+id/login_entry_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/blue_accent"
         android:text="@string/login_entry_logIn_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/login_entry_password_input"
-        app:layout_constraintStart_toStartOf="@+id/login_entry_password_input"
-        app:layout_constraintTop_toBottomOf="@+id/login_entry_signup_bttn" />
+        app:layout_constraintStart_toStartOf="@+id/login_entry_password_input" />
 
     <TextView
         android:id="@+id/login_entry_signup_bttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="10dp"
         android:text="@string/login_entry_logIn_signup_button"
         android:textColor="#892FBA"
-        app:layout_constraintEnd_toEndOf="@+id/login_entry_login_button"
-        app:layout_constraintStart_toStartOf="@+id/login_entry_login_button"
+        app:layout_constraintEnd_toEndOf="@+id/login_entry_password_input"
+        app:layout_constraintStart_toStartOf="@+id/login_entry_password_input"
         app:layout_constraintTop_toBottomOf="@+id/login_entry_password_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

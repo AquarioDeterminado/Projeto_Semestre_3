@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ligth_beige">
 
     <TextView
         android:id="@+id/mainpage_events_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="@string/mainpage_datePicker_label"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +21,7 @@
         android:id="@+id/mainpage_datePicker"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:entries="@array/event_time_window"
         android:textAlignment="viewEnd"
         app:layout_constraintBottom_toBottomOf="@+id/mainpage_events_title"
@@ -31,6 +32,7 @@
         android:id="@+id/mainpage_events_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:scrollbars="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -43,8 +45,8 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:text="@string/mainpage_spaces_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainpage_events_list" />
@@ -53,6 +55,7 @@
         android:id="@+id/mainpage_spaces_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +70,8 @@
         android:layout_marginBottom="10dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/mainpage_events_list"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainpage_events_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

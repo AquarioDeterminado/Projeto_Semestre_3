@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.CheckInDesk">
+    tools:context=".views.CheckInDesk"
+    android:background="@color/ligth_beige">
 
     <TextView
         android:id="@+id/idrp_tile_page"
@@ -21,10 +22,11 @@
         android:id="@+id/idrp_check_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
+        android:backgroundTint="@color/blue_accent"
         android:text="@string/idrp_desk_reserve_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
