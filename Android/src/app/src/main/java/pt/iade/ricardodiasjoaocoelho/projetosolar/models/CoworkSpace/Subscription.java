@@ -37,6 +37,18 @@ public class Subscription implements Parcelable {
 
     public Date getNextRenewalDate() { return nextRenewalDate; }
 
+    public UserInfo getUser() {
+        return user;
+    }
+
+    public Icon getSubIcon() {
+        return subIcon;
+    }
+
+    public String getLocationAccessId() {
+        return locationAccessId;
+    }
+
     /* --- Parcelable --- */
     @Override
     public int describeContents() {
@@ -70,8 +82,12 @@ public class Subscription implements Parcelable {
         dest.writeParcelable(user, 0);
         dest.writeString(title);
         dest.writeParcelable(subIcon, 0);
-        dest.writeLong(nextRenewalDate.getTime());
-        dest.writeString(locationAccessId)  ;
+        if (nextRenewalDate == null)
+            dest.writeLong(0);
+        else
+            dest.writeLong(nextRenewalDate.getTime());
+        dest.writeString(locationAccessId)
+        ;
     }
 
     public double getPrice() {
@@ -80,5 +96,13 @@ public class Subscription implements Parcelable {
 
     public String getSpaceName() {
         return this.spaceName;
+    }
+
+    public String getName() {
+        return title;
+    }
+
+    public String getRenewal() {
+        return "Monthly";
     }
 }

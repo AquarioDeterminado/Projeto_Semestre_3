@@ -13,8 +13,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 import pt.iade.ricardodiasjoaocoelho.projetosolar.R;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.CoworkSpace;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.CoworkSpace.Subscription;
+import pt.iade.ricardodiasjoaocoelho.projetosolar.models.Utils.Tag;
 import pt.iade.ricardodiasjoaocoelho.projetosolar.views.Space_Info;
 
 public class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.ViewHolder> {
@@ -60,7 +64,11 @@ public class SpaceListAdapter extends RecyclerView.Adapter<SpaceListAdapter.View
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext() , Space_Info.class);
                 CoworkSpace space = coworkSpaceDataSet[position];
+                ArrayList<Subscription> subs = space.getSubscriptions();
+                ArrayList<Tag> tags = space.getTags();
                 intent.putExtra("space", space);
+                intent.putParcelableArrayListExtra("subscriptions", subs);
+                intent.putParcelableArrayListExtra("tags", tags);
                 startActivity(v.getContext(), intent, null);
             }
         });
