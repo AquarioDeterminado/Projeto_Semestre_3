@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@mipmap/logo_foreground" />
 
     <EditText
         android:id="@+id/login_entry_username_input"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/login_entry_logIn_signup_button"
-        android:textColor="#892FBA"
+        android:textColor="@color/blue_accent"
         app:layout_constraintEnd_toEndOf="@+id/login_entry_password_input"
         app:layout_constraintStart_toStartOf="@+id/login_entry_password_input"
         app:layout_constraintTop_toBottomOf="@+id/login_entry_password_input" />

@@ -64,7 +64,7 @@ public class LogIn extends AppCompatActivity {
                             int userId = id.getId();
                             if (userId > 0) {
                                 Intent mainPage = new Intent(context, MainPage.class);
-                                mainPage.putExtra("userID", id);
+                                mainPage.putExtra("userID", id.getId());
                                 logInController.saveLogInInfo(context, inputUsername, inputPassword);
                                 startActivity(mainPage);
                             } else {
