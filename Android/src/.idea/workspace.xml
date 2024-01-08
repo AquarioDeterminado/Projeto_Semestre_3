@@ -167,18 +167,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0c20855-795c-4573-8b52-42795fbbc056" name="Changes" comment="Change Password Done;">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/adapters/SubscriptionListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/sub_plan_row_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/CoworkSpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/CoworkSpaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/controllers/SpaceController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/CoworkSpace/CoworkSpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/CoworkSpace/CoworkSpace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/CoworkSpace/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/CoworkSpace/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/Utils/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/models/Utils/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Space_Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/Space_Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/adapters/SpaceListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/iade/ricardodiasjoaocoelho/projetosolar/views/adapters/SpaceListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_space_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_space_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Server Spring Boot" beforeDir="false" afterPath="$PROJECT_DIR$/../../Server Spring Boot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Final/Slides/Projeto Solar - Prototípo (Slides) .key" beforeDir="false" afterPath="$PROJECT_DIR$/../../Final/Slides/Projeto Solar - Prototípo (Slides) .key" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
